@@ -1,0 +1,128 @@
+@import "tailwindcss";
+
+:root {
+  --color-primary: #0f6b5c;
+  --color-navy: #1b2a4a;
+  --color-warning: #c47a11;
+  --color-danger: #b42318;
+  --color-bg: #f3f6f4;
+  --color-surface: #ffffff;
+  --color-border: #d7e0ea;
+  --color-text: #1b2a4a;
+  --color-text-secondary: #4a5b6c;
+  --color-muted: #6b7c8d;
+}
+
+@theme inline {
+  --color-background: var(--color-bg);
+  --color-foreground: var(--color-text);
+  --font-sans: var(--font-edu-sans), "Source Sans 3", system-ui, sans-serif;
+  --font-display: var(--font-edu-display), Literata, Georgia, serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.5;
+  letter-spacing: -0.011em;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.font-display {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.font-tabular {
+  font-variant-numeric: tabular-nums lining-nums;
+  letter-spacing: -0.03em;
+}
+
+.bg-atmosphere {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(1200px 500px at 10% -10%, rgba(15, 107, 92, 0.14), transparent 60%),
+    radial-gradient(900px 420px at 100% 0%, rgba(27, 42, 74, 0.1), transparent 55%),
+    linear-gradient(180deg, #eef5f1 0%, #f3f6f4 40%, #eef2f6 100%);
+}
+
+.field {
+  width: 100%;
+  border-radius: 0.75rem;
+  border: 1px solid var(--color-border);
+  background: #fff;
+  padding: 0.5rem 0.75rem;
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  color: var(--color-navy);
+}
+
+.field:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+@keyframes kpiIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes timelineIn {
+  from {
+    opacity: 0;
+    transform: translateX(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.kpi-enter {
+  animation: kpiIn 0.45s ease both;
+}
+
+.timeline-enter {
+  animation: timelineIn 0.4s ease both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kpi-enter,
+  .timeline-enter {
+    animation: none;
+  }
+
+  .group:hover {
+    transform: none !important;
+  }
+}
