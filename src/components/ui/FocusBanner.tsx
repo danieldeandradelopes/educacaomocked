@@ -6,7 +6,7 @@ import type { ReactNode } from 'react';
 const LABELS: Record<string, string> = {
   teachers: 'Filtrado: professores',
   employees: 'Filtrado: funcionários',
-  ciop: 'Filtrado: vínculo CIOP',
+  ciop: 'Filtrado: Funcionários CIOP',
   stale: 'Filtrado: casos sem atualização',
   referrals: 'Filtrado: encaminhados / aguardando retorno',
   attendance: 'Filtrado: baixa frequência (busca ativa)',

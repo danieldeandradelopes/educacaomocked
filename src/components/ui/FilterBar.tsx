@@ -26,7 +26,7 @@ export function FilterBar() {
   const active = isFilterActive(filters);
 
   return (
-    <div className="flex flex-col gap-3 rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)]/90 p-3 backdrop-blur sm:p-4">
+    <div className="surface-card flex flex-col gap-3 p-3 sm:p-4">
       <div className="flex flex-wrap items-end gap-3">
         <label className="flex min-w-[7rem] flex-col gap-1 text-xs font-medium text-[var(--color-muted)]">
           Ano
@@ -73,7 +73,7 @@ export function FilterBar() {
           type="button"
           onClick={resetFilters}
           disabled={!active}
-          className="rounded-xl border border-[var(--color-border)] px-3 py-2 text-sm font-medium text-[var(--color-navy)] transition hover:bg-[var(--color-navy)]/5 disabled:cursor-not-allowed disabled:opacity-40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-primary)]"
+          className="min-h-10 rounded-[var(--radius-control)] border border-[var(--color-border)] px-3 py-2 text-sm font-medium text-[var(--color-navy)] transition hover:bg-[var(--color-navy)]/5 disabled:cursor-not-allowed disabled:opacity-40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-primary)]"
         >
           Limpar
         </button>
@@ -89,10 +89,10 @@ export function FilterBar() {
               {describeFilters(filters, schools)}
             </span>
             {' '}
-            · selects multi (aglutinam)
+            · filtros aplicados
           </>
         ) : (
-          <> · rede completa · dados via API</>
+          <> · rede completa · Ambiente de demonstração</>
         )}
       </p>
     </div>

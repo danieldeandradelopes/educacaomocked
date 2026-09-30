@@ -1,23 +1,32 @@
 @import "tailwindcss";
 
 :root {
-  --color-primary: #0f6b5c;
-  --color-navy: #1b2a4a;
-  --color-warning: #c47a11;
-  --color-danger: #b42318;
-  --color-bg: #f3f6f4;
+  /* Brand / semantic tokens */
+  --color-primary: #0f7a82;
+  --color-navy: #1d3456;
+  --color-success: #15803d;
+  --color-warning: #b45309;
+  --color-danger: #dc2626;
+  --color-info: #1d4ed8;
+  --color-bg: #f6f8f9;
   --color-surface: #ffffff;
-  --color-border: #d7e0ea;
-  --color-text: #1b2a4a;
-  --color-text-secondary: #4a5b6c;
-  --color-muted: #6b7c8d;
+  --color-border: #d8e0e8;
+  --color-text: #10233f;
+  --color-text-secondary: #475569;
+  --color-muted: #475569;
+
+  /* Spacing / shape */
+  --radius-card: 1rem;
+  --radius-control: 0.75rem;
+  --shadow-card: 0 1px 2px rgba(16, 35, 63, 0.05), 0 1px 0 rgba(16, 35, 63, 0.03);
+  --space-section: 1.5rem;
 }
 
 @theme inline {
   --color-background: var(--color-bg);
   --color-foreground: var(--color-text);
-  --font-sans: var(--font-edu-sans), "Source Sans 3", system-ui, sans-serif;
-  --font-display: var(--font-edu-display), Literata, Georgia, serif;
+  --font-sans: var(--font-edu-sans), Inter, system-ui, sans-serif;
+  --font-display: var(--font-edu-sans), Inter, system-ui, sans-serif;
 }
 
 * {
@@ -49,14 +58,13 @@ a {
 
 .font-display {
   font-family: var(--font-display);
-  font-optical-sizing: auto;
   letter-spacing: -0.02em;
-  line-height: 1.2;
+  line-height: 1.25;
 }
 
 .font-tabular {
   font-variant-numeric: tabular-nums lining-nums;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
 }
 
 .bg-atmosphere {
@@ -64,21 +72,19 @@ a {
   position: fixed;
   inset: 0;
   z-index: 0;
-  background:
-    radial-gradient(1200px 500px at 10% -10%, rgba(15, 107, 92, 0.14), transparent 60%),
-    radial-gradient(900px 420px at 100% 0%, rgba(27, 42, 74, 0.1), transparent 55%),
-    linear-gradient(180deg, #eef5f1 0%, #f3f6f4 40%, #eef2f6 100%);
+  background: linear-gradient(180deg, #f6f8f9 0%, #eef2f6 100%);
 }
 
 .field {
   width: 100%;
-  border-radius: 0.75rem;
+  min-height: 2.5rem;
+  border-radius: var(--radius-control);
   border: 1px solid var(--color-border);
-  background: #fff;
+  background: var(--color-surface);
   padding: 0.5rem 0.75rem;
   font-family: var(--font-sans);
   font-size: 0.9375rem;
-  color: var(--color-navy);
+  color: var(--color-text);
 }
 
 .field:focus-visible {
@@ -86,10 +92,17 @@ a {
   outline-offset: 2px;
 }
 
+.surface-card {
+  border-radius: var(--radius-card);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+}
+
 @keyframes kpiIn {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(8px);
   }
   to {
     opacity: 1;
@@ -100,7 +113,7 @@ a {
 @keyframes timelineIn {
   from {
     opacity: 0;
-    transform: translateX(-8px);
+    transform: translateX(-6px);
   }
   to {
     opacity: 1;
@@ -109,17 +122,17 @@ a {
 }
 
 .kpi-enter {
-  animation: kpiIn 0.45s ease both;
+  animation: kpiIn 0.4s ease both;
 }
 
 .timeline-enter {
-  animation: timelineIn 0.4s ease both;
+  animation: timelineIn 0.35s ease both;
 }
 
 @keyframes toastIn {
   from {
     opacity: 0;
-    transform: translateY(12px);
+    transform: translateY(10px);
   }
   to {
     opacity: 1;
@@ -138,7 +151,9 @@ a {
     animation: none;
   }
 
-  .group:hover {
+  .group:hover,
+  a:hover,
+  button:hover {
     transform: none !important;
   }
 }

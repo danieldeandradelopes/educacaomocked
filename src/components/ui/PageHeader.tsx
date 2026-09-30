@@ -12,11 +12,13 @@ export function PageHeader({
   return (
     <div className="flex flex-wrap items-start justify-between gap-3">
       <section>
-        <h1 className="font-display text-2xl font-semibold text-[var(--color-navy)] sm:text-3xl">
+        <h1 className="text-2xl font-semibold tracking-tight text-[var(--color-navy)] sm:text-3xl">
           {title}
         </h1>
         {description && (
-          <p className="mt-1 max-w-3xl text-sm text-[var(--color-text-secondary)]">{description}</p>
+          <p className="mt-1 max-w-3xl text-sm leading-relaxed text-[var(--color-text-secondary)]">
+            {description}
+          </p>
         )}
       </section>
       {action}
@@ -24,9 +26,13 @@ export function PageHeader({
   );
 }
 
-export function LoadingBlock({ label = 'Carregando dados da API…' }: { label?: string }) {
+export function LoadingBlock({ label = 'Carregando dados…' }: { label?: string }) {
   return (
-    <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6 text-sm text-[var(--color-muted)]">
+    <div
+      className="surface-card p-6 text-sm text-[var(--color-muted)]"
+      role="status"
+      aria-live="polite"
+    >
       {label}
     </div>
   );
@@ -34,7 +40,10 @@ export function LoadingBlock({ label = 'Carregando dados da API…' }: { label?:
 
 export function ErrorBlock({ message }: { message: string }) {
   return (
-    <div className="rounded-2xl border border-[var(--color-danger)]/30 bg-[var(--color-danger)]/8 p-6 text-sm text-[var(--color-danger)]">
+    <div
+      className="rounded-[var(--radius-card)] border border-[var(--color-danger)]/30 bg-[var(--color-danger)]/8 p-6 text-sm text-[var(--color-danger)]"
+      role="alert"
+    >
       {message}
     </div>
   );

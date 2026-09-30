@@ -48,7 +48,7 @@ export const NAV_ITEMS: readonly NavItem[] = [
   { id: 'waitlist', label: 'Lista de Espera', href: '/waitlist', icon: ListOrdered },
   { id: 'tutoring', label: 'Reforço Escolar', href: '/tutoring', icon: BookOpen },
   { id: 'inclusive', label: 'Educação Inclusiva', href: '/inclusive', icon: HeartHandshake },
-  { id: 'transport', label: 'Transporte', href: '/transport', icon: Bus },
+  { id: 'transport', label: 'Transporte Escolar', href: '/transport', icon: Bus },
   { id: 'schools', label: 'Escolas', href: '/schools', icon: School },
   { id: 'teachers', label: 'Professores', href: '/teachers', icon: UserRound },
   { id: 'employees', label: 'Funcionários', href: '/employees', icon: Briefcase },

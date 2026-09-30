@@ -57,10 +57,10 @@ export function DataTable({
 
   return (
     <div className="space-y-3">
-      <div className="overflow-x-auto rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)]">
+      <div className="surface-card overflow-x-auto">
         <table className="min-w-full border-collapse text-left text-sm">
           {caption && <caption className="sr-only">{caption}</caption>}
-          <thead className="bg-[var(--color-navy)]/[0.04]">
+          <thead className="bg-[var(--color-bg)]">
             <tr>
               {cols.map((column) => {
                 const canSort = Boolean(sort) && column.sortable !== false;

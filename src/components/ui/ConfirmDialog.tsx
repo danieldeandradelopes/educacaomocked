@@ -105,7 +105,7 @@ export function ConfirmProvider({ children }: { children: ReactNode }) {
                 <div className="min-w-0">
                   <h2
                     id={titleId}
-                    className="font-display text-lg font-semibold text-[var(--color-navy)]"
+                    className="text-lg font-semibold text-[var(--color-navy)]"
                   >
                     {options.title}
                   </h2>
@@ -120,7 +120,7 @@ export function ConfirmProvider({ children }: { children: ReactNode }) {
                 <button
                   type="button"
                   onClick={() => finish(false)}
-                  className="rounded-xl border border-[var(--color-border)] px-4 py-2.5 text-sm font-medium text-[var(--color-navy)] transition hover:bg-[var(--color-navy)]/5"
+                  className="min-h-10 rounded-[var(--radius-control)] border border-[var(--color-border)] px-4 py-2.5 text-sm font-medium text-[var(--color-navy)] transition hover:bg-[var(--color-navy)]/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-primary)]"
                 >
                   {options.cancelLabel ?? 'Cancelar'}
                 </button>
@@ -128,7 +128,7 @@ export function ConfirmProvider({ children }: { children: ReactNode }) {
                   ref={confirmBtnRef}
                   type="button"
                   onClick={() => finish(true)}
-                  className={`rounded-xl px-4 py-2.5 text-sm font-semibold text-white transition hover:opacity-90 ${
+                  className={`min-h-10 rounded-[var(--radius-control)] px-4 py-2.5 text-sm font-semibold text-white transition hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-primary)] ${
                     tone === 'danger' ? 'bg-[var(--color-danger)]' : 'bg-[var(--color-primary)]'
                   }`}
                 >

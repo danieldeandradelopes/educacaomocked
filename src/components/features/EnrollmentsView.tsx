@@ -155,7 +155,7 @@ export function EnrollmentsView() {
       {!loading && !error && (
         <>
           <section className="grid gap-3 sm:grid-cols-3">
-            <KpiCard index={0} label="Ativas" value={rows.filter((r) => r.status === 'ativa').length} accent="teal" />
+            <KpiCard index={0} label="Ativas" value={rows.filter((r) => r.status === 'ativa').length} accent="navy" />
             <KpiCard
               index={1}
               label="Transferidas"

@@ -110,9 +110,9 @@ function InclusiveContent() {
       {!loading && !error && (
         <>
           <section className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
-            <KpiCard index={0} label="Na rede (KPI)" value={kpis.inclusive} accent="teal" />
+            <KpiCard index={0} label="Na rede (KPI)" value={kpis.inclusive} accent="navy" />
             <KpiCard index={1} label="Registros" value={base.length} accent="navy" />
-            <KpiCard index={2} label="Com tutor" value={base.filter((r) => r.hasTutor).length} accent="teal" />
+            <KpiCard index={2} label="Com tutor" value={base.filter((r) => r.hasTutor).length} accent="navy" />
             <KpiCard
               index={3}
               label="Pendentes"

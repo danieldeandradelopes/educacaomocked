@@ -17,6 +17,7 @@ import { DataTable } from '@/components/ui/DataTable';
 import { ErrorBlock, LoadingBlock, PageHeader } from '@/components/ui/PageHeader';
 import { usePagination } from '@/hooks/usePagination';
 import { useSortable } from '@/hooks/useSortable';
+import { CHART_THEME } from '@/lib/chart-theme';
 import { useApiList } from '@/lib/use-api';
 import { useFilters } from '@/lib/filter-context';
 import { describeFilters, filtersResetKey, formatPercent, isFilterActive, matchesSchoolId } from '@/lib/filters';
@@ -73,7 +74,7 @@ export function AttendanceView() {
       {!monthly.loading && !bySchool.loading && !schoolsReq.loading && (
         <>
           <section className="grid gap-3 sm:grid-cols-3">
-            <KpiCard index={0} label="Média filtrada" value={Number(avg.toFixed(1))} hint="%" accent="teal" />
+            <KpiCard index={0} label="Média filtrada" value={Number(avg.toFixed(1))} hint="%" accent="navy" />
             <KpiCard index={1} label="Baixa frequência (proxy)" value={low} accent="danger" />
             <KpiCard index={2} label="Escolas na visão" value={schools.length} accent="navy" />
           </section>
@@ -81,22 +82,22 @@ export function AttendanceView() {
             <ChartCard title="Evolução mensal" subtitle="Rede">
               <ResponsiveContainer width="100%" height="100%">
                 <LineChart data={monthly.data ?? []}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#d7e0ea" />
-                  <XAxis dataKey="month" tick={{ fill: '#5b6b7c', fontSize: 12 }} />
-                  <YAxis domain={[90, 97]} tick={{ fill: '#5b6b7c', fontSize: 12 }} />
+                  <CartesianGrid strokeDasharray="3 3" stroke={CHART_THEME.grid} />
+                  <XAxis dataKey="month" tick={{ fill: CHART_THEME.muted, fontSize: 12 }} />
+                  <YAxis domain={[90, 97]} tick={{ fill: CHART_THEME.muted, fontSize: 12 }} />
                   <Tooltip />
-                  <Line type="monotone" dataKey="rate" stroke="#0F6B5C" strokeWidth={2} />
+                  <Line type="monotone" dataKey="rate" stroke={CHART_THEME.primary} strokeWidth={2} />
                 </LineChart>
               </ResponsiveContainer>
             </ChartCard>
             <ChartCard title="Por escola" subtitle="Taxa atual">
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={schools}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#d7e0ea" />
+                  <CartesianGrid strokeDasharray="3 3" stroke={CHART_THEME.grid} />
                   <XAxis dataKey="schoolName" hide />
-                  <YAxis domain={[90, 97]} tick={{ fill: '#5b6b7c', fontSize: 12 }} />
+                  <YAxis domain={[90, 97]} tick={{ fill: CHART_THEME.muted, fontSize: 12 }} />
                   <Tooltip />
-                  <Bar dataKey="rate" fill="#1B2A4A" radius={[6, 6, 0, 0]} />
+                  <Bar dataKey="rate" fill={CHART_THEME.navy} radius={[6, 6, 0, 0]} />
                 </BarChart>
               </ResponsiveContainer>
             </ChartCard>

@@ -30,7 +30,7 @@ export function SettingsView() {
       {settings && (
         <div className="grid gap-4 md:grid-cols-2">
           <article className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5">
-            <h2 className="font-display text-lg font-semibold text-[var(--color-navy)]">
+            <h2 className="text-lg font-semibold text-[var(--color-navy)]">
               Organização
             </h2>
             <dl className="mt-4 space-y-3 text-sm">
@@ -48,7 +48,7 @@ export function SettingsView() {
             </dl>
           </article>
           <article className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5">
-            <h2 className="font-display text-lg font-semibold text-[var(--color-navy)]">
+            <h2 className="text-lg font-semibold text-[var(--color-navy)]">
               Regras de alerta
             </h2>
             <dl className="mt-4 space-y-3 text-sm">

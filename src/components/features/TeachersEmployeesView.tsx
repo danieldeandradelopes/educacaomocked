@@ -94,12 +94,12 @@ function StaffCrudView({
               index={0}
               label={onlyTeachers ? 'Professores (KPI)' : 'Funcionários (KPI)'}
               value={onlyTeachers ? kpis.teachers : kpis.staff}
-              accent={onlyTeachers ? 'teal' : 'navy'}
+              accent={onlyTeachers ? 'navy' : 'navy'}
             />
             <KpiCard index={1} label="Registros" value={rows.length} accent="navy" />
             <KpiCard
               index={2}
-              label={onlyTeachers ? 'Efetivos' : 'CIOP'}
+              label={onlyTeachers ? 'Efetivos' : 'Funcionários CIOP'}
               value={
                 onlyTeachers
                   ? rows.filter((r) => r.employmentType === 'effective').length

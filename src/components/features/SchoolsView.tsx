@@ -96,7 +96,7 @@ function SchoolsContent() {
               >
                 <div className="flex items-start justify-between gap-2">
                   <div>
-                    <h2 className="font-display text-lg font-semibold text-[var(--color-navy)]">
+                    <h2 className="text-lg font-semibold text-[var(--color-navy)]">
                       {school.name}
                     </h2>
                     <p className="mt-1 text-xs text-[var(--color-muted)]">{school.neighborhood}</p>

@@ -173,9 +173,9 @@ function DocumentsContent() {
               value={documentBase.filter((d) => d.status === 'pendente').length}
               accent="amber"
             />
-            <KpiCard index={2} label="Legislação" value={lawBase.length} accent="teal" />
+            <KpiCard index={2} label="Legislação" value={lawBase.length} accent="navy" />
           </section>
-          <h2 className="font-display text-lg font-semibold text-[var(--color-navy)]">
+          <h2 className="text-lg font-semibold text-[var(--color-navy)]">
             Documentos da rede
           </h2>
           <AggregateFilterChips
@@ -219,7 +219,7 @@ function DocumentsContent() {
               </tr>
             ))}
           </DataTable>
-          <h2 className="font-display text-lg font-semibold text-[var(--color-navy)]">
+          <h2 className="text-lg font-semibold text-[var(--color-navy)]">
             Legislação e atos
           </h2>
           {(() => {

@@ -24,6 +24,7 @@ import { useCrudResource } from '@/hooks/useCrudResource';
 import { usePagination } from '@/hooks/usePagination';
 import { useSortable } from '@/hooks/useSortable';
 import { activeSearchFields } from '@/lib/crud-fields';
+import { CHART_THEME } from '@/lib/chart-theme';
 import { useApiList } from '@/lib/use-api';
 import { useFilters } from '@/lib/filter-context';
 import {
@@ -157,29 +158,29 @@ function ActiveSearchContent() {
           <section className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
             <KpiCard index={0} label="Em busca ativa (KPI)" value={kpis.activeSearch} accent="danger" />
             <KpiCard index={1} label="Sem atualização" value={stale} accent="amber" />
-            <KpiCard index={2} label="Resolvidos" value={resolved} accent="teal" />
+            <KpiCard index={2} label="Resolvidos" value={resolved} accent="navy" />
             <KpiCard index={3} label="Encaminhados" value={referrals} accent="navy" />
           </section>
           <div className="grid gap-4 xl:grid-cols-2">
             <ChartCard title="Evolução" subtitle="Casos por mês">
               <ResponsiveContainer width="100%" height="100%">
                 <LineChart data={trendReq.data ?? []}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#d7e0ea" />
-                  <XAxis dataKey="month" tick={{ fill: '#5b6b7c', fontSize: 12 }} />
-                  <YAxis tick={{ fill: '#5b6b7c', fontSize: 12 }} />
+                  <CartesianGrid strokeDasharray="3 3" stroke={CHART_THEME.grid} />
+                  <XAxis dataKey="month" tick={{ fill: CHART_THEME.muted, fontSize: 12 }} />
+                  <YAxis tick={{ fill: CHART_THEME.muted, fontSize: 12 }} />
                   <Tooltip formatter={(value) => [formatNumber(Number(value)), 'Casos']} />
-                  <Line type="monotone" dataKey="cases" stroke="#B42318" strokeWidth={2} dot />
+                  <Line type="monotone" dataKey="cases" stroke={CHART_THEME.danger} strokeWidth={2} dot />
                 </LineChart>
               </ResponsiveContainer>
             </ChartCard>
             <ChartCard title="Por escola" subtitle="Casos cadastrados">
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={bySchool}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#d7e0ea" />
-                  <XAxis dataKey="name" tick={{ fill: '#5b6b7c', fontSize: 11 }} />
-                  <YAxis tick={{ fill: '#5b6b7c', fontSize: 12 }} />
+                  <CartesianGrid strokeDasharray="3 3" stroke={CHART_THEME.grid} />
+                  <XAxis dataKey="name" tick={{ fill: CHART_THEME.muted, fontSize: 11 }} />
+                  <YAxis tick={{ fill: CHART_THEME.muted, fontSize: 12 }} />
                   <Tooltip />
-                  <Bar dataKey="cases" fill="#C47A11" radius={[8, 8, 0, 0]} />
+                  <Bar dataKey="cases" fill={CHART_THEME.warning} radius={[8, 8, 0, 0]} />
                 </BarChart>
               </ResponsiveContainer>
             </ChartCard>

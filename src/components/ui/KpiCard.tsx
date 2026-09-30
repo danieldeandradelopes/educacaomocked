@@ -11,14 +11,21 @@ interface KpiCardProps {
   href?: string;
   delta?: number;
   accent?: 'teal' | 'navy' | 'amber' | 'danger';
+  size?: 'lg' | 'md' | 'sm';
   index?: number;
 }
 
-const accentClass: Record<NonNullable<KpiCardProps['accent']>, string> = {
-  teal: 'from-[var(--color-primary)]/15 to-transparent border-[var(--color-primary)]/25',
-  navy: 'from-[var(--color-navy)]/10 to-transparent border-[var(--color-navy)]/20',
-  amber: 'from-[var(--color-warning)]/15 to-transparent border-[var(--color-warning)]/30',
-  danger: 'from-[var(--color-danger)]/12 to-transparent border-[var(--color-danger)]/25',
+const accentBar: Record<NonNullable<KpiCardProps['accent']>, string> = {
+  teal: 'bg-[var(--color-primary)]',
+  navy: 'bg-[var(--color-navy)]',
+  amber: 'bg-[var(--color-warning)]',
+  danger: 'bg-[var(--color-danger)]',
+};
+
+const sizeValue: Record<NonNullable<KpiCardProps['size']>, string> = {
+  lg: 'text-4xl sm:text-5xl font-bold',
+  md: 'text-3xl sm:text-4xl font-semibold',
+  sm: 'text-2xl sm:text-3xl font-semibold',
 };
 
 export function KpiCard({
@@ -27,22 +34,33 @@ export function KpiCard({
   hint,
   href,
   delta,
-  accent = 'teal',
+  accent = 'navy',
+  size = 'md',
   index = 0,
 }: KpiCardProps) {
+  const showSemanticAccent = accent === 'amber' || accent === 'danger';
+
   const content = (
     <div
-      className={`kpi-enter relative overflow-hidden rounded-2xl border bg-gradient-to-br p-4 shadow-[0_1px_0_rgba(27,42,74,0.04)] ${
+      className={`kpi-enter surface-card relative overflow-hidden p-4 ${
         href
           ? 'group transition duration-200 hover:-translate-y-0.5 hover:shadow-md'
           : ''
-      } ${accentClass[accent]}`}
-      style={{ animationDelay: `${index * 60}ms` }}
+      }`}
+      style={{ animationDelay: `${index * 50}ms` }}
     >
+      {showSemanticAccent && (
+        <span
+          className={`absolute inset-y-0 left-0 w-1 ${accentBar[accent]}`}
+          aria-hidden
+        />
+      )}
       <p className="text-xs font-medium uppercase tracking-wide text-[var(--color-muted)]">
         {label}
       </p>
-      <p className="mt-2 font-display font-tabular text-3xl font-semibold text-[var(--color-navy)] sm:text-4xl">
+      <p
+        className={`mt-2 font-tabular text-[var(--color-navy)] ${sizeValue[size]}`}
+      >
         {formatNumber(value)}
       </p>
       {(hint || typeof delta === 'number') && (
@@ -57,7 +75,7 @@ export function KpiCard({
         </p>
       )}
       {href && (
-        <span className="mt-3 inline-flex text-xs font-semibold text-[var(--color-primary)] opacity-80 group-hover:opacity-100">
+        <span className="mt-3 inline-flex min-h-6 items-center text-xs font-semibold text-[var(--color-primary)] opacity-90 group-hover:opacity-100">
           Ver detalhe →
         </span>
       )}
@@ -66,7 +84,10 @@ export function KpiCard({
 
   if (href) {
     return (
-      <Link href={href} className="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-primary)] rounded-2xl">
+      <Link
+        href={href}
+        className="block rounded-[var(--radius-card)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-primary)]"
+      >
         {content}
       </Link>
     );
@@ -85,16 +106,33 @@ export function ChartCard({
   children: ReactNode;
 }) {
   return (
-    <section className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-4 shadow-[0_1px_0_rgba(27,42,74,0.04)] sm:p-5">
+    <section className="surface-card p-4 sm:p-5">
       <header className="mb-4">
-        <h2 className="font-display text-lg font-semibold text-[var(--color-navy)]">
-          {title}
-        </h2>
+        <h2 className="text-lg font-semibold text-[var(--color-navy)]">{title}</h2>
         {subtitle && (
           <p className="mt-1 text-sm text-[var(--color-text-secondary)]">{subtitle}</p>
         )}
       </header>
       <div className="h-64 w-full">{children}</div>
     </section>
+  );
+}
+
+export function SectionHeader({
+  title,
+  description,
+}: {
+  title: string;
+  description?: string;
+}) {
+  return (
+    <header className="mb-3">
+      <h2 className="text-sm font-semibold uppercase tracking-wide text-[var(--color-muted)]">
+        {title}
+      </h2>
+      {description && (
+        <p className="mt-1 text-sm text-[var(--color-text-secondary)]">{description}</p>
+      )}
+    </header>
   );
 }

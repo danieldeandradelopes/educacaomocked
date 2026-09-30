@@ -33,9 +33,10 @@ import {
   shiftLabel,
 } from '@/lib/filters';
 import { EMPLOYMENT_TYPE_LABEL } from '@/lib/labels';
+import { CHART_SERIES, CHART_THEME } from '@/lib/chart-theme';
 import type { School, StaffMember } from '@/domain/types';
 
-const PIE_COLORS = ['#0F6B5C', '#1B2A4A', '#C47A11', '#5b6b7c'];
+const PIE_COLORS = [...CHART_SERIES];
 const FOCUS_ALLOWED = ['teachers', 'employees', 'ciop'] as const;
 
 function applyFocus(staff: readonly StaffMember[], focus: string | null): StaffMember[] {
@@ -120,7 +121,7 @@ function StaffContent() {
   return (
     <div className="space-y-6">
       <section>
-        <h1 className="font-display text-2xl font-semibold text-[var(--color-navy)] sm:text-3xl">
+        <h1 className="text-2xl font-semibold tracking-tight text-[var(--color-navy)] sm:text-3xl">
           Quadro de Pessoal
         </h1>
         <p className="mt-1 text-sm text-[var(--color-text-secondary)]">
@@ -132,7 +133,7 @@ function StaffContent() {
       <FocusBanner allowed={FOCUS_ALLOWED} />
 
       <section className="grid gap-3 sm:grid-cols-2 xl:grid-cols-5">
-        <KpiCard index={0} label="Professores" value={kpis.teachers} accent="teal" />
+        <KpiCard index={0} label="Professores" value={kpis.teachers} accent="navy" />
         <KpiCard index={1} label="Funcionários" value={kpis.staff} accent="navy" />
         <KpiCard
           index={2}
@@ -144,9 +145,9 @@ function StaffContent() {
           index={3}
           label="Contratados (amostra)"
           value={contract}
-          accent="amber"
+          accent="navy"
         />
-        <KpiCard index={4} label="CIOP" value={kpis.ciop} accent="teal" />
+        <KpiCard index={4} label="Funcionários CIOP" value={kpis.ciop} accent="navy" size="lg" />
       </section>
 
       <div className="grid gap-4 xl:grid-cols-2">
@@ -175,12 +176,12 @@ function StaffContent() {
         <ChartCard title="Por escola (amostra)" subtitle="Professores × funcionários">
           <ResponsiveContainer width="100%" height="100%">
             <BarChart data={bySchool}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#d7e0ea" />
-              <XAxis dataKey="name" tick={{ fill: '#5b6b7c', fontSize: 11 }} />
-              <YAxis tick={{ fill: '#5b6b7c', fontSize: 12 }} />
+              <CartesianGrid strokeDasharray="3 3" stroke={CHART_THEME.grid} />
+              <XAxis dataKey="name" tick={{ fill: CHART_THEME.muted, fontSize: 11 }} />
+              <YAxis tick={{ fill: CHART_THEME.muted, fontSize: 12 }} />
               <Tooltip />
-              <Bar dataKey="teachers" name="Professores" fill="#0F6B5C" radius={[6, 6, 0, 0]} />
-              <Bar dataKey="staff" name="Funcionários" fill="#1B2A4A" radius={[6, 6, 0, 0]} />
+              <Bar dataKey="teachers" name="Professores" fill={CHART_THEME.primary} radius={[6, 6, 0, 0]} />
+              <Bar dataKey="staff" name="Funcionários" fill={CHART_THEME.navy} radius={[6, 6, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>
         </ChartCard>

@@ -109,7 +109,7 @@ function IntersectoralContent() {
         <>
           <section className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
             <KpiCard index={0} label="Casos" value={base.length} accent="navy" />
-            <KpiCard index={1} label="Ativos" value={base.filter((r) => r.status === 'ativo').length} accent="teal" />
+            <KpiCard index={1} label="Ativos" value={base.filter((r) => r.status === 'ativo').length} accent="navy" />
             <KpiCard
               index={2}
               label="Aguardando retorno"

@@ -104,7 +104,7 @@ export function CrudModal({
         aria-labelledby={formId}
         className="relative z-10 max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5 shadow-xl"
       >
-        <h2 id={formId} className="font-display text-xl font-semibold text-[var(--color-navy)]">
+        <h2 id={formId} className="text-xl font-semibold text-[var(--color-navy)]">
           {title}
         </h2>
         <form className="mt-4 space-y-3" onSubmit={handleSubmit}>
@@ -209,14 +209,14 @@ export function CrudModal({
             <button
               type="button"
               onClick={onClose}
-              className="rounded-xl border border-[var(--color-border)] px-3 py-2 text-sm font-medium text-[var(--color-navy)]"
+              className="min-h-10 rounded-[var(--radius-control)] border border-[var(--color-border)] px-3 py-2 text-sm font-medium text-[var(--color-navy)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-primary)]"
             >
               Cancelar
             </button>
             <button
               type="submit"
               disabled={busy}
-              className="rounded-xl bg-[var(--color-primary)] px-3 py-2 text-sm font-semibold text-white disabled:opacity-60"
+              className="min-h-10 rounded-[var(--radius-control)] bg-[var(--color-primary)] px-3 py-2 text-sm font-semibold text-white disabled:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-primary)]"
             >
               {busy ? 'Salvando…' : submitLabel}
             </button>
@@ -240,7 +240,7 @@ export function CrudActions({
       <button
         type="button"
         onClick={onCreate}
-        className="rounded-xl bg-[var(--color-primary)] px-3 py-2 text-sm font-semibold text-white transition hover:opacity-90"
+        className="min-h-10 rounded-[var(--radius-control)] bg-[var(--color-primary)] px-3 py-2 text-sm font-semibold text-white transition hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-primary)]"
       >
         + Novo
       </button>
@@ -263,7 +263,7 @@ export function RowActions({
         type="button"
         onClick={onEdit}
         disabled={busy}
-        className="rounded-lg border border-[var(--color-border)] px-2 py-1 text-xs font-semibold text-[var(--color-navy)] hover:bg-[var(--color-navy)]/5 disabled:opacity-50"
+        className="inline-flex min-h-6 min-w-6 items-center rounded-lg border border-[var(--color-border)] px-2 py-1 text-xs font-semibold text-[var(--color-navy)] hover:bg-[var(--color-navy)]/5 disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-primary)]"
       >
         Editar
       </button>
@@ -271,7 +271,7 @@ export function RowActions({
         type="button"
         onClick={onDelete}
         disabled={busy}
-        className="rounded-lg border border-[var(--color-danger)]/30 px-2 py-1 text-xs font-semibold text-[var(--color-danger)] hover:bg-[var(--color-danger)]/8 disabled:opacity-50"
+        className="inline-flex min-h-6 min-w-6 items-center rounded-lg border border-[var(--color-danger)]/30 px-2 py-1 text-xs font-semibold text-[var(--color-danger)] hover:bg-[var(--color-danger)]/8 disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-primary)]"
       >
         Excluir
       </button>

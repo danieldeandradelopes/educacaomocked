@@ -37,9 +37,10 @@ import {
   preferredSchoolId,
   stageLabel,
 } from '@/lib/filters';
+import { CHART_SERIES, CHART_THEME } from '@/lib/chart-theme';
 import type { School, WaitlistEntry } from '@/domain/types';
 
-const PIE_COLORS = ['#0F6B5C', '#1B2A4A', '#C47A11'];
+const PIE_COLORS = [...CHART_SERIES];
 const FOCUS_ALLOWED = ['over60'] as const;
 
 type WaitSituation = 'recent' | 'over30' | 'over60';
@@ -202,11 +203,11 @@ function WaitlistContent() {
             <ChartCard title="Demanda por escola" subtitle="Preferência declarada">
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={bySchool}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#d7e0ea" />
-                  <XAxis dataKey="name" tick={{ fill: '#5b6b7c', fontSize: 11 }} />
-                  <YAxis allowDecimals={false} tick={{ fill: '#5b6b7c', fontSize: 12 }} />
+                  <CartesianGrid strokeDasharray="3 3" stroke={CHART_THEME.grid} />
+                  <XAxis dataKey="name" tick={{ fill: CHART_THEME.muted, fontSize: 11 }} />
+                  <YAxis allowDecimals={false} tick={{ fill: CHART_THEME.muted, fontSize: 12 }} />
                   <Tooltip />
-                  <Bar dataKey="count" fill="#0F6B5C" radius={[8, 8, 0, 0]} />
+                  <Bar dataKey="count" fill={CHART_THEME.primary} radius={[8, 8, 0, 0]} />
                 </BarChart>
               </ResponsiveContainer>
             </ChartCard>

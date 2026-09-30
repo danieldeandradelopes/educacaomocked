@@ -64,7 +64,7 @@ function Student360Content({ studentId }: { studentId: string }) {
           <p className="text-xs font-semibold uppercase tracking-wide text-[var(--color-muted)]">
             Aluno 360º
           </p>
-          <h1 className="mt-1 font-display text-2xl font-semibold text-[var(--color-navy)] sm:text-3xl">
+          <h1 className="mt-1 text-2xl font-semibold text-[var(--color-navy)] sm:text-3xl">
             {student.name}
           </h1>
           <p className="mt-1 text-sm text-[var(--color-text-secondary)]">
@@ -107,7 +107,7 @@ function Student360Content({ studentId }: { studentId: string }) {
 
       <section className="grid gap-4 lg:grid-cols-3">
         <article className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5 lg:col-span-1">
-          <h2 className="font-display text-lg font-semibold text-[var(--color-navy)]">
+          <h2 className="text-lg font-semibold text-[var(--color-navy)]">
             Dados básicos
           </h2>
           <dl className="mt-4 space-y-3 text-sm">
@@ -127,7 +127,7 @@ function Student360Content({ studentId }: { studentId: string }) {
         </article>
 
         <article className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5 lg:col-span-2">
-          <h2 className="font-display text-lg font-semibold text-[var(--color-navy)]">
+          <h2 className="text-lg font-semibold text-[var(--color-navy)]">
             Acompanhamentos
           </h2>
           <ul className="mt-4 grid gap-3 sm:grid-cols-2">
@@ -172,7 +172,7 @@ function Student360Content({ studentId }: { studentId: string }) {
       </section>
 
       <section className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5">
-        <h2 className="font-display text-lg font-semibold text-[var(--color-navy)]">
+        <h2 className="text-lg font-semibold text-[var(--color-navy)]">
           Linha do tempo
         </h2>
         {timeline.length === 0 ? (

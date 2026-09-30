@@ -110,7 +110,7 @@ export function TransportView() {
         <>
           <section className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
             <KpiCard index={0} label="Transportados (KPI)" value={kpis.transport} accent="navy" />
-            <KpiCard index={1} label="Alunos (amostra)" value={students.length} accent="teal" />
+            <KpiCard index={1} label="Alunos (amostra)" value={students.length} accent="navy" />
             <KpiCard index={2} label="Rotas" value={(routesReq.data ?? []).length} accent="amber" />
             <KpiCard index={3} label="Veículos" value={(routesReq.data ?? []).length} accent="navy" />
           </section>

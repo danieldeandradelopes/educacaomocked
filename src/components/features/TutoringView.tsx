@@ -126,7 +126,7 @@ export function TutoringView() {
       {!loading && !error && (
         <>
           <section className="grid gap-3 sm:grid-cols-3">
-            <KpiCard index={0} label="Na rede (KPI)" value={kpis.tutoring} accent="teal" />
+            <KpiCard index={0} label="Na rede (KPI)" value={kpis.tutoring} accent="navy" />
             <KpiCard index={1} label="Registros" value={base.length} accent="navy" />
             <KpiCard
               index={2}

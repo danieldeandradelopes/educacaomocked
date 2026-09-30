@@ -19,7 +19,7 @@ import {
   YAxis,
 } from 'recharts';
 import { AttentionList } from '@/components/ui/AttentionList';
-import { ChartCard, KpiCard } from '@/components/ui/KpiCard';
+import { ChartCard, KpiCard, SectionHeader } from '@/components/ui/KpiCard';
 import { ErrorBlock, LoadingBlock } from '@/components/ui/PageHeader';
 import { useApiList } from '@/lib/use-api';
 import { useFilters } from '@/lib/filter-context';
@@ -36,6 +36,7 @@ import {
   shiftLabel,
   stageLabel,
 } from '@/lib/filters';
+import { CHART_THEME } from '@/lib/chart-theme';
 import type {
   AttentionPoint,
   School,
@@ -47,12 +48,12 @@ import type {
 } from '@/domain/types';
 
 const CHART = {
-  teal: '#0F6B5C',
-  navy: '#1B2A4A',
-  amber: '#C47B2D',
-  danger: '#B42318',
-  muted: '#5b6b7c',
-  grid: '#d7e0ea',
+  teal: CHART_THEME.primary,
+  navy: CHART_THEME.navy,
+  amber: CHART_THEME.warning,
+  danger: CHART_THEME.danger,
+  muted: CHART_THEME.muted,
+  grid: CHART_THEME.grid,
 } as const;
 
 const STAGE_COLORS: Record<Stage, string> = {
@@ -328,12 +329,12 @@ export function DashboardView() {
   ]);
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-8">
       <section>
-        <h1 className="font-display text-2xl font-semibold text-[var(--color-navy)] sm:text-3xl">
+        <h1 className="text-2xl font-semibold tracking-tight text-[var(--color-navy)] sm:text-3xl">
           Visão geral da rede
         </h1>
-        <p className="mt-1 max-w-2xl text-sm text-[var(--color-text-secondary)]">
+        <p className="mt-1 max-w-2xl text-sm leading-relaxed text-[var(--color-text-secondary)]">
           Indicadores, alertas e distribuição da educação municipal — números fictícios para
           validação com a Dirigente.
           {isFilterActive(filters) ? (
@@ -347,80 +348,106 @@ export function DashboardView() {
         </p>
       </section>
 
-      <section className="grid gap-3 sm:grid-cols-2 xl:grid-cols-5">
-        <KpiCard
-          index={0}
-          label="Alunos"
-          value={kpis.students}
-          delta={kpis.studentsDelta}
-          hint="matrículas ativas"
-          accent="teal"
+      <section>
+        <SectionHeader
+          title="Rede e pessoal"
+          description="Dimensão da rede municipal e composição do quadro"
         />
-        <KpiCard index={1} label="Escolas" value={kpis.schools} hint="ativas" href="/schools" accent="navy" />
-        <KpiCard
-          index={2}
-          label="Professores"
-          value={kpis.teachers}
-          hint="ativos"
-          href="/staff?focus=teachers"
-          accent="navy"
+        <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-5">
+          <KpiCard
+            index={0}
+            label="Alunos"
+            value={kpis.students}
+            delta={kpis.studentsDelta}
+            hint="matrículas ativas"
+            accent="navy"
+            size="lg"
+          />
+          <KpiCard
+            index={1}
+            label="Escolas"
+            value={kpis.schools}
+            hint="ativas"
+            href="/schools"
+            accent="navy"
+          />
+          <KpiCard
+            index={2}
+            label="Professores"
+            value={kpis.teachers}
+            hint="ativos"
+            href="/staff?focus=teachers"
+            accent="navy"
+          />
+          <KpiCard
+            index={3}
+            label="Funcionários"
+            value={kpis.staff}
+            hint="ativos"
+            href="/staff?focus=employees"
+            accent="navy"
+          />
+          <KpiCard
+            index={4}
+            label="Funcionários CIOP"
+            value={kpis.ciop}
+            hint="vínculo de pessoal"
+            href="/staff?focus=ciop"
+            accent="navy"
+            size="lg"
+          />
+        </div>
+      </section>
+
+      <section>
+        <SectionHeader
+          title="Programas e operação"
+          description="Acompanhamentos e serviços da rede"
         />
-        <KpiCard
-          index={3}
-          label="Funcionários"
-          value={kpis.staff}
-          hint="ativos"
-          href="/staff?focus=employees"
-          accent="navy"
-        />
-        <KpiCard
-          index={4}
-          label="CIOP"
-          value={kpis.ciop}
-          hint="vínculo de pessoal"
-          href="/staff?focus=ciop"
-          accent="teal"
-        />
-        <KpiCard
-          index={5}
-          label="Busca Ativa"
-          value={kpis.activeSearch}
-          hint="em acompanhamento"
-          href="/active-search?focus=attendance"
-          accent="danger"
-        />
-        <KpiCard
-          index={6}
-          label="Lista de Espera"
-          value={kpis.waitlist}
-          hint="aguardando vaga"
-          href="/waitlist"
-          accent="amber"
-        />
-        <KpiCard
-          index={7}
-          label="Reforço Escolar"
-          value={kpis.tutoring}
-          hint="em acompanhamento"
-          href="/tutoring"
-          accent="teal"
-        />
-        <KpiCard
-          index={8}
-          label="Transporte"
-          value={kpis.transport}
-          hint="ver rotas e alunos"
-          href="/transport"
-          accent="navy"
-        />
-        <KpiCard
-          index={9}
-          label="Educação Inclusiva"
-          value={kpis.inclusive}
-          hint="acompanhamentos"
-          href="/inclusive"
-          accent="teal"
-        />
+        <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-5">
+          <KpiCard
+            index={5}
+            label="Busca Ativa"
+            value={kpis.activeSearch}
+            hint="em acompanhamento"
+            href="/active-search?focus=attendance"
+            accent="danger"
+            size="lg"
+          />
+          <KpiCard
+            index={6}
+            label="Lista de Espera"
+            value={kpis.waitlist}
+            hint="aguardando vaga"
+            href="/waitlist"
+            accent="amber"
+            size="lg"
+          />
+          <KpiCard
+            index={7}
+            label="Reforço Escolar"
+            value={kpis.tutoring}
+            hint="em acompanhamento"
+            href="/tutoring"
+            accent="navy"
+          />
+          <KpiCard
+            index={8}
+            label="Transporte Escolar"
+            value={kpis.transport}
+            hint="ver rotas e alunos"
+            href="/transport"
+            accent="navy"
+          />
+          <KpiCard
+            index={9}
+            label="Educação Inclusiva"
+            value={kpis.inclusive}
+            hint="acompanhamentos"
+            href="/inclusive"
+            accent="navy"
+          />
+        </div>
       </section>
 
       {loading && <LoadingBlock />}
@@ -428,47 +455,54 @@ export function DashboardView() {
 
       {!loading && !error && (
         <>
-          <section className="grid gap-3 sm:grid-cols-2 xl:grid-cols-5">
-            <KpiCard
-              index={0}
-              label="Frequência média"
-              value={Number(chartData.avgAttendance.toFixed(1))}
-              hint="rede filtrada (%)"
-              href="/attendance"
-              accent="teal"
+          <section>
+            <SectionHeader
+              title="Pontos de atenção"
+              description="Indicadores que pedem acompanhamento imediato"
             />
-            <KpiCard
-              index={1}
-              label="Baixa frequência"
-              value={chartData.lowAttendance}
-              hint="amostra abaixo de 75%"
-              href="/active-search?focus=attendance"
-              accent="danger"
-            />
-            <KpiCard
-              index={2}
-              label="Espera longa"
-              value={chartData.waitOver60}
-              hint="mais de 60 dias"
-              href="/waitlist?focus=long"
-              accent="amber"
-            />
-            <KpiCard
-              index={3}
-              label="Docs pendentes"
-              value={chartData.docsPending}
-              hint="alunos / documentos"
-              href="/documents?focus=pending"
-              accent="amber"
-            />
-            <KpiCard
-              index={4}
-              label="Encaminhamentos"
-              value={chartData.intersectoralPending}
-              hint="aguardando retorno"
-              href="/intersectoral"
-              accent="navy"
-            />
+            <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-5">
+              <KpiCard
+                index={0}
+                label="Frequência média"
+                value={Number(chartData.avgAttendance.toFixed(1))}
+                hint="rede filtrada (%)"
+                href="/attendance"
+                accent="navy"
+                size="lg"
+              />
+              <KpiCard
+                index={1}
+                label="Baixa frequência"
+                value={chartData.lowAttendance}
+                hint="amostra abaixo de 75%"
+                href="/active-search?focus=attendance"
+                accent="danger"
+              />
+              <KpiCard
+                index={2}
+                label="Espera longa"
+                value={chartData.waitOver60}
+                hint="mais de 60 dias"
+                href="/waitlist?focus=long"
+                accent="amber"
+              />
+              <KpiCard
+                index={3}
+                label="Docs pendentes"
+                value={chartData.docsPending}
+                hint="alunos / documentos"
+                href="/documents?focus=pending"
+                accent="amber"
+              />
+              <KpiCard
+                index={4}
+                label="Encaminhamentos"
+                value={chartData.intersectoralPending}
+                hint="aguardando retorno"
+                href="/intersectoral"
+                accent="navy"
+              />
+            </div>
           </section>
 
           <AttentionList items={attentionReq.data ?? []} />
