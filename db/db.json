@@ -1,0 +1,5449 @@
+{
+  "kpis": [
+    {
+      "students": 8426,
+      "schools": 18,
+      "teachers": 524,
+      "staff": 324,
+      "ciop": 52,
+      "activeSearch": 137,
+      "waitlist": 284,
+      "tutoring": 642,
+      "transport": 1186,
+      "inclusive": 428,
+      "studentsDelta": 3.2
+    }
+  ],
+  "attentionPoints": [
+    {
+      "id": "att-1",
+      "title": "Baixa frequência",
+      "count": 137,
+      "detail": "23 novos no período",
+      "href": "/active-search?focus=attendance",
+      "severity": "danger"
+    },
+    {
+      "id": "att-2",
+      "title": "Busca ativa sem atualização",
+      "count": 18,
+      "detail": "Casos sem registro recente",
+      "href": "/active-search?focus=stale",
+      "severity": "warning"
+    },
+    {
+      "id": "att-3",
+      "title": "Lista de espera > 60 dias",
+      "count": 37,
+      "detail": "Crianças aguardando vaga",
+      "href": "/waitlist?focus=over60",
+      "severity": "warning"
+    },
+    {
+      "id": "att-4",
+      "title": "Inclusão pendente",
+      "count": 12,
+      "detail": "Aguardando definição de acompanhamento",
+      "href": "/inclusive",
+      "severity": "info"
+    },
+    {
+      "id": "att-5",
+      "title": "Documentação pendente",
+      "count": 23,
+      "detail": "Alunos com documentos incompletos",
+      "href": "/documents?focus=pending",
+      "severity": "info"
+    },
+    {
+      "id": "att-6",
+      "title": "Encaminhamentos aguardando retorno",
+      "count": 9,
+      "detail": "Acompanhamentos intersetoriais",
+      "href": "/intersectoral?focus=pending",
+      "severity": "warning"
+    }
+  ],
+  "schools": [
+    {
+      "id": "sch-02",
+      "name": "EMEF Maria Silva",
+      "neighborhood": "Jardim América",
+      "stages": [
+        "infantil",
+        "fundamental"
+      ],
+      "students": 592,
+      "teachers": 38,
+      "staff": 22,
+      "attendanceRate": 94.1,
+      "activeSearch": 9,
+      "tutoring": 71,
+      "inclusive": 28,
+      "transported": 118
+    },
+    {
+      "id": "sch-03",
+      "name": "EMEF Paulo Freire",
+      "neighborhood": "Vila Nova",
+      "stages": [
+        "fundamental"
+      ],
+      "students": 541,
+      "teachers": 35,
+      "staff": 20,
+      "attendanceRate": 92.8,
+      "activeSearch": 14,
+      "tutoring": 64,
+      "inclusive": 25,
+      "transported": 96
+    },
+    {
+      "id": "sch-04",
+      "name": "EMEI Jardim Brasil",
+      "neighborhood": "Jardim Brasil",
+      "stages": [
+        "creche",
+        "infantil"
+      ],
+      "students": 498,
+      "teachers": 28,
+      "staff": 18,
+      "attendanceRate": 95,
+      "activeSearch": 6,
+      "tutoring": 42,
+      "inclusive": 22,
+      "transported": 84
+    },
+    {
+      "id": "sch-05",
+      "name": "EMEF Castro Alves",
+      "neighborhood": "Boa Vista",
+      "stages": [
+        "fundamental"
+      ],
+      "students": 476,
+      "teachers": 31,
+      "staff": 19,
+      "attendanceRate": 93.7,
+      "activeSearch": 11,
+      "tutoring": 58,
+      "inclusive": 24,
+      "transported": 102
+    },
+    {
+      "id": "sch-06",
+      "name": "EMEF Cecília Meireles",
+      "neighborhood": "São José",
+      "stages": [
+        "infantil",
+        "fundamental"
+      ],
+      "students": 452,
+      "teachers": 29,
+      "staff": 17,
+      "attendanceRate": 94.5,
+      "activeSearch": 8,
+      "tutoring": 49,
+      "inclusive": 19,
+      "transported": 88
+    },
+    {
+      "id": "sch-07",
+      "name": "EMEI Pequeno Príncipe",
+      "neighborhood": "Centro",
+      "stages": [
+        "infantil"
+      ],
+      "students": 312,
+      "teachers": 22,
+      "staff": 14,
+      "attendanceRate": 95.4,
+      "activeSearch": 4,
+      "tutoring": 28,
+      "inclusive": 16,
+      "transported": 54
+    },
+    {
+      "id": "sch-08",
+      "name": "Creche Sol Nascente",
+      "neighborhood": "Vila Nova",
+      "stages": [
+        "creche"
+      ],
+      "students": 186,
+      "teachers": 18,
+      "staff": 12,
+      "attendanceRate": 96.1,
+      "activeSearch": 2,
+      "tutoring": 12,
+      "inclusive": 8,
+      "transported": 36
+    },
+    {
+      "id": "sch-09",
+      "name": "EMEF Dom Pedro II",
+      "neighborhood": "Industrial",
+      "stages": [
+        "fundamental"
+      ],
+      "students": 510,
+      "teachers": 33,
+      "staff": 21,
+      "attendanceRate": 93,
+      "activeSearch": 10,
+      "tutoring": 55,
+      "inclusive": 20,
+      "transported": 9
+    },
+    {
+      "id": "sch-10",
+      "name": "Centro Municipal Integrado",
+      "neighborhood": "Nova Esperança",
+      "stages": [
+        "creche",
+        "infantil",
+        "fundamental"
+      ],
+      "students": 438,
+      "teachers": 27,
+      "staff": 16,
+      "attendanceRate": 94.8,
+      "activeSearch": 7,
+      "tutoring": 47,
+      "inclusive": 18,
+      "transported": 79
+    },
+    {
+      "id": "sch-11",
+      "name": "EMEI Arco-Íris",
+      "neighborhood": "Boa Vista",
+      "stages": [
+        "infantil"
+      ],
+      "students": 265,
+      "teachers": 19,
+      "staff": 11,
+      "attendanceRate": 95.6,
+      "activeSearch": 3,
+      "tutoring": 22,
+      "inclusive": 12,
+      "transported": 41
+    },
+    {
+      "id": "sch-12",
+      "name": "Creche Cantinho Feliz",
+      "neighborhood": "São José",
+      "stages": [
+        "creche",
+        "infantil"
+      ],
+      "students": 142,
+      "teachers": 14,
+      "staff": 9,
+      "attendanceRate": 96.4,
+      "activeSearch": 1,
+      "tutoring": 8,
+      "inclusive": 6,
+      "transported": 22
+    },
+    {
+      "name": "Governador Mario Covas",
+      "neighborhood": "Teste",
+      "stages": [
+        "fundamental",
+        "infantil"
+      ],
+      "students": 900,
+      "teachers": 40,
+      "staff": 50,
+      "attendanceRate": 95,
+      "activeSearch": 10,
+      "tutoring": 20,
+      "inclusive": 30,
+      "transported": 260,
+      "id": "sch-mulhocq6-x2m2i"
+    }
+  ],
+  "students": [
+    {
+      "id": "stu-001",
+      "name": "Ana Silva Silva",
+      "schoolId": "sch-01",
+      "grade": "1º ano",
+      "stage": "fundamental",
+      "shift": "manha",
+      "neighborhood": "Centro",
+      "attendanceRate": 62,
+      "birthDate": "2012-01-01",
+      "guardianName": "Felipe Oliveira",
+      "inActiveSearch": true,
+      "inTutoring": true,
+      "inInclusive": true,
+      "documentsPending": true,
+      "transported": true
+    },
+    {
+      "id": "stu-002",
+      "name": "Bruno Souza Almeida",
+      "schoolId": "sch-02",
+      "grade": "2º ano",
+      "stage": "fundamental",
+      "shift": "tarde",
+      "neighborhood": "Jardim América",
+      "attendanceRate": 79.1,
+      "birthDate": "2013-02-02",
+      "guardianName": "Giulia Souza",
+      "inActiveSearch": false,
+      "inTutoring": false,
+      "inInclusive": false,
+      "documentsPending": false,
+      "transported": false
+    },
+    {
+      "id": "stu-003",
+      "name": "Carla Pereira Rocha",
+      "schoolId": "sch-03",
+      "grade": "3º ano",
+      "stage": "fundamental",
+      "shift": "integral",
+      "neighborhood": "Vila Nova",
+      "attendanceRate": 96.2,
+      "birthDate": "2014-03-03",
+      "guardianName": "Hugo Lima",
+      "inActiveSearch": false,
+      "inTutoring": false,
+      "inInclusive": false,
+      "documentsPending": false,
+      "transported": false
+    },
+    {
+      "id": "stu-004",
+      "name": "Diego Araújo Santos",
+      "schoolId": "sch-04",
+      "grade": "Pré II",
+      "stage": "infantil",
+      "shift": "noite",
+      "neighborhood": "Jardim Brasil",
+      "attendanceRate": 77.3,
+      "birthDate": "2015-04-04",
+      "guardianName": "Isabela Costa",
+      "inActiveSearch": false,
+      "inTutoring": true,
+      "inInclusive": false,
+      "documentsPending": false,
+      "transported": false
+    },
+    {
+      "id": "stu-005",
+      "name": "Elena Gomes Nascimento",
+      "schoolId": "sch-05",
+      "grade": "5º ano",
+      "stage": "fundamental",
+      "shift": "manha",
+      "neighborhood": "Boa Vista",
+      "attendanceRate": 94.4,
+      "birthDate": "2016-05-05",
+      "guardianName": "João Pereira",
+      "inActiveSearch": false,
+      "inTutoring": false,
+      "inInclusive": false,
+      "documentsPending": false,
+      "transported": true
+    },
+    {
+      "id": "stu-006",
+      "name": "Felipe Ribeiro Ribeiro",
+      "schoolId": "sch-06",
+      "grade": "6º ano",
+      "stage": "fundamental",
+      "shift": "tarde",
+      "neighborhood": "São José",
+      "attendanceRate": 75.5,
+      "birthDate": "2017-06-06",
+      "guardianName": "Karina Almeida",
+      "inActiveSearch": true,
+      "inTutoring": false,
+      "inInclusive": false,
+      "documentsPending": false,
+      "transported": false
+    },
+    {
+      "id": "stu-007",
+      "name": "Giulia Mendes Oliveira",
+      "schoolId": "sch-07",
+      "grade": "Pré I",
+      "stage": "infantil",
+      "shift": "integral",
+      "neighborhood": "Centro",
+      "attendanceRate": 92.6,
+      "birthDate": "2018-07-07",
+      "guardianName": "Lucas Nascimento",
+      "inActiveSearch": false,
+      "inTutoring": true,
+      "inInclusive": false,
+      "documentsPending": true,
+      "transported": false
+    },
+    {
+      "id": "stu-008",
+      "name": "Hugo Santos Araújo",
+      "schoolId": "sch-08",
+      "grade": "Maternal I",
+      "stage": "creche",
+      "shift": "noite",
+      "neighborhood": "Vila Nova",
+      "attendanceRate": 73.7,
+      "birthDate": "2019-08-08",
+      "guardianName": "Marina Araújo",
+      "inActiveSearch": false,
+      "inTutoring": false,
+      "inInclusive": true,
+      "documentsPending": false,
+      "transported": false
+    },
+    {
+      "id": "stu-009",
+      "name": "Isabela Lima Alves",
+      "schoolId": "sch-09",
+      "grade": "9º ano",
+      "stage": "fundamental",
+      "shift": "manha",
+      "neighborhood": "Industrial",
+      "attendanceRate": 90.8,
+      "birthDate": "2020-09-09",
+      "guardianName": "Nicolas Fernandes",
+      "inActiveSearch": false,
+      "inTutoring": false,
+      "inInclusive": false,
+      "documentsPending": false,
+      "transported": true
+    },
+    {
+      "id": "stu-010",
+      "name": "João Almeida Souza",
+      "schoolId": "sch-10",
+      "grade": "Berçário",
+      "stage": "creche",
+      "shift": "tarde",
+      "neighborhood": "Nova Esperança",
+      "attendanceRate": 71.9,
+      "birthDate": "2021-10-10",
+      "guardianName": "Olivia Carvalho",
+      "inActiveSearch": false,
+      "inTutoring": true,
+      "inInclusive": false,
+      "documentsPending": false,
+      "transported": false
+    },
+    {
+      "id": "stu-011",
+      "name": "Karina Fernandes Fernandes",
+      "schoolId": "sch-11",
+      "grade": "Pré I",
+      "stage": "infantil",
+      "shift": "integral",
+      "neighborhood": "Boa Vista",
+      "attendanceRate": 88,
+      "birthDate": "2012-11-11",
+      "guardianName": "Pedro Gomes",
+      "inActiveSearch": true,
+      "inTutoring": false,
+      "inInclusive": false,
+      "documentsPending": false,
+      "transported": false
+    },
+    {
+      "id": "stu-012",
+      "name": "Lucas Martins Monteiro",
+      "schoolId": "sch-12",
+      "grade": "Pré II",
+      "stage": "infantil",
+      "shift": "noite",
+      "neighborhood": "São José",
+      "attendanceRate": 69.1,
+      "birthDate": "2013-12-12",
+      "guardianName": "Rafaela Martins",
+      "inActiveSearch": false,
+      "inTutoring": false,
+      "inInclusive": false,
+      "documentsPending": false,
+      "transported": false
+    },
+    {
+      "id": "stu-013",
+      "name": "Marina Alves Lima",
+      "schoolId": "sch-01",
+      "grade": "4º ano",
+      "stage": "fundamental",
+      "shift": "manha",
+      "neighborhood": "Centro",
+      "attendanceRate": 86.2,
+      "birthDate": "2014-01-13",
+      "guardianName": "Sofia Rocha",
+      "inActiveSearch": false,
+      "inTutoring": true,
+      "inInclusive": false,
+      "documentsPending": true,
+      "transported": true
+    },
+    {
+      "id": "stu-014",
+      "name": "Nicolas Barros Carvalho",
+      "schoolId": "sch-02",
+      "grade": "5º ano",
+      "stage": "fundamental",
+      "shift": "tarde",
+      "neighborhood": "Jardim América",
+      "attendanceRate": 67.3,
+      "birthDate": "2015-02-14",
+      "guardianName": "Tiago Ribeiro",
+      "inActiveSearch": false,
+      "inTutoring": false,
+      "inInclusive": false,
+      "documentsPending": false,
+      "transported": false
+    },
+    {
+      "id": "stu-015",
+      "name": "Olivia Oliveira Mendes",
+      "schoolId": "sch-03",
+      "grade": "6º ano",
+      "stage": "fundamental",
+      "shift": "integral",
+      "neighborhood": "Vila Nova",
+      "attendanceRate": 84.4,
+      "birthDate": "2016-03-15",
+      "guardianName": "Valentina Alves",
+      "inActiveSearch": false,
+      "inTutoring": false,
+      "inInclusive": true,
+      "documentsPending": false,
+      "transported": false
+    },
+    {
+      "id": "stu-016",
+      "name": "Pedro Costa Costa",
+      "schoolId": "sch-04",
+      "grade": "Pré II",
+      "stage": "infantil",
+      "shift": "noite",
+      "neighborhood": "Jardim Brasil",
+      "attendanceRate": 65.5,
+      "birthDate": "2017-04-16",
+      "guardianName": "Arthur Monteiro",
+      "inActiveSearch": true,
+      "inTutoring": true,
+      "inInclusive": false,
+      "documentsPending": false,
+      "transported": false
+    },
+    {
+      "id": "stu-017",
+      "name": "Rafaela Nascimento Gomes",
+      "schoolId": "sch-05",
+      "grade": "8º ano",
+      "stage": "fundamental",
+      "shift": "manha",
+      "neighborhood": "Boa Vista",
+      "attendanceRate": 82.6,
+      "birthDate": "2018-05-17",
+      "guardianName": "Beatriz Mendes",
+      "inActiveSearch": false,
+      "inTutoring": false,
+      "inInclusive": false,
+      "documentsPending": false,
+      "transported": true
+    },
+    {
+      "id": "stu-018",
+      "name": "Sofia Carvalho Barros",
+      "schoolId": "sch-06",
+      "grade": "9º ano",
+      "stage": "fundamental",
+      "shift": "tarde",
+      "neighborhood": "São José",
+      "attendanceRate": 63.7,
+      "birthDate": "2019-06-18",
+      "guardianName": "Caio Barros",
+      "inActiveSearch": false,
+      "inTutoring": false,
+      "inInclusive": false,
+      "documentsPending": false,
+      "transported": false
+    },
+    {
+      "id": "stu-019",
+      "name": "Tiago Rocha Pereira",
+      "schoolId": "sch-07",
+      "grade": "Pré I",
+      "stage": "infantil",
+      "shift": "integral",
+      "neighborhood": "Centro",
+      "attendanceRate": 80.8,
+      "birthDate": "2020-07-19",
+      "guardianName": "Daniela Silva",
+      "inActiveSearch": false,
+      "inTutoring": true,
+      "inInclusive": false,
+      "documentsPending": true,
+      "transported": false
+    },
+    {
+      "id": "stu-020",
+      "name": "Valentina Monteiro Martins",
+      "schoolId": "sch-08",
+      "grade": "Maternal I",
+      "stage": "creche",
+      "shift": "noite",
+      "neighborhood": "Vila Nova",
+      "attendanceRate": 97.9,
+      "birthDate": "2021-08-20",
+      "guardianName": "Eduardo Santos",
+      "inActiveSearch": false,
+      "inTutoring": false,
+      "inInclusive": false,
+      "documentsPending": false,
+      "transported": false
+    },
+    {
+      "id": "stu-021",
+      "name": "Arthur Silva Silva",
+      "schoolId": "sch-09",
+      "grade": "3º ano",
+      "stage": "fundamental",
+      "shift": "manha",
+      "neighborhood": "Industrial",
+      "attendanceRate": 78,
+      "birthDate": "2012-09-21",
+      "guardianName": "Fernanda Oliveira",
+      "inActiveSearch": true,
+      "inTutoring": false,
+      "inInclusive": false,
+      "documentsPending": false,
+      "transported": true
+    },
+    {
+      "id": "stu-022",
+      "name": "Beatriz Souza Almeida",
+      "schoolId": "sch-10",
+      "grade": "Berçário",
+      "stage": "creche",
+      "shift": "tarde",
+      "neighborhood": "Nova Esperança",
+      "attendanceRate": 95.1,
+      "birthDate": "2013-10-22",
+      "guardianName": "Gabriel Souza",
+      "inActiveSearch": false,
+      "inTutoring": true,
+      "inInclusive": true,
+      "documentsPending": false,
+      "transported": false
+    },
+    {
+      "id": "stu-023",
+      "name": "Caio Pereira Rocha",
+      "schoolId": "sch-11",
+      "grade": "Pré I",
+      "stage": "infantil",
+      "shift": "integral",
+      "neighborhood": "Boa Vista",
+      "attendanceRate": 76.2,
+      "birthDate": "2014-11-23",
+      "guardianName": "Helena Lima",
+      "inActiveSearch": false,
+      "inTutoring": false,
+      "inInclusive": false,
+      "documentsPending": false,
+      "transported": false
+    },
+    {
+      "id": "stu-024",
+      "name": "Daniela Araújo Santos",
+      "schoolId": "sch-12",
+      "grade": "Pré II",
+      "stage": "infantil",
+      "shift": "noite",
+      "neighborhood": "São José",
+      "attendanceRate": 93.3,
+      "birthDate": "2015-12-24",
+      "guardianName": "Igor Costa",
+      "inActiveSearch": false,
+      "inTutoring": false,
+      "inInclusive": false,
+      "documentsPending": false,
+      "transported": false
+    },
+    {
+      "id": "stu-025",
+      "name": "Eduardo Gomes Nascimento",
+      "schoolId": "sch-01",
+      "grade": "7º ano",
+      "stage": "fundamental",
+      "shift": "manha",
+      "neighborhood": "Centro",
+      "attendanceRate": 74.4,
+      "birthDate": "2016-01-25",
+      "guardianName": "Julia Pereira",
+      "inActiveSearch": false,
+      "inTutoring": true,
+      "inInclusive": false,
+      "documentsPending": true,
+      "transported": true
+    },
+    {
+      "id": "stu-026",
+      "name": "Fernanda Ribeiro Ribeiro",
+      "schoolId": "sch-02",
+      "grade": "8º ano",
+      "stage": "fundamental",
+      "shift": "tarde",
+      "neighborhood": "Jardim América",
+      "attendanceRate": 91.5,
+      "birthDate": "2017-02-26",
+      "guardianName": "Ana Almeida",
+      "inActiveSearch": true,
+      "inTutoring": false,
+      "inInclusive": false,
+      "documentsPending": false,
+      "transported": false
+    },
+    {
+      "id": "stu-027",
+      "name": "Gabriel Mendes Oliveira",
+      "schoolId": "sch-03",
+      "grade": "9º ano",
+      "stage": "fundamental",
+      "shift": "integral",
+      "neighborhood": "Vila Nova",
+      "attendanceRate": 72.6,
+      "birthDate": "2018-03-27",
+      "guardianName": "Bruno Nascimento",
+      "inActiveSearch": false,
+      "inTutoring": false,
+      "inInclusive": false,
+      "documentsPending": false,
+      "transported": false
+    },
+    {
+      "id": "stu-028",
+      "name": "Helena Santos Araújo",
+      "schoolId": "sch-04",
+      "grade": "Pré II",
+      "stage": "infantil",
+      "shift": "noite",
+      "neighborhood": "Jardim Brasil",
+      "attendanceRate": 89.7,
+      "birthDate": "2019-04-01",
+      "guardianName": "Carla Araújo",
+      "inActiveSearch": false,
+      "inTutoring": true,
+      "inInclusive": false,
+      "documentsPending": false,
+      "transported": false
+    },
+    {
+      "id": "stu-029",
+      "name": "Igor Lima Alves",
+      "schoolId": "sch-05",
+      "grade": "2º ano",
+      "stage": "fundamental",
+      "shift": "manha",
+      "neighborhood": "Boa Vista",
+      "attendanceRate": 70.8,
+      "birthDate": "2020-05-02",
+      "guardianName": "Diego Fernandes",
+      "inActiveSearch": false,
+      "inTutoring": false,
+      "inInclusive": true,
+      "documentsPending": false,
+      "transported": true
+    },
+    {
+      "id": "stu-030",
+      "name": "Julia Almeida Souza",
+      "schoolId": "sch-06",
+      "grade": "3º ano",
+      "stage": "fundamental",
+      "shift": "tarde",
+      "neighborhood": "São José",
+      "attendanceRate": 87.9,
+      "birthDate": "2021-06-03",
+      "guardianName": "Elena Carvalho",
+      "inActiveSearch": false,
+      "inTutoring": false,
+      "inInclusive": false,
+      "documentsPending": false,
+      "transported": false
+    },
+    {
+      "id": "stu-031",
+      "name": "Ana Fernandes Fernandes",
+      "schoolId": "sch-07",
+      "grade": "Pré I",
+      "stage": "infantil",
+      "shift": "integral",
+      "neighborhood": "Centro",
+      "attendanceRate": 68,
+      "birthDate": "2012-07-04",
+      "guardianName": "Felipe Gomes",
+      "inActiveSearch": true,
+      "inTutoring": true,
+      "inInclusive": false,
+      "documentsPending": true,
+      "transported": false
+    },
+    {
+      "id": "stu-032",
+      "name": "Bruno Martins Monteiro",
+      "schoolId": "sch-08",
+      "grade": "Maternal I",
+      "stage": "creche",
+      "shift": "noite",
+      "neighborhood": "Vila Nova",
+      "attendanceRate": 85.1,
+      "birthDate": "2013-08-05",
+      "guardianName": "Giulia Martins",
+      "inActiveSearch": false,
+      "inTutoring": false,
+      "inInclusive": false,
+      "documentsPending": false,
+      "transported": false
+    },
+    {
+      "id": "stu-033",
+      "name": "Carla Alves Lima",
+      "schoolId": "sch-09",
+      "grade": "6º ano",
+      "stage": "fundamental",
+      "shift": "manha",
+      "neighborhood": "Industrial",
+      "attendanceRate": 66.2,
+      "birthDate": "2014-09-06",
+      "guardianName": "Hugo Rocha",
+      "inActiveSearch": false,
+      "inTutoring": false,
+      "inInclusive": false,
+      "documentsPending": false,
+      "transported": true
+    },
+    {
+      "id": "stu-034",
+      "name": "Diego Barros Carvalho",
+      "schoolId": "sch-10",
+      "grade": "Berçário",
+      "stage": "creche",
+      "shift": "tarde",
+      "neighborhood": "Nova Esperança",
+      "attendanceRate": 83.3,
+      "birthDate": "2015-10-07",
+      "guardianName": "Isabela Ribeiro",
+      "inActiveSearch": false,
+      "inTutoring": true,
+      "inInclusive": false,
+      "documentsPending": false,
+      "transported": false
+    },
+    {
+      "id": "stu-035",
+      "name": "Elena Oliveira Mendes",
+      "schoolId": "sch-11",
+      "grade": "Pré I",
+      "stage": "infantil",
+      "shift": "integral",
+      "neighborhood": "Boa Vista",
+      "attendanceRate": 64.4,
+      "birthDate": "2016-11-08",
+      "guardianName": "João Alves",
+      "inActiveSearch": false,
+      "inTutoring": false,
+      "inInclusive": false,
+      "documentsPending": false,
+      "transported": false
+    },
+    {
+      "id": "stu-036",
+      "name": "Felipe Costa Costa",
+      "schoolId": "sch-12",
+      "grade": "Pré II",
+      "stage": "infantil",
+      "shift": "noite",
+      "neighborhood": "São José",
+      "attendanceRate": 81.5,
+      "birthDate": "2017-12-09",
+      "guardianName": "Karina Monteiro",
+      "inActiveSearch": true,
+      "inTutoring": false,
+      "inInclusive": true,
+      "documentsPending": false,
+      "transported": false
+    },
+    {
+      "id": "stu-037",
+      "name": "Giulia Nascimento Gomes",
+      "schoolId": "sch-01",
+      "grade": "1º ano",
+      "stage": "fundamental",
+      "shift": "manha",
+      "neighborhood": "Centro",
+      "attendanceRate": 62.6,
+      "birthDate": "2018-01-10",
+      "guardianName": "Lucas Mendes",
+      "inActiveSearch": false,
+      "inTutoring": true,
+      "inInclusive": false,
+      "documentsPending": true,
+      "transported": true
+    },
+    {
+      "id": "stu-038",
+      "name": "Hugo Carvalho Barros",
+      "schoolId": "sch-02",
+      "grade": "2º ano",
+      "stage": "fundamental",
+      "shift": "tarde",
+      "neighborhood": "Jardim América",
+      "attendanceRate": 79.7,
+      "birthDate": "2019-02-11",
+      "guardianName": "Marina Barros",
+      "inActiveSearch": false,
+      "inTutoring": false,
+      "inInclusive": false,
+      "documentsPending": false,
+      "transported": false
+    },
+    {
+      "id": "stu-039",
+      "name": "Isabela Rocha Pereira",
+      "schoolId": "sch-03",
+      "grade": "3º ano",
+      "stage": "fundamental",
+      "shift": "integral",
+      "neighborhood": "Vila Nova",
+      "attendanceRate": 96.8,
+      "birthDate": "2020-03-12",
+      "guardianName": "Nicolas Silva",
+      "inActiveSearch": false,
+      "inTutoring": false,
+      "inInclusive": false,
+      "documentsPending": false,
+      "transported": false
+    },
+    {
+      "id": "stu-040",
+      "name": "João Monteiro Martins",
+      "schoolId": "sch-04",
+      "grade": "Pré II",
+      "stage": "infantil",
+      "shift": "noite",
+      "neighborhood": "Jardim Brasil",
+      "attendanceRate": 77.9,
+      "birthDate": "2021-04-13",
+      "guardianName": "Olivia Santos",
+      "inActiveSearch": false,
+      "inTutoring": true,
+      "inInclusive": false,
+      "documentsPending": false,
+      "transported": false
+    },
+    {
+      "id": "stu-041",
+      "name": "Karina Silva Silva",
+      "schoolId": "sch-05",
+      "grade": "5º ano",
+      "stage": "fundamental",
+      "shift": "manha",
+      "neighborhood": "Boa Vista",
+      "attendanceRate": 94,
+      "birthDate": "2012-05-14",
+      "guardianName": "Pedro Oliveira",
+      "inActiveSearch": true,
+      "inTutoring": false,
+      "inInclusive": false,
+      "documentsPending": false,
+      "transported": true
+    },
+    {
+      "id": "stu-042",
+      "name": "Lucas Souza Almeida",
+      "schoolId": "sch-06",
+      "grade": "6º ano",
+      "stage": "fundamental",
+      "shift": "tarde",
+      "neighborhood": "São José",
+      "attendanceRate": 75.1,
+      "birthDate": "2013-06-15",
+      "guardianName": "Rafaela Souza",
+      "inActiveSearch": false,
+      "inTutoring": false,
+      "inInclusive": false,
+      "documentsPending": false,
+      "transported": false
+    },
+    {
+      "id": "stu-043",
+      "name": "Marina Pereira Rocha",
+      "schoolId": "sch-07",
+      "grade": "Pré I",
+      "stage": "infantil",
+      "shift": "integral",
+      "neighborhood": "Centro",
+      "attendanceRate": 92.2,
+      "birthDate": "2014-07-16",
+      "guardianName": "Sofia Lima",
+      "inActiveSearch": false,
+      "inTutoring": true,
+      "inInclusive": true,
+      "documentsPending": true,
+      "transported": false
+    },
+    {
+      "id": "stu-044",
+      "name": "Nicolas Araújo Santos",
+      "schoolId": "sch-08",
+      "grade": "Maternal I",
+      "stage": "creche",
+      "shift": "noite",
+      "neighborhood": "Vila Nova",
+      "attendanceRate": 73.3,
+      "birthDate": "2015-08-17",
+      "guardianName": "Tiago Costa",
+      "inActiveSearch": false,
+      "inTutoring": false,
+      "inInclusive": false,
+      "documentsPending": false,
+      "transported": false
+    },
+    {
+      "id": "stu-045",
+      "name": "Olivia Gomes Nascimento",
+      "schoolId": "sch-09",
+      "grade": "9º ano",
+      "stage": "fundamental",
+      "shift": "manha",
+      "neighborhood": "Industrial",
+      "attendanceRate": 90.4,
+      "birthDate": "2016-09-18",
+      "guardianName": "Valentina Pereira",
+      "inActiveSearch": false,
+      "inTutoring": false,
+      "inInclusive": false,
+      "documentsPending": false,
+      "transported": true
+    },
+    {
+      "id": "stu-046",
+      "name": "Pedro Ribeiro Ribeiro",
+      "schoolId": "sch-10",
+      "grade": "Berçário",
+      "stage": "creche",
+      "shift": "tarde",
+      "neighborhood": "Nova Esperança",
+      "attendanceRate": 71.5,
+      "birthDate": "2017-10-19",
+      "guardianName": "Arthur Almeida",
+      "inActiveSearch": true,
+      "inTutoring": true,
+      "inInclusive": false,
+      "documentsPending": false,
+      "transported": false
+    },
+    {
+      "id": "stu-047",
+      "name": "Rafaela Mendes Oliveira",
+      "schoolId": "sch-11",
+      "grade": "Pré I",
+      "stage": "infantil",
+      "shift": "integral",
+      "neighborhood": "Boa Vista",
+      "attendanceRate": 88.6,
+      "birthDate": "2018-11-20",
+      "guardianName": "Beatriz Nascimento",
+      "inActiveSearch": false,
+      "inTutoring": false,
+      "inInclusive": false,
+      "documentsPending": false,
+      "transported": false
+    },
+    {
+      "id": "stu-048",
+      "name": "Sofia Santos Araújo",
+      "schoolId": "sch-12",
+      "grade": "Pré II",
+      "stage": "infantil",
+      "shift": "noite",
+      "neighborhood": "São José",
+      "attendanceRate": 69.7,
+      "birthDate": "2019-12-21",
+      "guardianName": "Caio Araújo",
+      "inActiveSearch": false,
+      "inTutoring": false,
+      "inInclusive": false,
+      "documentsPending": false,
+      "transported": false
+    },
+    {
+      "id": "stu-049",
+      "name": "Tiago Lima Alves",
+      "schoolId": "sch-01",
+      "grade": "4º ano",
+      "stage": "fundamental",
+      "shift": "manha",
+      "neighborhood": "Centro",
+      "attendanceRate": 86.8,
+      "birthDate": "2020-01-22",
+      "guardianName": "Daniela Fernandes",
+      "inActiveSearch": false,
+      "inTutoring": true,
+      "inInclusive": false,
+      "documentsPending": true,
+      "transported": true
+    },
+    {
+      "id": "stu-050",
+      "name": "Valentina Almeida Souza",
+      "schoolId": "sch-02",
+      "grade": "5º ano",
+      "stage": "fundamental",
+      "shift": "tarde",
+      "neighborhood": "Jardim América",
+      "attendanceRate": 67.9,
+      "birthDate": "2021-02-23",
+      "guardianName": "Eduardo Carvalho",
+      "inActiveSearch": false,
+      "inTutoring": false,
+      "inInclusive": true,
+      "documentsPending": false,
+      "transported": false
+    },
+    {
+      "id": "stu-051",
+      "name": "Arthur Fernandes Fernandes",
+      "schoolId": "sch-03",
+      "grade": "6º ano",
+      "stage": "fundamental",
+      "shift": "integral",
+      "neighborhood": "Vila Nova",
+      "attendanceRate": 84,
+      "birthDate": "2012-03-24",
+      "guardianName": "Fernanda Gomes",
+      "inActiveSearch": true,
+      "inTutoring": false,
+      "inInclusive": false,
+      "documentsPending": false,
+      "transported": false
+    },
+    {
+      "id": "stu-052",
+      "name": "Beatriz Martins Monteiro",
+      "schoolId": "sch-04",
+      "grade": "Pré II",
+      "stage": "infantil",
+      "shift": "noite",
+      "neighborhood": "Jardim Brasil",
+      "attendanceRate": 65.1,
+      "birthDate": "2013-04-25",
+      "guardianName": "Gabriel Martins",
+      "inActiveSearch": false,
+      "inTutoring": true,
+      "inInclusive": false,
+      "documentsPending": false,
+      "transported": false
+    },
+    {
+      "id": "stu-053",
+      "name": "Caio Alves Lima",
+      "schoolId": "sch-05",
+      "grade": "8º ano",
+      "stage": "fundamental",
+      "shift": "manha",
+      "neighborhood": "Boa Vista",
+      "attendanceRate": 82.2,
+      "birthDate": "2014-05-26",
+      "guardianName": "Helena Rocha",
+      "inActiveSearch": false,
+      "inTutoring": false,
+      "inInclusive": false,
+      "documentsPending": false,
+      "transported": true
+    },
+    {
+      "id": "stu-054",
+      "name": "Daniela Barros Carvalho",
+      "schoolId": "sch-06",
+      "grade": "9º ano",
+      "stage": "fundamental",
+      "shift": "tarde",
+      "neighborhood": "São José",
+      "attendanceRate": 63.3,
+      "birthDate": "2015-06-27",
+      "guardianName": "Igor Ribeiro",
+      "inActiveSearch": false,
+      "inTutoring": false,
+      "inInclusive": false,
+      "documentsPending": false,
+      "transported": false
+    },
+    {
+      "id": "stu-055",
+      "name": "Eduardo Oliveira Mendes",
+      "schoolId": "sch-07",
+      "grade": "Pré I",
+      "stage": "infantil",
+      "shift": "integral",
+      "neighborhood": "Centro",
+      "attendanceRate": 80.4,
+      "birthDate": "2016-07-01",
+      "guardianName": "Julia Alves",
+      "inActiveSearch": false,
+      "inTutoring": true,
+      "inInclusive": false,
+      "documentsPending": true,
+      "transported": false
+    },
+    {
+      "id": "stu-056",
+      "name": "Fernanda Costa Costa",
+      "schoolId": "sch-08",
+      "grade": "Maternal I",
+      "stage": "creche",
+      "shift": "noite",
+      "neighborhood": "Vila Nova",
+      "attendanceRate": 97.5,
+      "birthDate": "2017-08-02",
+      "guardianName": "Ana Monteiro",
+      "inActiveSearch": true,
+      "inTutoring": false,
+      "inInclusive": false,
+      "documentsPending": false,
+      "transported": false
+    },
+    {
+      "id": "stu-057",
+      "name": "Gabriel Nascimento Gomes",
+      "schoolId": "sch-09",
+      "grade": "3º ano",
+      "stage": "fundamental",
+      "shift": "manha",
+      "neighborhood": "Industrial",
+      "attendanceRate": 78.6,
+      "birthDate": "2018-09-03",
+      "guardianName": "Bruno Mendes",
+      "inActiveSearch": false,
+      "inTutoring": false,
+      "inInclusive": true,
+      "documentsPending": false,
+      "transported": true
+    },
+    {
+      "id": "stu-058",
+      "name": "Helena Carvalho Barros",
+      "schoolId": "sch-10",
+      "grade": "Berçário",
+      "stage": "creche",
+      "shift": "tarde",
+      "neighborhood": "Nova Esperança",
+      "attendanceRate": 95.7,
+      "birthDate": "2019-10-04",
+      "guardianName": "Carla Barros",
+      "inActiveSearch": false,
+      "inTutoring": true,
+      "inInclusive": false,
+      "documentsPending": false,
+      "transported": false
+    },
+    {
+      "id": "stu-059",
+      "name": "Igor Rocha Pereira",
+      "schoolId": "sch-11",
+      "grade": "Pré I",
+      "stage": "infantil",
+      "shift": "integral",
+      "neighborhood": "Boa Vista",
+      "attendanceRate": 76.8,
+      "birthDate": "2020-11-05",
+      "guardianName": "Diego Silva",
+      "inActiveSearch": false,
+      "inTutoring": false,
+      "inInclusive": false,
+      "documentsPending": false,
+      "transported": false
+    },
+    {
+      "id": "stu-060",
+      "name": "Julia Monteiro Martins",
+      "schoolId": "sch-12",
+      "grade": "Pré II",
+      "stage": "infantil",
+      "shift": "noite",
+      "neighborhood": "São José",
+      "attendanceRate": 93.9,
+      "birthDate": "2021-12-06",
+      "guardianName": "Elena Santos",
+      "inActiveSearch": false,
+      "inTutoring": false,
+      "inInclusive": false,
+      "documentsPending": false,
+      "transported": false
+    },
+    {
+      "id": "stu-061",
+      "name": "Ana Silva Silva",
+      "schoolId": "sch-01",
+      "grade": "7º ano",
+      "stage": "fundamental",
+      "shift": "manha",
+      "neighborhood": "Centro",
+      "attendanceRate": 74,
+      "birthDate": "2012-01-07",
+      "guardianName": "Felipe Oliveira",
+      "inActiveSearch": true,
+      "inTutoring": true,
+      "inInclusive": false,
+      "documentsPending": true,
+      "transported": true
+    },
+    {
+      "id": "stu-062",
+      "name": "Bruno Souza Almeida",
+      "schoolId": "sch-02",
+      "grade": "8º ano",
+      "stage": "fundamental",
+      "shift": "tarde",
+      "neighborhood": "Jardim América",
+      "attendanceRate": 91.1,
+      "birthDate": "2013-02-08",
+      "guardianName": "Giulia Souza",
+      "inActiveSearch": false,
+      "inTutoring": false,
+      "inInclusive": false,
+      "documentsPending": false,
+      "transported": false
+    },
+    {
+      "id": "stu-063",
+      "name": "Carla Pereira Rocha",
+      "schoolId": "sch-03",
+      "grade": "9º ano",
+      "stage": "fundamental",
+      "shift": "integral",
+      "neighborhood": "Vila Nova",
+      "attendanceRate": 72.2,
+      "birthDate": "2014-03-09",
+      "guardianName": "Hugo Lima",
+      "inActiveSearch": false,
+      "inTutoring": false,
+      "inInclusive": false,
+      "documentsPending": false,
+      "transported": false
+    },
+    {
+      "id": "stu-064",
+      "name": "Diego Araújo Santos",
+      "schoolId": "sch-04",
+      "grade": "Pré II",
+      "stage": "infantil",
+      "shift": "noite",
+      "neighborhood": "Jardim Brasil",
+      "attendanceRate": 89.3,
+      "birthDate": "2015-04-10",
+      "guardianName": "Isabela Costa",
+      "inActiveSearch": false,
+      "inTutoring": true,
+      "inInclusive": true,
+      "documentsPending": false,
+      "transported": false
+    },
+    {
+      "id": "stu-065",
+      "name": "Elena Gomes Nascimento",
+      "schoolId": "sch-05",
+      "grade": "2º ano",
+      "stage": "fundamental",
+      "shift": "manha",
+      "neighborhood": "Boa Vista",
+      "attendanceRate": 70.4,
+      "birthDate": "2016-05-11",
+      "guardianName": "João Pereira",
+      "inActiveSearch": false,
+      "inTutoring": false,
+      "inInclusive": false,
+      "documentsPending": false,
+      "transported": true
+    },
+    {
+      "id": "stu-066",
+      "name": "Felipe Ribeiro Ribeiro",
+      "schoolId": "sch-06",
+      "grade": "3º ano",
+      "stage": "fundamental",
+      "shift": "tarde",
+      "neighborhood": "São José",
+      "attendanceRate": 87.5,
+      "birthDate": "2017-06-12",
+      "guardianName": "Karina Almeida",
+      "inActiveSearch": true,
+      "inTutoring": false,
+      "inInclusive": false,
+      "documentsPending": false,
+      "transported": false
+    },
+    {
+      "id": "stu-067",
+      "name": "Giulia Mendes Oliveira",
+      "schoolId": "sch-07",
+      "grade": "Pré I",
+      "stage": "infantil",
+      "shift": "integral",
+      "neighborhood": "Centro",
+      "attendanceRate": 68.6,
+      "birthDate": "2018-07-13",
+      "guardianName": "Lucas Nascimento",
+      "inActiveSearch": false,
+      "inTutoring": true,
+      "inInclusive": false,
+      "documentsPending": true,
+      "transported": false
+    },
+    {
+      "id": "stu-068",
+      "name": "Hugo Santos Araújo",
+      "schoolId": "sch-08",
+      "grade": "Maternal I",
+      "stage": "creche",
+      "shift": "noite",
+      "neighborhood": "Vila Nova",
+      "attendanceRate": 85.7,
+      "birthDate": "2019-08-14",
+      "guardianName": "Marina Araújo",
+      "inActiveSearch": false,
+      "inTutoring": false,
+      "inInclusive": false,
+      "documentsPending": false,
+      "transported": false
+    },
+    {
+      "id": "stu-069",
+      "name": "Isabela Lima Alves",
+      "schoolId": "sch-09",
+      "grade": "6º ano",
+      "stage": "fundamental",
+      "shift": "manha",
+      "neighborhood": "Industrial",
+      "attendanceRate": 66.8,
+      "birthDate": "2020-09-15",
+      "guardianName": "Nicolas Fernandes",
+      "inActiveSearch": false,
+      "inTutoring": false,
+      "inInclusive": false,
+      "documentsPending": false,
+      "transported": true
+    },
+    {
+      "id": "stu-070",
+      "name": "João Almeida Souza",
+      "schoolId": "sch-10",
+      "grade": "Berçário",
+      "stage": "creche",
+      "shift": "tarde",
+      "neighborhood": "Nova Esperança",
+      "attendanceRate": 83.9,
+      "birthDate": "2021-10-16",
+      "guardianName": "Olivia Carvalho",
+      "inActiveSearch": false,
+      "inTutoring": true,
+      "inInclusive": false,
+      "documentsPending": false,
+      "transported": false
+    },
+    {
+      "id": "stu-071",
+      "name": "Karina Fernandes Fernandes",
+      "schoolId": "sch-11",
+      "grade": "Pré I",
+      "stage": "infantil",
+      "shift": "integral",
+      "neighborhood": "Boa Vista",
+      "attendanceRate": 64,
+      "birthDate": "2012-11-17",
+      "guardianName": "Pedro Gomes",
+      "inActiveSearch": true,
+      "inTutoring": false,
+      "inInclusive": true,
+      "documentsPending": false,
+      "transported": false
+    },
+    {
+      "id": "stu-072",
+      "name": "Lucas Martins Monteiro",
+      "schoolId": "sch-12",
+      "grade": "Pré II",
+      "stage": "infantil",
+      "shift": "noite",
+      "neighborhood": "São José",
+      "attendanceRate": 81.1,
+      "birthDate": "2013-12-18",
+      "guardianName": "Rafaela Martins",
+      "inActiveSearch": false,
+      "inTutoring": false,
+      "inInclusive": false,
+      "documentsPending": false,
+      "transported": false
+    },
+    {
+      "id": "stu-073",
+      "name": "Marina Alves Lima",
+      "schoolId": "sch-01",
+      "grade": "1º ano",
+      "stage": "fundamental",
+      "shift": "manha",
+      "neighborhood": "Centro",
+      "attendanceRate": 62.2,
+      "birthDate": "2014-01-19",
+      "guardianName": "Sofia Rocha",
+      "inActiveSearch": false,
+      "inTutoring": true,
+      "inInclusive": false,
+      "documentsPending": true,
+      "transported": true
+    },
+    {
+      "id": "stu-074",
+      "name": "Nicolas Barros Carvalho",
+      "schoolId": "sch-02",
+      "grade": "2º ano",
+      "stage": "fundamental",
+      "shift": "tarde",
+      "neighborhood": "Jardim América",
+      "attendanceRate": 79.3,
+      "birthDate": "2015-02-20",
+      "guardianName": "Tiago Ribeiro",
+      "inActiveSearch": false,
+      "inTutoring": false,
+      "inInclusive": false,
+      "documentsPending": false,
+      "transported": false
+    },
+    {
+      "id": "stu-075",
+      "name": "Olivia Oliveira Mendes",
+      "schoolId": "sch-03",
+      "grade": "3º ano",
+      "stage": "fundamental",
+      "shift": "integral",
+      "neighborhood": "Vila Nova",
+      "attendanceRate": 96.4,
+      "birthDate": "2016-03-21",
+      "guardianName": "Valentina Alves",
+      "inActiveSearch": false,
+      "inTutoring": false,
+      "inInclusive": false,
+      "documentsPending": false,
+      "transported": false
+    },
+    {
+      "id": "stu-076",
+      "name": "Pedro Costa Costa",
+      "schoolId": "sch-04",
+      "grade": "Pré II",
+      "stage": "infantil",
+      "shift": "noite",
+      "neighborhood": "Jardim Brasil",
+      "attendanceRate": 77.5,
+      "birthDate": "2017-04-22",
+      "guardianName": "Arthur Monteiro",
+      "inActiveSearch": true,
+      "inTutoring": true,
+      "inInclusive": false,
+      "documentsPending": false,
+      "transported": false
+    },
+    {
+      "id": "stu-077",
+      "name": "Rafaela Nascimento Gomes",
+      "schoolId": "sch-05",
+      "grade": "5º ano",
+      "stage": "fundamental",
+      "shift": "manha",
+      "neighborhood": "Boa Vista",
+      "attendanceRate": 94.6,
+      "birthDate": "2018-05-23",
+      "guardianName": "Beatriz Mendes",
+      "inActiveSearch": false,
+      "inTutoring": false,
+      "inInclusive": false,
+      "documentsPending": false,
+      "transported": true
+    },
+    {
+      "id": "stu-078",
+      "name": "Sofia Carvalho Barros",
+      "schoolId": "sch-06",
+      "grade": "6º ano",
+      "stage": "fundamental",
+      "shift": "tarde",
+      "neighborhood": "São José",
+      "attendanceRate": 75.7,
+      "birthDate": "2019-06-24",
+      "guardianName": "Caio Barros",
+      "inActiveSearch": false,
+      "inTutoring": false,
+      "inInclusive": true,
+      "documentsPending": false,
+      "transported": false
+    },
+    {
+      "id": "stu-079",
+      "name": "Tiago Rocha Pereira",
+      "schoolId": "sch-07",
+      "grade": "Pré I",
+      "stage": "infantil",
+      "shift": "integral",
+      "neighborhood": "Centro",
+      "attendanceRate": 92.8,
+      "birthDate": "2020-07-25",
+      "guardianName": "Daniela Silva",
+      "inActiveSearch": false,
+      "inTutoring": true,
+      "inInclusive": false,
+      "documentsPending": true,
+      "transported": false
+    },
+    {
+      "id": "stu-080",
+      "name": "Valentina Monteiro Martins",
+      "schoolId": "sch-08",
+      "grade": "Maternal I",
+      "stage": "creche",
+      "shift": "noite",
+      "neighborhood": "Vila Nova",
+      "attendanceRate": 73.9,
+      "birthDate": "2021-08-26",
+      "guardianName": "Eduardo Santos",
+      "inActiveSearch": false,
+      "inTutoring": false,
+      "inInclusive": false,
+      "documentsPending": false,
+      "transported": false
+    }
+  ],
+  "activeSearch": [
+    {
+      "id": "as-01",
+      "studentId": "stu-001",
+      "schoolId": "sch-01",
+      "grade": "1º ano",
+      "attendanceRate": 62,
+      "status": "em_acompanhamento",
+      "openedAt": "2026-01-12",
+      "lastUpdateAt": "2026-09-01"
+    },
+    {
+      "id": "as-02",
+      "studentId": "stu-006",
+      "schoolId": "sch-06",
+      "grade": "6º ano",
+      "attendanceRate": 75.5,
+      "status": "em_investigacao",
+      "openedAt": "2026-02-12",
+      "lastUpdateAt": "2026-09-02"
+    },
+    {
+      "id": "as-03",
+      "studentId": "stu-011",
+      "schoolId": "sch-11",
+      "grade": "Pré I",
+      "attendanceRate": 88,
+      "status": "aguardando_retorno",
+      "openedAt": "2026-03-12",
+      "lastUpdateAt": "2026-09-03"
+    },
+    {
+      "id": "as-04",
+      "studentId": "stu-016",
+      "schoolId": "sch-04",
+      "grade": "Pré II",
+      "attendanceRate": 65.5,
+      "status": "encaminhado",
+      "openedAt": "2026-04-12",
+      "lastUpdateAt": "2026-09-04"
+    },
+    {
+      "id": "as-05",
+      "studentId": "stu-021",
+      "schoolId": "sch-09",
+      "grade": "3º ano",
+      "attendanceRate": 78,
+      "status": "resolvido",
+      "openedAt": "2026-05-12",
+      "lastUpdateAt": "2026-09-05"
+    },
+    {
+      "id": "as-06",
+      "studentId": "stu-026",
+      "schoolId": "sch-02",
+      "grade": "8º ano",
+      "attendanceRate": 91.5,
+      "status": "encerrado",
+      "openedAt": "2026-06-12",
+      "lastUpdateAt": "2026-09-06"
+    },
+    {
+      "id": "as-07",
+      "studentId": "stu-031",
+      "schoolId": "sch-07",
+      "grade": "Pré I",
+      "attendanceRate": 68,
+      "status": "em_acompanhamento",
+      "openedAt": "2026-07-12",
+      "lastUpdateAt": "2026-09-07"
+    },
+    {
+      "id": "as-08",
+      "studentId": "stu-036",
+      "schoolId": "sch-12",
+      "grade": "Pré II",
+      "attendanceRate": 81.5,
+      "status": "em_investigacao",
+      "openedAt": "2026-08-12",
+      "lastUpdateAt": "2026-09-08"
+    },
+    {
+      "id": "as-09",
+      "studentId": "stu-041",
+      "schoolId": "sch-05",
+      "grade": "5º ano",
+      "attendanceRate": 94,
+      "status": "aguardando_retorno",
+      "openedAt": "2026-01-12",
+      "lastUpdateAt": "2026-09-09"
+    },
+    {
+      "id": "as-10",
+      "studentId": "stu-046",
+      "schoolId": "sch-10",
+      "grade": "Berçário",
+      "attendanceRate": 71.5,
+      "status": "encaminhado",
+      "openedAt": "2026-02-12",
+      "lastUpdateAt": "2026-09-10"
+    },
+    {
+      "id": "as-11",
+      "studentId": "stu-051",
+      "schoolId": "sch-03",
+      "grade": "6º ano",
+      "attendanceRate": 84,
+      "status": "resolvido",
+      "openedAt": "2026-03-12",
+      "lastUpdateAt": "2026-09-11"
+    },
+    {
+      "id": "as-12",
+      "studentId": "stu-056",
+      "schoolId": "sch-08",
+      "grade": "Maternal I",
+      "attendanceRate": 97.5,
+      "status": "encerrado",
+      "openedAt": "2026-04-12",
+      "lastUpdateAt": "2026-09-12"
+    },
+    {
+      "id": "as-13",
+      "studentId": "stu-061",
+      "schoolId": "sch-01",
+      "grade": "7º ano",
+      "attendanceRate": 74,
+      "status": "em_acompanhamento",
+      "openedAt": "2026-05-12",
+      "lastUpdateAt": "2026-09-13"
+    },
+    {
+      "id": "as-14",
+      "studentId": "stu-066",
+      "schoolId": "sch-06",
+      "grade": "3º ano",
+      "attendanceRate": 87.5,
+      "status": "em_investigacao",
+      "openedAt": "2026-06-12",
+      "lastUpdateAt": "2026-09-14"
+    },
+    {
+      "id": "as-15",
+      "studentId": "stu-071",
+      "schoolId": "sch-11",
+      "grade": "Pré I",
+      "attendanceRate": 64,
+      "status": "aguardando_retorno",
+      "openedAt": "2026-07-12",
+      "lastUpdateAt": "2026-09-15"
+    },
+    {
+      "id": "as-16",
+      "studentId": "stu-076",
+      "schoolId": "sch-04",
+      "grade": "Pré II",
+      "attendanceRate": 77.5,
+      "status": "encaminhado",
+      "openedAt": "2026-08-12",
+      "lastUpdateAt": "2026-09-16"
+    }
+  ],
+  "activeSearchTrend": [
+    {
+      "month": "Jan",
+      "cases": 98
+    },
+    {
+      "month": "Fev",
+      "cases": 105
+    },
+    {
+      "month": "Mar",
+      "cases": 112
+    },
+    {
+      "month": "Abr",
+      "cases": 118
+    },
+    {
+      "month": "Mai",
+      "cases": 124
+    },
+    {
+      "month": "Jun",
+      "cases": 129
+    },
+    {
+      "month": "Jul",
+      "cases": 131
+    },
+    {
+      "month": "Ago",
+      "cases": 134
+    },
+    {
+      "month": "Set",
+      "cases": 137
+    }
+  ],
+  "waitlist": [
+    {
+      "id": "wl-01",
+      "childName": "Karina Silva Silva",
+      "stage": "creche",
+      "preferredSchoolId": "sch-04",
+      "neighborhood": "Jardim Brasil",
+      "age": 1,
+      "waitingDays": 10,
+      "requestedAt": "2026-01-05"
+    },
+    {
+      "id": "wl-02",
+      "childName": "Lucas Souza Almeida",
+      "stage": "fundamental",
+      "preferredSchoolId": "sch-05",
+      "neighborhood": "Boa Vista",
+      "age": 7,
+      "waitingDays": 23,
+      "requestedAt": "2026-02-06"
+    },
+    {
+      "id": "wl-03",
+      "childName": "Marina Pereira Rocha",
+      "stage": "infantil",
+      "preferredSchoolId": "sch-06",
+      "neighborhood": "São José",
+      "age": 4,
+      "waitingDays": 36,
+      "requestedAt": "2026-03-07"
+    },
+    {
+      "id": "wl-04",
+      "childName": "Nicolas Araújo Santos",
+      "stage": "infantil",
+      "preferredSchoolId": "sch-07",
+      "neighborhood": "Centro",
+      "age": 5,
+      "waitingDays": 49,
+      "requestedAt": "2026-04-08"
+    },
+    {
+      "id": "wl-05",
+      "childName": "Olivia Gomes Nascimento",
+      "stage": "creche",
+      "preferredSchoolId": "sch-08",
+      "neighborhood": "Vila Nova",
+      "age": 2,
+      "waitingDays": 62,
+      "requestedAt": "2026-05-09"
+    },
+    {
+      "id": "wl-06",
+      "childName": "Pedro Ribeiro Ribeiro",
+      "stage": "fundamental",
+      "preferredSchoolId": "sch-09",
+      "neighborhood": "Industrial",
+      "age": 6,
+      "waitingDays": 75,
+      "requestedAt": "2026-06-10"
+    },
+    {
+      "id": "wl-07",
+      "childName": "Rafaela Mendes Oliveira",
+      "stage": "creche",
+      "preferredSchoolId": "sch-10",
+      "neighborhood": "Nova Esperança",
+      "age": 1,
+      "waitingDays": 88,
+      "requestedAt": "2026-07-11"
+    },
+    {
+      "id": "wl-08",
+      "childName": "Sofia Santos Araújo",
+      "stage": "infantil",
+      "preferredSchoolId": "sch-11",
+      "neighborhood": "Boa Vista",
+      "age": 5,
+      "waitingDays": 101,
+      "requestedAt": "2026-08-12"
+    },
+    {
+      "id": "wl-09",
+      "childName": "Tiago Lima Alves",
+      "stage": "creche",
+      "preferredSchoolId": "sch-12",
+      "neighborhood": "São José",
+      "age": 3,
+      "waitingDays": 19,
+      "requestedAt": "2026-01-13"
+    },
+    {
+      "id": "wl-10",
+      "childName": "Valentina Almeida Souza",
+      "stage": "fundamental",
+      "preferredSchoolId": "sch-01",
+      "neighborhood": "Centro",
+      "age": 10,
+      "waitingDays": 32,
+      "requestedAt": "2026-02-14"
+    },
+    {
+      "id": "wl-11",
+      "childName": "Arthur Fernandes Fernandes",
+      "stage": "infantil",
+      "preferredSchoolId": "sch-02",
+      "neighborhood": "Jardim América",
+      "age": 4,
+      "waitingDays": 45,
+      "requestedAt": "2026-03-15"
+    },
+    {
+      "id": "wl-12",
+      "childName": "Beatriz Martins Monteiro",
+      "stage": "fundamental",
+      "preferredSchoolId": "sch-03",
+      "neighborhood": "Vila Nova",
+      "age": 7,
+      "waitingDays": 58,
+      "requestedAt": "2026-04-16"
+    },
+    {
+      "id": "wl-13",
+      "childName": "Caio Alves Lima",
+      "stage": "creche",
+      "preferredSchoolId": "sch-04",
+      "neighborhood": "Jardim Brasil",
+      "age": 1,
+      "waitingDays": 71,
+      "requestedAt": "2026-05-17"
+    },
+    {
+      "id": "wl-14",
+      "childName": "Daniela Barros Carvalho",
+      "stage": "fundamental",
+      "preferredSchoolId": "sch-05",
+      "neighborhood": "Boa Vista",
+      "age": 9,
+      "waitingDays": 84,
+      "requestedAt": "2026-06-18"
+    },
+    {
+      "id": "wl-15",
+      "childName": "Eduardo Oliveira Mendes",
+      "stage": "infantil",
+      "preferredSchoolId": "sch-06",
+      "neighborhood": "São José",
+      "age": 4,
+      "waitingDays": 97,
+      "requestedAt": "2026-07-19"
+    },
+    {
+      "id": "wl-16",
+      "childName": "Fernanda Costa Costa",
+      "stage": "infantil",
+      "preferredSchoolId": "sch-07",
+      "neighborhood": "Centro",
+      "age": 5,
+      "waitingDays": 15,
+      "requestedAt": "2026-08-20"
+    },
+    {
+      "id": "wl-17",
+      "childName": "Gabriel Nascimento Gomes",
+      "stage": "creche",
+      "preferredSchoolId": "sch-08",
+      "neighborhood": "Vila Nova",
+      "age": 2,
+      "waitingDays": 28,
+      "requestedAt": "2026-01-21"
+    },
+    {
+      "id": "wl-18",
+      "childName": "Helena Carvalho Barros",
+      "stage": "fundamental",
+      "preferredSchoolId": "sch-09",
+      "neighborhood": "Industrial",
+      "age": 8,
+      "waitingDays": 41,
+      "requestedAt": "2026-02-22"
+    },
+    {
+      "id": "wl-19",
+      "childName": "Igor Rocha Pereira",
+      "stage": "creche",
+      "preferredSchoolId": "sch-10",
+      "neighborhood": "Nova Esperança",
+      "age": 1,
+      "waitingDays": 54,
+      "requestedAt": "2026-03-23"
+    },
+    {
+      "id": "wl-20",
+      "childName": "Julia Monteiro Martins",
+      "stage": "infantil",
+      "preferredSchoolId": "sch-11",
+      "neighborhood": "Boa Vista",
+      "age": 5,
+      "waitingDays": 67,
+      "requestedAt": "2026-04-24"
+    },
+    {
+      "id": "wl-21",
+      "childName": "Ana Silva Silva",
+      "stage": "creche",
+      "preferredSchoolId": "sch-12",
+      "neighborhood": "São José",
+      "age": 3,
+      "waitingDays": 80,
+      "requestedAt": "2026-05-05"
+    },
+    {
+      "id": "wl-22",
+      "childName": "Bruno Souza Almeida",
+      "stage": "fundamental",
+      "preferredSchoolId": "sch-01",
+      "neighborhood": "Centro",
+      "age": 7,
+      "waitingDays": 93,
+      "requestedAt": "2026-06-06"
+    },
+    {
+      "id": "wl-23",
+      "childName": "Carla Pereira Rocha",
+      "stage": "infantil",
+      "preferredSchoolId": "sch-02",
+      "neighborhood": "Jardim América",
+      "age": 4,
+      "waitingDays": 11,
+      "requestedAt": "2026-07-07"
+    },
+    {
+      "id": "wl-24",
+      "childName": "Diego Araújo Santos",
+      "stage": "fundamental",
+      "preferredSchoolId": "sch-03",
+      "neighborhood": "Vila Nova",
+      "age": 9,
+      "waitingDays": 24,
+      "requestedAt": "2026-08-08"
+    },
+    {
+      "id": "wl-25",
+      "childName": "Elena Gomes Nascimento",
+      "stage": "creche",
+      "preferredSchoolId": "sch-04",
+      "neighborhood": "Jardim Brasil",
+      "age": 1,
+      "waitingDays": 37,
+      "requestedAt": "2026-01-09"
+    },
+    {
+      "id": "wl-26",
+      "childName": "Felipe Ribeiro Ribeiro",
+      "stage": "fundamental",
+      "preferredSchoolId": "sch-05",
+      "neighborhood": "Boa Vista",
+      "age": 6,
+      "waitingDays": 50,
+      "requestedAt": "2026-02-10"
+    },
+    {
+      "id": "wl-27",
+      "childName": "Giulia Mendes Oliveira",
+      "stage": "infantil",
+      "preferredSchoolId": "sch-06",
+      "neighborhood": "São José",
+      "age": 4,
+      "waitingDays": 63,
+      "requestedAt": "2026-03-11"
+    },
+    {
+      "id": "wl-28",
+      "childName": "Hugo Santos Araújo",
+      "stage": "infantil",
+      "preferredSchoolId": "sch-07",
+      "neighborhood": "Centro",
+      "age": 5,
+      "waitingDays": 76,
+      "requestedAt": "2026-04-12"
+    },
+    {
+      "id": "wl-29",
+      "childName": "Isabela Lima Alves",
+      "stage": "creche",
+      "preferredSchoolId": "sch-08",
+      "neighborhood": "Vila Nova",
+      "age": 2,
+      "waitingDays": 89,
+      "requestedAt": "2026-05-13"
+    },
+    {
+      "id": "wl-30",
+      "childName": "João Almeida Souza",
+      "stage": "fundamental",
+      "preferredSchoolId": "sch-09",
+      "neighborhood": "Industrial",
+      "age": 10,
+      "waitingDays": 102,
+      "requestedAt": "2026-06-14"
+    },
+    {
+      "id": "wl-31",
+      "childName": "Karina Fernandes Fernandes",
+      "stage": "creche",
+      "preferredSchoolId": "sch-10",
+      "neighborhood": "Nova Esperança",
+      "age": 1,
+      "waitingDays": 20,
+      "requestedAt": "2026-07-15"
+    },
+    {
+      "id": "wl-32",
+      "childName": "Lucas Martins Monteiro",
+      "stage": "infantil",
+      "preferredSchoolId": "sch-11",
+      "neighborhood": "Boa Vista",
+      "age": 5,
+      "waitingDays": 33,
+      "requestedAt": "2026-08-16"
+    },
+    {
+      "id": "wl-33",
+      "childName": "Marina Alves Lima",
+      "stage": "creche",
+      "preferredSchoolId": "sch-12",
+      "neighborhood": "São José",
+      "age": 3,
+      "waitingDays": 46,
+      "requestedAt": "2026-01-17"
+    },
+    {
+      "id": "wl-34",
+      "childName": "Nicolas Barros Carvalho",
+      "stage": "fundamental",
+      "preferredSchoolId": "sch-01",
+      "neighborhood": "Centro",
+      "age": 9,
+      "waitingDays": 59,
+      "requestedAt": "2026-02-18"
+    },
+    {
+      "id": "wl-35",
+      "childName": "Olivia Oliveira Mendes",
+      "stage": "infantil",
+      "preferredSchoolId": "sch-02",
+      "neighborhood": "Jardim América",
+      "age": 4,
+      "waitingDays": 72,
+      "requestedAt": "2026-03-19"
+    },
+    {
+      "id": "wl-36",
+      "childName": "Pedro Costa Costa",
+      "stage": "fundamental",
+      "preferredSchoolId": "sch-03",
+      "neighborhood": "Vila Nova",
+      "age": 6,
+      "waitingDays": 85,
+      "requestedAt": "2026-04-20"
+    },
+    {
+      "id": "wl-37",
+      "childName": "Rafaela Nascimento Gomes",
+      "stage": "creche",
+      "preferredSchoolId": "sch-04",
+      "neighborhood": "Jardim Brasil",
+      "age": 1,
+      "waitingDays": 98,
+      "requestedAt": "2026-05-21"
+    },
+    {
+      "id": "wl-38",
+      "childName": "Sofia Carvalho Barros",
+      "stage": "fundamental",
+      "preferredSchoolId": "sch-05",
+      "neighborhood": "Boa Vista",
+      "age": 8,
+      "waitingDays": 16,
+      "requestedAt": "2026-06-22"
+    },
+    {
+      "id": "wl-39",
+      "childName": "Tiago Rocha Pereira",
+      "stage": "infantil",
+      "preferredSchoolId": "sch-06",
+      "neighborhood": "São José",
+      "age": 4,
+      "waitingDays": 29,
+      "requestedAt": "2026-07-23"
+    },
+    {
+      "id": "wl-40",
+      "childName": "Valentina Monteiro Martins",
+      "stage": "infantil",
+      "preferredSchoolId": "sch-07",
+      "neighborhood": "Centro",
+      "age": 5,
+      "waitingDays": 42,
+      "requestedAt": "2026-08-24"
+    }
+  ],
+  "staff": [
+    {
+      "id": "tch-01",
+      "name": "Arthur Silva Silva",
+      "schoolId": "sch-01",
+      "role": "Professor(a) — Português",
+      "employmentType": "effective",
+      "isTeacher": true,
+      "shift": "manha"
+    },
+    {
+      "id": "tch-02",
+      "name": "Beatriz Souza Almeida",
+      "schoolId": "sch-02",
+      "role": "Professor(a) — Matemática",
+      "employmentType": "contract",
+      "isTeacher": true,
+      "shift": "tarde"
+    },
+    {
+      "id": "tch-03",
+      "name": "Caio Pereira Rocha",
+      "schoolId": "sch-03",
+      "role": "Professor(a) — Ciências",
+      "employmentType": "effective",
+      "isTeacher": true,
+      "shift": "integral"
+    },
+    {
+      "id": "tch-04",
+      "name": "Daniela Araújo Santos",
+      "schoolId": "sch-04",
+      "role": "Professor(a) — História",
+      "employmentType": "other",
+      "isTeacher": true,
+      "shift": "noite"
+    },
+    {
+      "id": "tch-05",
+      "name": "Eduardo Gomes Nascimento",
+      "schoolId": "sch-05",
+      "role": "Professor(a) — Geografia",
+      "employmentType": "effective",
+      "isTeacher": true,
+      "shift": "manha"
+    },
+    {
+      "id": "tch-06",
+      "name": "Fernanda Ribeiro Ribeiro",
+      "schoolId": "sch-06",
+      "role": "Professor(a) — Educação Física",
+      "employmentType": "contract",
+      "isTeacher": true,
+      "shift": "tarde"
+    },
+    {
+      "id": "tch-07",
+      "name": "Gabriel Mendes Oliveira",
+      "schoolId": "sch-07",
+      "role": "Professor(a) — Artes",
+      "employmentType": "effective",
+      "isTeacher": true,
+      "shift": "integral"
+    },
+    {
+      "id": "tch-08",
+      "name": "Helena Santos Araújo",
+      "schoolId": "sch-08",
+      "role": "Professor(a) — Inglês",
+      "employmentType": "other",
+      "isTeacher": true,
+      "shift": "noite"
+    },
+    {
+      "id": "tch-09",
+      "name": "Igor Lima Alves",
+      "schoolId": "sch-09",
+      "role": "Professor(a) — Português",
+      "employmentType": "effective",
+      "isTeacher": true,
+      "shift": "manha"
+    },
+    {
+      "id": "tch-10",
+      "name": "Julia Almeida Souza",
+      "schoolId": "sch-10",
+      "role": "Professor(a) — Matemática",
+      "employmentType": "contract",
+      "isTeacher": true,
+      "shift": "tarde"
+    },
+    {
+      "id": "tch-11",
+      "name": "Ana Fernandes Fernandes",
+      "schoolId": "sch-11",
+      "role": "Professor(a) — Ciências",
+      "employmentType": "effective",
+      "isTeacher": true,
+      "shift": "integral"
+    },
+    {
+      "id": "tch-12",
+      "name": "Bruno Martins Monteiro",
+      "schoolId": "sch-12",
+      "role": "Professor(a) — História",
+      "employmentType": "other",
+      "isTeacher": true,
+      "shift": "noite"
+    },
+    {
+      "id": "tch-13",
+      "name": "Carla Alves Lima",
+      "schoolId": "sch-01",
+      "role": "Professor(a) — Geografia",
+      "employmentType": "effective",
+      "isTeacher": true,
+      "shift": "manha"
+    },
+    {
+      "id": "tch-14",
+      "name": "Diego Barros Carvalho",
+      "schoolId": "sch-02",
+      "role": "Professor(a) — Educação Física",
+      "employmentType": "contract",
+      "isTeacher": true,
+      "shift": "tarde"
+    },
+    {
+      "id": "tch-15",
+      "name": "Elena Oliveira Mendes",
+      "schoolId": "sch-03",
+      "role": "Professor(a) — Artes",
+      "employmentType": "effective",
+      "isTeacher": true,
+      "shift": "integral"
+    },
+    {
+      "id": "tch-16",
+      "name": "Felipe Costa Costa",
+      "schoolId": "sch-04",
+      "role": "Professor(a) — Inglês",
+      "employmentType": "other",
+      "isTeacher": true,
+      "shift": "noite"
+    },
+    {
+      "id": "tch-17",
+      "name": "Giulia Nascimento Gomes",
+      "schoolId": "sch-05",
+      "role": "Professor(a) — Português",
+      "employmentType": "effective",
+      "isTeacher": true,
+      "shift": "manha"
+    },
+    {
+      "id": "tch-18",
+      "name": "Hugo Carvalho Barros",
+      "schoolId": "sch-06",
+      "role": "Professor(a) — Matemática",
+      "employmentType": "contract",
+      "isTeacher": true,
+      "shift": "tarde"
+    },
+    {
+      "id": "tch-19",
+      "name": "Isabela Rocha Pereira",
+      "schoolId": "sch-07",
+      "role": "Professor(a) — Ciências",
+      "employmentType": "effective",
+      "isTeacher": true,
+      "shift": "integral"
+    },
+    {
+      "id": "tch-20",
+      "name": "João Monteiro Martins",
+      "schoolId": "sch-08",
+      "role": "Professor(a) — História",
+      "employmentType": "other",
+      "isTeacher": true,
+      "shift": "noite"
+    },
+    {
+      "id": "tch-21",
+      "name": "Karina Silva Silva",
+      "schoolId": "sch-09",
+      "role": "Professor(a) — Geografia",
+      "employmentType": "effective",
+      "isTeacher": true,
+      "shift": "manha"
+    },
+    {
+      "id": "tch-22",
+      "name": "Lucas Souza Almeida",
+      "schoolId": "sch-10",
+      "role": "Professor(a) — Educação Física",
+      "employmentType": "contract",
+      "isTeacher": true,
+      "shift": "tarde"
+    },
+    {
+      "id": "tch-23",
+      "name": "Marina Pereira Rocha",
+      "schoolId": "sch-11",
+      "role": "Professor(a) — Artes",
+      "employmentType": "effective",
+      "isTeacher": true,
+      "shift": "integral"
+    },
+    {
+      "id": "tch-24",
+      "name": "Nicolas Araújo Santos",
+      "schoolId": "sch-12",
+      "role": "Professor(a) — Inglês",
+      "employmentType": "other",
+      "isTeacher": true,
+      "shift": "noite"
+    },
+    {
+      "id": "tch-25",
+      "name": "Olivia Gomes Nascimento",
+      "schoolId": "sch-01",
+      "role": "Professor(a) — Português",
+      "employmentType": "effective",
+      "isTeacher": true,
+      "shift": "manha"
+    },
+    {
+      "id": "tch-26",
+      "name": "Pedro Ribeiro Ribeiro",
+      "schoolId": "sch-02",
+      "role": "Professor(a) — Matemática",
+      "employmentType": "contract",
+      "isTeacher": true,
+      "shift": "tarde"
+    },
+    {
+      "id": "tch-27",
+      "name": "Rafaela Mendes Oliveira",
+      "schoolId": "sch-03",
+      "role": "Professor(a) — Ciências",
+      "employmentType": "effective",
+      "isTeacher": true,
+      "shift": "integral"
+    },
+    {
+      "id": "tch-28",
+      "name": "Sofia Santos Araújo",
+      "schoolId": "sch-04",
+      "role": "Professor(a) — História",
+      "employmentType": "other",
+      "isTeacher": true,
+      "shift": "noite"
+    },
+    {
+      "id": "tch-29",
+      "name": "Tiago Lima Alves",
+      "schoolId": "sch-05",
+      "role": "Professor(a) — Geografia",
+      "employmentType": "effective",
+      "isTeacher": true,
+      "shift": "manha"
+    },
+    {
+      "id": "tch-30",
+      "name": "Valentina Almeida Souza",
+      "schoolId": "sch-06",
+      "role": "Professor(a) — Educação Física",
+      "employmentType": "contract",
+      "isTeacher": true,
+      "shift": "tarde"
+    },
+    {
+      "id": "tch-31",
+      "name": "Arthur Fernandes Fernandes",
+      "schoolId": "sch-07",
+      "role": "Professor(a) — Artes",
+      "employmentType": "effective",
+      "isTeacher": true,
+      "shift": "integral"
+    },
+    {
+      "id": "tch-32",
+      "name": "Beatriz Martins Monteiro",
+      "schoolId": "sch-08",
+      "role": "Professor(a) — Inglês",
+      "employmentType": "other",
+      "isTeacher": true,
+      "shift": "noite"
+    },
+    {
+      "id": "tch-33",
+      "name": "Caio Alves Lima",
+      "schoolId": "sch-09",
+      "role": "Professor(a) — Português",
+      "employmentType": "effective",
+      "isTeacher": true,
+      "shift": "manha"
+    },
+    {
+      "id": "tch-34",
+      "name": "Daniela Barros Carvalho",
+      "schoolId": "sch-10",
+      "role": "Professor(a) — Matemática",
+      "employmentType": "contract",
+      "isTeacher": true,
+      "shift": "tarde"
+    },
+    {
+      "id": "tch-35",
+      "name": "Eduardo Oliveira Mendes",
+      "schoolId": "sch-11",
+      "role": "Professor(a) — Ciências",
+      "employmentType": "effective",
+      "isTeacher": true,
+      "shift": "integral"
+    },
+    {
+      "id": "tch-36",
+      "name": "Fernanda Costa Costa",
+      "schoolId": "sch-12",
+      "role": "Professor(a) — História",
+      "employmentType": "other",
+      "isTeacher": true,
+      "shift": "noite"
+    },
+    {
+      "id": "tch-37",
+      "name": "Gabriel Nascimento Gomes",
+      "schoolId": "sch-01",
+      "role": "Professor(a) — Geografia",
+      "employmentType": "effective",
+      "isTeacher": true,
+      "shift": "manha"
+    },
+    {
+      "id": "tch-38",
+      "name": "Helena Carvalho Barros",
+      "schoolId": "sch-02",
+      "role": "Professor(a) — Educação Física",
+      "employmentType": "contract",
+      "isTeacher": true,
+      "shift": "tarde"
+    },
+    {
+      "id": "tch-39",
+      "name": "Igor Rocha Pereira",
+      "schoolId": "sch-03",
+      "role": "Professor(a) — Artes",
+      "employmentType": "effective",
+      "isTeacher": true,
+      "shift": "integral"
+    },
+    {
+      "id": "tch-40",
+      "name": "Julia Monteiro Martins",
+      "schoolId": "sch-04",
+      "role": "Professor(a) — Inglês",
+      "employmentType": "other",
+      "isTeacher": true,
+      "shift": "noite"
+    },
+    {
+      "id": "emp-01",
+      "name": "Ana Silva Silva",
+      "schoolId": "sch-01",
+      "role": "Auxiliar de sala",
+      "employmentType": "effective",
+      "isTeacher": false,
+      "shift": "tarde"
+    },
+    {
+      "id": "emp-02",
+      "name": "Bruno Souza Almeida",
+      "schoolId": "sch-02",
+      "role": "Merendeiro(a)",
+      "employmentType": "contract",
+      "isTeacher": false,
+      "shift": "integral"
+    },
+    {
+      "id": "emp-03",
+      "name": "Carla Pereira Rocha",
+      "schoolId": "sch-03",
+      "role": "Porteiro(a)",
+      "employmentType": "ciop",
+      "isTeacher": false,
+      "shift": "noite"
+    },
+    {
+      "id": "emp-04",
+      "name": "Diego Araújo Santos",
+      "schoolId": "sch-04",
+      "role": "Secretário(a) escolar",
+      "employmentType": "ciop",
+      "isTeacher": false,
+      "shift": "manha"
+    },
+    {
+      "id": "emp-05",
+      "name": "Elena Gomes Nascimento",
+      "schoolId": "sch-05",
+      "role": "Coordenador(a) pedagógico(a)",
+      "employmentType": "other",
+      "isTeacher": false,
+      "shift": "tarde"
+    },
+    {
+      "id": "emp-06",
+      "name": "Felipe Ribeiro Ribeiro",
+      "schoolId": "sch-06",
+      "role": "Monitor(a)",
+      "employmentType": "effective",
+      "isTeacher": false,
+      "shift": "integral"
+    },
+    {
+      "id": "emp-07",
+      "name": "Giulia Mendes Oliveira",
+      "schoolId": "sch-07",
+      "role": "Auxiliar de sala",
+      "employmentType": "contract",
+      "isTeacher": false,
+      "shift": "noite"
+    },
+    {
+      "id": "emp-08",
+      "name": "Hugo Santos Araújo",
+      "schoolId": "sch-08",
+      "role": "Merendeiro(a)",
+      "employmentType": "ciop",
+      "isTeacher": false,
+      "shift": "manha"
+    },
+    {
+      "id": "emp-09",
+      "name": "Isabela Lima Alves",
+      "schoolId": "sch-09",
+      "role": "Porteiro(a)",
+      "employmentType": "ciop",
+      "isTeacher": false,
+      "shift": "tarde"
+    },
+    {
+      "id": "emp-10",
+      "name": "João Almeida Souza",
+      "schoolId": "sch-10",
+      "role": "Secretário(a) escolar",
+      "employmentType": "other",
+      "isTeacher": false,
+      "shift": "integral"
+    },
+    {
+      "id": "emp-11",
+      "name": "Karina Fernandes Fernandes",
+      "schoolId": "sch-11",
+      "role": "Coordenador(a) pedagógico(a)",
+      "employmentType": "effective",
+      "isTeacher": false,
+      "shift": "noite"
+    },
+    {
+      "id": "emp-12",
+      "name": "Lucas Martins Monteiro",
+      "schoolId": "sch-12",
+      "role": "Monitor(a)",
+      "employmentType": "contract",
+      "isTeacher": false,
+      "shift": "manha"
+    },
+    {
+      "id": "emp-13",
+      "name": "Marina Alves Lima",
+      "schoolId": "sch-01",
+      "role": "Auxiliar de sala",
+      "employmentType": "ciop",
+      "isTeacher": false,
+      "shift": "tarde"
+    },
+    {
+      "id": "emp-14",
+      "name": "Nicolas Barros Carvalho",
+      "schoolId": "sch-02",
+      "role": "Merendeiro(a)",
+      "employmentType": "ciop",
+      "isTeacher": false,
+      "shift": "integral"
+    },
+    {
+      "id": "emp-15",
+      "name": "Olivia Oliveira Mendes",
+      "schoolId": "sch-03",
+      "role": "Porteiro(a)",
+      "employmentType": "other",
+      "isTeacher": false,
+      "shift": "noite"
+    },
+    {
+      "id": "emp-16",
+      "name": "Pedro Costa Costa",
+      "schoolId": "sch-04",
+      "role": "Secretário(a) escolar",
+      "employmentType": "effective",
+      "isTeacher": false,
+      "shift": "manha"
+    },
+    {
+      "id": "emp-17",
+      "name": "Rafaela Nascimento Gomes",
+      "schoolId": "sch-05",
+      "role": "Coordenador(a) pedagógico(a)",
+      "employmentType": "contract",
+      "isTeacher": false,
+      "shift": "tarde"
+    },
+    {
+      "id": "emp-18",
+      "name": "Sofia Carvalho Barros",
+      "schoolId": "sch-06",
+      "role": "Monitor(a)",
+      "employmentType": "ciop",
+      "isTeacher": false,
+      "shift": "integral"
+    },
+    {
+      "id": "emp-19",
+      "name": "Tiago Rocha Pereira",
+      "schoolId": "sch-07",
+      "role": "Auxiliar de sala",
+      "employmentType": "ciop",
+      "isTeacher": false,
+      "shift": "noite"
+    },
+    {
+      "id": "emp-20",
+      "name": "Valentina Monteiro Martins",
+      "schoolId": "sch-08",
+      "role": "Merendeiro(a)",
+      "employmentType": "other",
+      "isTeacher": false,
+      "shift": "manha"
+    },
+    {
+      "id": "emp-21",
+      "name": "Arthur Silva Silva",
+      "schoolId": "sch-09",
+      "role": "Porteiro(a)",
+      "employmentType": "effective",
+      "isTeacher": false,
+      "shift": "tarde"
+    },
+    {
+      "id": "emp-22",
+      "name": "Beatriz Souza Almeida",
+      "schoolId": "sch-10",
+      "role": "Secretário(a) escolar",
+      "employmentType": "contract",
+      "isTeacher": false,
+      "shift": "integral"
+    },
+    {
+      "id": "emp-23",
+      "name": "Caio Pereira Rocha",
+      "schoolId": "sch-11",
+      "role": "Coordenador(a) pedagógico(a)",
+      "employmentType": "ciop",
+      "isTeacher": false,
+      "shift": "noite"
+    },
+    {
+      "id": "emp-24",
+      "name": "Daniela Araújo Santos",
+      "schoolId": "sch-12",
+      "role": "Monitor(a)",
+      "employmentType": "ciop",
+      "isTeacher": false,
+      "shift": "manha"
+    },
+    {
+      "id": "emp-25",
+      "name": "Eduardo Gomes Nascimento",
+      "schoolId": "sch-01",
+      "role": "Auxiliar de sala",
+      "employmentType": "other",
+      "isTeacher": false,
+      "shift": "tarde"
+    },
+    {
+      "id": "emp-26",
+      "name": "Fernanda Ribeiro Ribeiro",
+      "schoolId": "sch-02",
+      "role": "Merendeiro(a)",
+      "employmentType": "effective",
+      "isTeacher": false,
+      "shift": "integral"
+    },
+    {
+      "id": "emp-27",
+      "name": "Gabriel Mendes Oliveira",
+      "schoolId": "sch-03",
+      "role": "Porteiro(a)",
+      "employmentType": "contract",
+      "isTeacher": false,
+      "shift": "noite"
+    },
+    {
+      "id": "emp-28",
+      "name": "Helena Santos Araújo",
+      "schoolId": "sch-04",
+      "role": "Secretário(a) escolar",
+      "employmentType": "ciop",
+      "isTeacher": false,
+      "shift": "manha"
+    },
+    {
+      "id": "emp-29",
+      "name": "Igor Lima Alves",
+      "schoolId": "sch-05",
+      "role": "Coordenador(a) pedagógico(a)",
+      "employmentType": "ciop",
+      "isTeacher": false,
+      "shift": "tarde"
+    },
+    {
+      "id": "emp-30",
+      "name": "Julia Almeida Souza",
+      "schoolId": "sch-06",
+      "role": "Monitor(a)",
+      "employmentType": "other",
+      "isTeacher": false,
+      "shift": "integral"
+    }
+  ],
+  "enrollments": [
+    {
+      "id": "enr-001",
+      "studentId": "stu-001",
+      "studentName": "Ana Silva Silva",
+      "schoolId": "sch-01",
+      "grade": "1º ano",
+      "stage": "fundamental",
+      "shift": "manha",
+      "status": "ativa",
+      "enrolledAt": "2026-02-01"
+    },
+    {
+      "id": "enr-002",
+      "studentId": "stu-002",
+      "studentName": "Bruno Souza Almeida",
+      "schoolId": "sch-02",
+      "grade": "2º ano",
+      "stage": "fundamental",
+      "shift": "tarde",
+      "status": "ativa",
+      "enrolledAt": "2026-02-02"
+    },
+    {
+      "id": "enr-003",
+      "studentId": "stu-003",
+      "studentName": "Carla Pereira Rocha",
+      "schoolId": "sch-03",
+      "grade": "3º ano",
+      "stage": "fundamental",
+      "shift": "integral",
+      "status": "ativa",
+      "enrolledAt": "2026-02-03"
+    },
+    {
+      "id": "enr-004",
+      "studentId": "stu-004",
+      "studentName": "Diego Araújo Santos",
+      "schoolId": "sch-04",
+      "grade": "Pré II",
+      "stage": "infantil",
+      "shift": "noite",
+      "status": "transferida",
+      "enrolledAt": "2026-02-04"
+    },
+    {
+      "id": "enr-005",
+      "studentId": "stu-005",
+      "studentName": "Elena Gomes Nascimento",
+      "schoolId": "sch-05",
+      "grade": "5º ano",
+      "stage": "fundamental",
+      "shift": "manha",
+      "status": "encerrada",
+      "enrolledAt": "2026-02-05"
+    },
+    {
+      "id": "enr-006",
+      "studentId": "stu-006",
+      "studentName": "Felipe Ribeiro Ribeiro",
+      "schoolId": "sch-06",
+      "grade": "6º ano",
+      "stage": "fundamental",
+      "shift": "tarde",
+      "status": "ativa",
+      "enrolledAt": "2026-02-06"
+    },
+    {
+      "id": "enr-007",
+      "studentId": "stu-007",
+      "studentName": "Giulia Mendes Oliveira",
+      "schoolId": "sch-07",
+      "grade": "Pré I",
+      "stage": "infantil",
+      "shift": "integral",
+      "status": "ativa",
+      "enrolledAt": "2026-02-07"
+    },
+    {
+      "id": "enr-008",
+      "studentId": "stu-008",
+      "studentName": "Hugo Santos Araújo",
+      "schoolId": "sch-08",
+      "grade": "Maternal I",
+      "stage": "creche",
+      "shift": "noite",
+      "status": "ativa",
+      "enrolledAt": "2026-02-08"
+    },
+    {
+      "id": "enr-009",
+      "studentId": "stu-009",
+      "studentName": "Isabela Lima Alves",
+      "schoolId": "sch-09",
+      "grade": "9º ano",
+      "stage": "fundamental",
+      "shift": "manha",
+      "status": "transferida",
+      "enrolledAt": "2026-02-09"
+    },
+    {
+      "id": "enr-010",
+      "studentId": "stu-010",
+      "studentName": "João Almeida Souza",
+      "schoolId": "sch-10",
+      "grade": "Berçário",
+      "stage": "creche",
+      "shift": "tarde",
+      "status": "encerrada",
+      "enrolledAt": "2026-02-10"
+    },
+    {
+      "id": "enr-011",
+      "studentId": "stu-011",
+      "studentName": "Karina Fernandes Fernandes",
+      "schoolId": "sch-11",
+      "grade": "Pré I",
+      "stage": "infantil",
+      "shift": "integral",
+      "status": "ativa",
+      "enrolledAt": "2026-02-11"
+    },
+    {
+      "id": "enr-012",
+      "studentId": "stu-012",
+      "studentName": "Lucas Martins Monteiro",
+      "schoolId": "sch-12",
+      "grade": "Pré II",
+      "stage": "infantil",
+      "shift": "noite",
+      "status": "ativa",
+      "enrolledAt": "2026-02-12"
+    },
+    {
+      "id": "enr-013",
+      "studentId": "stu-013",
+      "studentName": "Marina Alves Lima",
+      "schoolId": "sch-01",
+      "grade": "4º ano",
+      "stage": "fundamental",
+      "shift": "manha",
+      "status": "ativa",
+      "enrolledAt": "2026-02-13"
+    },
+    {
+      "id": "enr-014",
+      "studentId": "stu-014",
+      "studentName": "Nicolas Barros Carvalho",
+      "schoolId": "sch-02",
+      "grade": "5º ano",
+      "stage": "fundamental",
+      "shift": "tarde",
+      "status": "transferida",
+      "enrolledAt": "2026-02-14"
+    },
+    {
+      "id": "enr-015",
+      "studentId": "stu-015",
+      "studentName": "Olivia Oliveira Mendes",
+      "schoolId": "sch-03",
+      "grade": "6º ano",
+      "stage": "fundamental",
+      "shift": "integral",
+      "status": "encerrada",
+      "enrolledAt": "2026-02-15"
+    },
+    {
+      "id": "enr-016",
+      "studentId": "stu-016",
+      "studentName": "Pedro Costa Costa",
+      "schoolId": "sch-04",
+      "grade": "Pré II",
+      "stage": "infantil",
+      "shift": "noite",
+      "status": "ativa",
+      "enrolledAt": "2026-02-16"
+    },
+    {
+      "id": "enr-017",
+      "studentId": "stu-017",
+      "studentName": "Rafaela Nascimento Gomes",
+      "schoolId": "sch-05",
+      "grade": "8º ano",
+      "stage": "fundamental",
+      "shift": "manha",
+      "status": "ativa",
+      "enrolledAt": "2026-02-17"
+    },
+    {
+      "id": "enr-018",
+      "studentId": "stu-018",
+      "studentName": "Sofia Carvalho Barros",
+      "schoolId": "sch-06",
+      "grade": "9º ano",
+      "stage": "fundamental",
+      "shift": "tarde",
+      "status": "ativa",
+      "enrolledAt": "2026-02-18"
+    },
+    {
+      "id": "enr-019",
+      "studentId": "stu-019",
+      "studentName": "Tiago Rocha Pereira",
+      "schoolId": "sch-07",
+      "grade": "Pré I",
+      "stage": "infantil",
+      "shift": "integral",
+      "status": "transferida",
+      "enrolledAt": "2026-02-19"
+    },
+    {
+      "id": "enr-020",
+      "studentId": "stu-020",
+      "studentName": "Valentina Monteiro Martins",
+      "schoolId": "sch-08",
+      "grade": "Maternal I",
+      "stage": "creche",
+      "shift": "noite",
+      "status": "encerrada",
+      "enrolledAt": "2026-02-20"
+    },
+    {
+      "id": "enr-021",
+      "studentId": "stu-021",
+      "studentName": "Arthur Silva Silva",
+      "schoolId": "sch-09",
+      "grade": "3º ano",
+      "stage": "fundamental",
+      "shift": "manha",
+      "status": "ativa",
+      "enrolledAt": "2026-02-01"
+    },
+    {
+      "id": "enr-022",
+      "studentId": "stu-022",
+      "studentName": "Beatriz Souza Almeida",
+      "schoolId": "sch-10",
+      "grade": "Berçário",
+      "stage": "creche",
+      "shift": "tarde",
+      "status": "ativa",
+      "enrolledAt": "2026-02-02"
+    },
+    {
+      "id": "enr-023",
+      "studentId": "stu-023",
+      "studentName": "Caio Pereira Rocha",
+      "schoolId": "sch-11",
+      "grade": "Pré I",
+      "stage": "infantil",
+      "shift": "integral",
+      "status": "ativa",
+      "enrolledAt": "2026-02-03"
+    },
+    {
+      "id": "enr-024",
+      "studentId": "stu-024",
+      "studentName": "Daniela Araújo Santos",
+      "schoolId": "sch-12",
+      "grade": "Pré II",
+      "stage": "infantil",
+      "shift": "noite",
+      "status": "transferida",
+      "enrolledAt": "2026-02-04"
+    },
+    {
+      "id": "enr-025",
+      "studentId": "stu-025",
+      "studentName": "Eduardo Gomes Nascimento",
+      "schoolId": "sch-01",
+      "grade": "7º ano",
+      "stage": "fundamental",
+      "shift": "manha",
+      "status": "encerrada",
+      "enrolledAt": "2026-02-05"
+    },
+    {
+      "id": "enr-026",
+      "studentId": "stu-026",
+      "studentName": "Fernanda Ribeiro Ribeiro",
+      "schoolId": "sch-02",
+      "grade": "8º ano",
+      "stage": "fundamental",
+      "shift": "tarde",
+      "status": "ativa",
+      "enrolledAt": "2026-02-06"
+    },
+    {
+      "id": "enr-027",
+      "studentId": "stu-027",
+      "studentName": "Gabriel Mendes Oliveira",
+      "schoolId": "sch-03",
+      "grade": "9º ano",
+      "stage": "fundamental",
+      "shift": "integral",
+      "status": "ativa",
+      "enrolledAt": "2026-02-07"
+    },
+    {
+      "id": "enr-028",
+      "studentId": "stu-028",
+      "studentName": "Helena Santos Araújo",
+      "schoolId": "sch-04",
+      "grade": "Pré II",
+      "stage": "infantil",
+      "shift": "noite",
+      "status": "ativa",
+      "enrolledAt": "2026-02-08"
+    },
+    {
+      "id": "enr-029",
+      "studentId": "stu-029",
+      "studentName": "Igor Lima Alves",
+      "schoolId": "sch-05",
+      "grade": "2º ano",
+      "stage": "fundamental",
+      "shift": "manha",
+      "status": "transferida",
+      "enrolledAt": "2026-02-09"
+    },
+    {
+      "id": "enr-030",
+      "studentId": "stu-030",
+      "studentName": "Julia Almeida Souza",
+      "schoolId": "sch-06",
+      "grade": "3º ano",
+      "stage": "fundamental",
+      "shift": "tarde",
+      "status": "encerrada",
+      "enrolledAt": "2026-02-10"
+    },
+    {
+      "id": "enr-031",
+      "studentId": "stu-031",
+      "studentName": "Ana Fernandes Fernandes",
+      "schoolId": "sch-07",
+      "grade": "Pré I",
+      "stage": "infantil",
+      "shift": "integral",
+      "status": "ativa",
+      "enrolledAt": "2026-02-11"
+    },
+    {
+      "id": "enr-032",
+      "studentId": "stu-032",
+      "studentName": "Bruno Martins Monteiro",
+      "schoolId": "sch-08",
+      "grade": "Maternal I",
+      "stage": "creche",
+      "shift": "noite",
+      "status": "ativa",
+      "enrolledAt": "2026-02-12"
+    },
+    {
+      "id": "enr-033",
+      "studentId": "stu-033",
+      "studentName": "Carla Alves Lima",
+      "schoolId": "sch-09",
+      "grade": "6º ano",
+      "stage": "fundamental",
+      "shift": "manha",
+      "status": "ativa",
+      "enrolledAt": "2026-02-13"
+    },
+    {
+      "id": "enr-034",
+      "studentId": "stu-034",
+      "studentName": "Diego Barros Carvalho",
+      "schoolId": "sch-10",
+      "grade": "Berçário",
+      "stage": "creche",
+      "shift": "tarde",
+      "status": "transferida",
+      "enrolledAt": "2026-02-14"
+    },
+    {
+      "id": "enr-035",
+      "studentId": "stu-035",
+      "studentName": "Elena Oliveira Mendes",
+      "schoolId": "sch-11",
+      "grade": "Pré I",
+      "stage": "infantil",
+      "shift": "integral",
+      "status": "encerrada",
+      "enrolledAt": "2026-02-15"
+    },
+    {
+      "id": "enr-036",
+      "studentId": "stu-036",
+      "studentName": "Felipe Costa Costa",
+      "schoolId": "sch-12",
+      "grade": "Pré II",
+      "stage": "infantil",
+      "shift": "noite",
+      "status": "ativa",
+      "enrolledAt": "2026-02-16"
+    },
+    {
+      "id": "enr-037",
+      "studentId": "stu-037",
+      "studentName": "Giulia Nascimento Gomes",
+      "schoolId": "sch-01",
+      "grade": "1º ano",
+      "stage": "fundamental",
+      "shift": "manha",
+      "status": "ativa",
+      "enrolledAt": "2026-02-17"
+    },
+    {
+      "id": "enr-038",
+      "studentId": "stu-038",
+      "studentName": "Hugo Carvalho Barros",
+      "schoolId": "sch-02",
+      "grade": "2º ano",
+      "stage": "fundamental",
+      "shift": "tarde",
+      "status": "ativa",
+      "enrolledAt": "2026-02-18"
+    },
+    {
+      "id": "enr-039",
+      "studentId": "stu-039",
+      "studentName": "Isabela Rocha Pereira",
+      "schoolId": "sch-03",
+      "grade": "3º ano",
+      "stage": "fundamental",
+      "shift": "integral",
+      "status": "transferida",
+      "enrolledAt": "2026-02-19"
+    },
+    {
+      "id": "enr-040",
+      "studentId": "stu-040",
+      "studentName": "João Monteiro Martins",
+      "schoolId": "sch-04",
+      "grade": "Pré II",
+      "stage": "infantil",
+      "shift": "noite",
+      "status": "encerrada",
+      "enrolledAt": "2026-02-20"
+    },
+    {
+      "id": "enr-041",
+      "studentId": "stu-041",
+      "studentName": "Karina Silva Silva",
+      "schoolId": "sch-05",
+      "grade": "5º ano",
+      "stage": "fundamental",
+      "shift": "manha",
+      "status": "ativa",
+      "enrolledAt": "2026-02-01"
+    },
+    {
+      "id": "enr-042",
+      "studentId": "stu-042",
+      "studentName": "Lucas Souza Almeida",
+      "schoolId": "sch-06",
+      "grade": "6º ano",
+      "stage": "fundamental",
+      "shift": "tarde",
+      "status": "ativa",
+      "enrolledAt": "2026-02-02"
+    },
+    {
+      "id": "enr-043",
+      "studentId": "stu-043",
+      "studentName": "Marina Pereira Rocha",
+      "schoolId": "sch-07",
+      "grade": "Pré I",
+      "stage": "infantil",
+      "shift": "integral",
+      "status": "ativa",
+      "enrolledAt": "2026-02-03"
+    },
+    {
+      "id": "enr-044",
+      "studentId": "stu-044",
+      "studentName": "Nicolas Araújo Santos",
+      "schoolId": "sch-08",
+      "grade": "Maternal I",
+      "stage": "creche",
+      "shift": "noite",
+      "status": "transferida",
+      "enrolledAt": "2026-02-04"
+    },
+    {
+      "id": "enr-045",
+      "studentId": "stu-045",
+      "studentName": "Olivia Gomes Nascimento",
+      "schoolId": "sch-09",
+      "grade": "9º ano",
+      "stage": "fundamental",
+      "shift": "manha",
+      "status": "encerrada",
+      "enrolledAt": "2026-02-05"
+    },
+    {
+      "id": "enr-046",
+      "studentId": "stu-046",
+      "studentName": "Pedro Ribeiro Ribeiro",
+      "schoolId": "sch-10",
+      "grade": "Berçário",
+      "stage": "creche",
+      "shift": "tarde",
+      "status": "ativa",
+      "enrolledAt": "2026-02-06"
+    },
+    {
+      "id": "enr-047",
+      "studentId": "stu-047",
+      "studentName": "Rafaela Mendes Oliveira",
+      "schoolId": "sch-11",
+      "grade": "Pré I",
+      "stage": "infantil",
+      "shift": "integral",
+      "status": "ativa",
+      "enrolledAt": "2026-02-07"
+    },
+    {
+      "id": "enr-048",
+      "studentId": "stu-048",
+      "studentName": "Sofia Santos Araújo",
+      "schoolId": "sch-12",
+      "grade": "Pré II",
+      "stage": "infantil",
+      "shift": "noite",
+      "status": "ativa",
+      "enrolledAt": "2026-02-08"
+    },
+    {
+      "id": "enr-049",
+      "studentId": "stu-049",
+      "studentName": "Tiago Lima Alves",
+      "schoolId": "sch-01",
+      "grade": "4º ano",
+      "stage": "fundamental",
+      "shift": "manha",
+      "status": "transferida",
+      "enrolledAt": "2026-02-09"
+    },
+    {
+      "id": "enr-050",
+      "studentId": "stu-050",
+      "studentName": "Valentina Almeida Souza",
+      "schoolId": "sch-02",
+      "grade": "5º ano",
+      "stage": "fundamental",
+      "shift": "tarde",
+      "status": "encerrada",
+      "enrolledAt": "2026-02-10"
+    }
+  ],
+  "attendanceMonthly": [
+    {
+      "month": "Jan",
+      "rate": 94.1
+    },
+    {
+      "month": "Fev",
+      "rate": 93.8
+    },
+    {
+      "month": "Mar",
+      "rate": 94.3
+    },
+    {
+      "month": "Abr",
+      "rate": 93.5
+    },
+    {
+      "month": "Mai",
+      "rate": 92.9
+    },
+    {
+      "month": "Jun",
+      "rate": 94
+    },
+    {
+      "month": "Jul",
+      "rate": 93.6
+    },
+    {
+      "month": "Ago",
+      "rate": 93.2
+    },
+    {
+      "month": "Set",
+      "rate": 93.9
+    }
+  ],
+  "attendanceBySchool": [
+    {
+      "schoolId": "sch-01",
+      "schoolName": "EMEF João XXIII",
+      "rate": 93.2,
+      "lowAttendance": 12
+    },
+    {
+      "schoolId": "sch-02",
+      "schoolName": "EMEF Maria Silva",
+      "rate": 94.1,
+      "lowAttendance": 9
+    },
+    {
+      "schoolId": "sch-03",
+      "schoolName": "EMEF Paulo Freire",
+      "rate": 92.8,
+      "lowAttendance": 14
+    },
+    {
+      "schoolId": "sch-04",
+      "schoolName": "EMEI Jardim Brasil",
+      "rate": 95,
+      "lowAttendance": 6
+    },
+    {
+      "schoolId": "sch-05",
+      "schoolName": "EMEF Castro Alves",
+      "rate": 93.7,
+      "lowAttendance": 11
+    },
+    {
+      "schoolId": "sch-06",
+      "schoolName": "EMEF Cecília Meireles",
+      "rate": 94.5,
+      "lowAttendance": 8
+    },
+    {
+      "schoolId": "sch-07",
+      "schoolName": "EMEI Pequeno Príncipe",
+      "rate": 95.4,
+      "lowAttendance": 4
+    },
+    {
+      "schoolId": "sch-08",
+      "schoolName": "Creche Sol Nascente",
+      "rate": 96.1,
+      "lowAttendance": 2
+    },
+    {
+      "schoolId": "sch-09",
+      "schoolName": "EMEF Dom Pedro II",
+      "rate": 93,
+      "lowAttendance": 10
+    },
+    {
+      "schoolId": "sch-10",
+      "schoolName": "Centro Municipal Integrado",
+      "rate": 94.8,
+      "lowAttendance": 7
+    },
+    {
+      "schoolId": "sch-11",
+      "schoolName": "EMEI Arco-Íris",
+      "rate": 95.6,
+      "lowAttendance": 3
+    },
+    {
+      "schoolId": "sch-12",
+      "schoolName": "Creche Cantinho Feliz",
+      "rate": 96.4,
+      "lowAttendance": 1
+    }
+  ],
+  "tutoring": [
+    {
+      "id": "tut-01",
+      "studentId": "stu-001",
+      "studentName": "Ana Silva Silva",
+      "schoolId": "sch-01",
+      "grade": "1º ano",
+      "subjects": [
+        "Português",
+        "Matemática"
+      ],
+      "bimestre": "1º",
+      "status": "em_acompanhamento"
+    },
+    {
+      "id": "tut-02",
+      "studentId": "stu-004",
+      "studentName": "Diego Araújo Santos",
+      "schoolId": "sch-04",
+      "grade": "Pré II",
+      "subjects": [
+        "Matemática"
+      ],
+      "bimestre": "2º",
+      "status": "evoluiu"
+    },
+    {
+      "id": "tut-03",
+      "studentId": "stu-007",
+      "studentName": "Giulia Mendes Oliveira",
+      "schoolId": "sch-07",
+      "grade": "Pré I",
+      "subjects": [
+        "Português",
+        "Matemática"
+      ],
+      "bimestre": "3º",
+      "status": "em_acompanhamento"
+    },
+    {
+      "id": "tut-04",
+      "studentId": "stu-010",
+      "studentName": "João Almeida Souza",
+      "schoolId": "sch-10",
+      "grade": "Berçário",
+      "subjects": [
+        "Português"
+      ],
+      "bimestre": "4º",
+      "status": "em_acompanhamento"
+    },
+    {
+      "id": "tut-05",
+      "studentId": "stu-013",
+      "studentName": "Marina Alves Lima",
+      "schoolId": "sch-01",
+      "grade": "4º ano",
+      "subjects": [
+        "Português",
+        "Matemática"
+      ],
+      "bimestre": "1º",
+      "status": "evoluiu"
+    },
+    {
+      "id": "tut-06",
+      "studentId": "stu-016",
+      "studentName": "Pedro Costa Costa",
+      "schoolId": "sch-04",
+      "grade": "Pré II",
+      "subjects": [
+        "Matemática"
+      ],
+      "bimestre": "2º",
+      "status": "em_acompanhamento"
+    },
+    {
+      "id": "tut-07",
+      "studentId": "stu-019",
+      "studentName": "Tiago Rocha Pereira",
+      "schoolId": "sch-07",
+      "grade": "Pré I",
+      "subjects": [
+        "Português",
+        "Matemática"
+      ],
+      "bimestre": "3º",
+      "status": "em_acompanhamento"
+    },
+    {
+      "id": "tut-08",
+      "studentId": "stu-022",
+      "studentName": "Beatriz Souza Almeida",
+      "schoolId": "sch-10",
+      "grade": "Berçário",
+      "subjects": [
+        "Matemática"
+      ],
+      "bimestre": "4º",
+      "status": "evoluiu"
+    },
+    {
+      "id": "tut-09",
+      "studentId": "stu-025",
+      "studentName": "Eduardo Gomes Nascimento",
+      "schoolId": "sch-01",
+      "grade": "7º ano",
+      "subjects": [
+        "Português",
+        "Matemática"
+      ],
+      "bimestre": "1º",
+      "status": "em_acompanhamento"
+    },
+    {
+      "id": "tut-10",
+      "studentId": "stu-028",
+      "studentName": "Helena Santos Araújo",
+      "schoolId": "sch-04",
+      "grade": "Pré II",
+      "subjects": [
+        "Português"
+      ],
+      "bimestre": "2º",
+      "status": "em_acompanhamento"
+    },
+    {
+      "id": "tut-11",
+      "studentId": "stu-031",
+      "studentName": "Ana Fernandes Fernandes",
+      "schoolId": "sch-07",
+      "grade": "Pré I",
+      "subjects": [
+        "Português",
+        "Matemática"
+      ],
+      "bimestre": "3º",
+      "status": "evoluiu"
+    },
+    {
+      "id": "tut-12",
+      "studentId": "stu-034",
+      "studentName": "Diego Barros Carvalho",
+      "schoolId": "sch-10",
+      "grade": "Berçário",
+      "subjects": [
+        "Matemática"
+      ],
+      "bimestre": "4º",
+      "status": "em_acompanhamento"
+    },
+    {
+      "id": "tut-13",
+      "studentId": "stu-037",
+      "studentName": "Giulia Nascimento Gomes",
+      "schoolId": "sch-01",
+      "grade": "1º ano",
+      "subjects": [
+        "Português",
+        "Matemática"
+      ],
+      "bimestre": "1º",
+      "status": "em_acompanhamento"
+    },
+    {
+      "id": "tut-14",
+      "studentId": "stu-040",
+      "studentName": "João Monteiro Martins",
+      "schoolId": "sch-04",
+      "grade": "Pré II",
+      "subjects": [
+        "Matemática"
+      ],
+      "bimestre": "2º",
+      "status": "evoluiu"
+    },
+    {
+      "id": "tut-15",
+      "studentId": "stu-043",
+      "studentName": "Marina Pereira Rocha",
+      "schoolId": "sch-07",
+      "grade": "Pré I",
+      "subjects": [
+        "Português",
+        "Matemática"
+      ],
+      "bimestre": "3º",
+      "status": "em_acompanhamento"
+    },
+    {
+      "id": "tut-16",
+      "studentId": "stu-046",
+      "studentName": "Pedro Ribeiro Ribeiro",
+      "schoolId": "sch-10",
+      "grade": "Berçário",
+      "subjects": [
+        "Português"
+      ],
+      "bimestre": "4º",
+      "status": "em_acompanhamento"
+    },
+    {
+      "id": "tut-17",
+      "studentId": "stu-049",
+      "studentName": "Tiago Lima Alves",
+      "schoolId": "sch-01",
+      "grade": "4º ano",
+      "subjects": [
+        "Português",
+        "Matemática"
+      ],
+      "bimestre": "1º",
+      "status": "evoluiu"
+    },
+    {
+      "id": "tut-18",
+      "studentId": "stu-052",
+      "studentName": "Beatriz Martins Monteiro",
+      "schoolId": "sch-04",
+      "grade": "Pré II",
+      "subjects": [
+        "Matemática"
+      ],
+      "bimestre": "2º",
+      "status": "em_acompanhamento"
+    },
+    {
+      "id": "tut-19",
+      "studentId": "stu-055",
+      "studentName": "Eduardo Oliveira Mendes",
+      "schoolId": "sch-07",
+      "grade": "Pré I",
+      "subjects": [
+        "Português",
+        "Matemática"
+      ],
+      "bimestre": "3º",
+      "status": "em_acompanhamento"
+    },
+    {
+      "id": "tut-20",
+      "studentId": "stu-058",
+      "studentName": "Helena Carvalho Barros",
+      "schoolId": "sch-10",
+      "grade": "Berçário",
+      "subjects": [
+        "Matemática"
+      ],
+      "bimestre": "4º",
+      "status": "evoluiu"
+    },
+    {
+      "id": "tut-21",
+      "studentId": "stu-061",
+      "studentName": "Ana Silva Silva",
+      "schoolId": "sch-01",
+      "grade": "7º ano",
+      "subjects": [
+        "Português",
+        "Matemática"
+      ],
+      "bimestre": "1º",
+      "status": "em_acompanhamento"
+    },
+    {
+      "id": "tut-22",
+      "studentId": "stu-064",
+      "studentName": "Diego Araújo Santos",
+      "schoolId": "sch-04",
+      "grade": "Pré II",
+      "subjects": [
+        "Português"
+      ],
+      "bimestre": "2º",
+      "status": "em_acompanhamento"
+    },
+    {
+      "id": "tut-23",
+      "studentId": "stu-067",
+      "studentName": "Giulia Mendes Oliveira",
+      "schoolId": "sch-07",
+      "grade": "Pré I",
+      "subjects": [
+        "Português",
+        "Matemática"
+      ],
+      "bimestre": "3º",
+      "status": "evoluiu"
+    },
+    {
+      "id": "tut-24",
+      "studentId": "stu-070",
+      "studentName": "João Almeida Souza",
+      "schoolId": "sch-10",
+      "grade": "Berçário",
+      "subjects": [
+        "Matemática"
+      ],
+      "bimestre": "4º",
+      "status": "em_acompanhamento"
+    },
+    {
+      "id": "tut-25",
+      "studentId": "stu-073",
+      "studentName": "Marina Alves Lima",
+      "schoolId": "sch-01",
+      "grade": "1º ano",
+      "subjects": [
+        "Português",
+        "Matemática"
+      ],
+      "bimestre": "1º",
+      "status": "em_acompanhamento"
+    },
+    {
+      "id": "tut-26",
+      "studentId": "stu-076",
+      "studentName": "Pedro Costa Costa",
+      "schoolId": "sch-04",
+      "grade": "Pré II",
+      "subjects": [
+        "Matemática"
+      ],
+      "bimestre": "2º",
+      "status": "evoluiu"
+    },
+    {
+      "id": "tut-27",
+      "studentId": "stu-079",
+      "studentName": "Tiago Rocha Pereira",
+      "schoolId": "sch-07",
+      "grade": "Pré I",
+      "subjects": [
+        "Português",
+        "Matemática"
+      ],
+      "bimestre": "3º",
+      "status": "em_acompanhamento"
+    }
+  ],
+  "inclusive": [
+    {
+      "id": "inc-01",
+      "studentId": "stu-001",
+      "studentName": "Ana Silva Silva",
+      "schoolId": "sch-01",
+      "grade": "1º ano",
+      "hasDocumentation": false,
+      "hasTutor": false,
+      "tutorName": null,
+      "status": "pendente"
+    },
+    {
+      "id": "inc-02",
+      "studentId": "stu-008",
+      "studentName": "Hugo Santos Araújo",
+      "schoolId": "sch-08",
+      "grade": "Maternal I",
+      "hasDocumentation": true,
+      "hasTutor": true,
+      "tutorName": "Lucas Souza Almeida",
+      "status": "definido"
+    },
+    {
+      "id": "inc-03",
+      "studentId": "stu-012",
+      "studentName": "Lucas Martins Monteiro",
+      "schoolId": "sch-12",
+      "grade": "Pré II",
+      "hasDocumentation": true,
+      "hasTutor": true,
+      "tutorName": "Marina Pereira Rocha",
+      "status": "definido"
+    },
+    {
+      "id": "inc-04",
+      "studentId": "stu-015",
+      "studentName": "Olivia Oliveira Mendes",
+      "schoolId": "sch-03",
+      "grade": "6º ano",
+      "hasDocumentation": true,
+      "hasTutor": true,
+      "tutorName": "Nicolas Araújo Santos",
+      "status": "definido"
+    },
+    {
+      "id": "inc-05",
+      "studentId": "stu-022",
+      "studentName": "Beatriz Souza Almeida",
+      "schoolId": "sch-10",
+      "grade": "Berçário",
+      "hasDocumentation": true,
+      "hasTutor": false,
+      "tutorName": null,
+      "status": "definido"
+    },
+    {
+      "id": "inc-06",
+      "studentId": "stu-023",
+      "studentName": "Caio Pereira Rocha",
+      "schoolId": "sch-11",
+      "grade": "Pré I",
+      "hasDocumentation": false,
+      "hasTutor": true,
+      "tutorName": "Pedro Ribeiro Ribeiro",
+      "status": "pendente"
+    },
+    {
+      "id": "inc-07",
+      "studentId": "stu-029",
+      "studentName": "Igor Lima Alves",
+      "schoolId": "sch-05",
+      "grade": "2º ano",
+      "hasDocumentation": true,
+      "hasTutor": true,
+      "tutorName": "Rafaela Mendes Oliveira",
+      "status": "definido"
+    },
+    {
+      "id": "inc-08",
+      "studentId": "stu-034",
+      "studentName": "Diego Barros Carvalho",
+      "schoolId": "sch-10",
+      "grade": "Berçário",
+      "hasDocumentation": true,
+      "hasTutor": true,
+      "tutorName": "Sofia Santos Araújo",
+      "status": "definido"
+    },
+    {
+      "id": "inc-09",
+      "studentId": "stu-036",
+      "studentName": "Felipe Costa Costa",
+      "schoolId": "sch-12",
+      "grade": "Pré II",
+      "hasDocumentation": true,
+      "hasTutor": false,
+      "tutorName": null,
+      "status": "definido"
+    },
+    {
+      "id": "inc-10",
+      "studentId": "stu-043",
+      "studentName": "Marina Pereira Rocha",
+      "schoolId": "sch-07",
+      "grade": "Pré I",
+      "hasDocumentation": true,
+      "hasTutor": true,
+      "tutorName": "Valentina Almeida Souza",
+      "status": "definido"
+    },
+    {
+      "id": "inc-11",
+      "studentId": "stu-045",
+      "studentName": "Olivia Gomes Nascimento",
+      "schoolId": "sch-09",
+      "grade": "9º ano",
+      "hasDocumentation": false,
+      "hasTutor": true,
+      "tutorName": "Arthur Fernandes Fernandes",
+      "status": "pendente"
+    },
+    {
+      "id": "inc-12",
+      "studentId": "stu-050",
+      "studentName": "Valentina Almeida Souza",
+      "schoolId": "sch-02",
+      "grade": "5º ano",
+      "hasDocumentation": true,
+      "hasTutor": true,
+      "tutorName": "Beatriz Martins Monteiro",
+      "status": "definido"
+    },
+    {
+      "id": "inc-13",
+      "studentId": "stu-056",
+      "studentName": "Fernanda Costa Costa",
+      "schoolId": "sch-08",
+      "grade": "Maternal I",
+      "hasDocumentation": true,
+      "hasTutor": false,
+      "tutorName": null,
+      "status": "definido"
+    },
+    {
+      "id": "inc-14",
+      "studentId": "stu-057",
+      "studentName": "Gabriel Nascimento Gomes",
+      "schoolId": "sch-09",
+      "grade": "3º ano",
+      "hasDocumentation": true,
+      "hasTutor": true,
+      "tutorName": "Daniela Barros Carvalho",
+      "status": "definido"
+    },
+    {
+      "id": "inc-15",
+      "studentId": "stu-064",
+      "studentName": "Diego Araújo Santos",
+      "schoolId": "sch-04",
+      "grade": "Pré II",
+      "hasDocumentation": true,
+      "hasTutor": true,
+      "tutorName": "Eduardo Oliveira Mendes",
+      "status": "definido"
+    },
+    {
+      "id": "inc-16",
+      "studentId": "stu-067",
+      "studentName": "Giulia Mendes Oliveira",
+      "schoolId": "sch-07",
+      "grade": "Pré I",
+      "hasDocumentation": false,
+      "hasTutor": true,
+      "tutorName": "Fernanda Costa Costa",
+      "status": "pendente"
+    },
+    {
+      "id": "inc-17",
+      "studentId": "stu-071",
+      "studentName": "Karina Fernandes Fernandes",
+      "schoolId": "sch-11",
+      "grade": "Pré I",
+      "hasDocumentation": true,
+      "hasTutor": false,
+      "tutorName": null,
+      "status": "definido"
+    },
+    {
+      "id": "inc-18",
+      "studentId": "stu-078",
+      "studentName": "Sofia Carvalho Barros",
+      "schoolId": "sch-06",
+      "grade": "6º ano",
+      "hasDocumentation": true,
+      "hasTutor": true,
+      "tutorName": "Helena Carvalho Barros",
+      "status": "definido"
+    }
+  ],
+  "transportRoutes": [
+    {
+      "id": "rt-01",
+      "name": "Rota Centro — Norte",
+      "vehicle": "Ônibus 12",
+      "driver": "José Almeida",
+      "students": 48
+    },
+    {
+      "id": "rt-02",
+      "name": "Rota Vila Nova",
+      "vehicle": "Van 03",
+      "driver": "Marcos Souza",
+      "students": 22
+    },
+    {
+      "id": "rt-03",
+      "name": "Rota Jardim Brasil",
+      "vehicle": "Ônibus 07",
+      "driver": "Paulo Mendes",
+      "students": 36
+    },
+    {
+      "id": "rt-04",
+      "name": "Rota Boa Vista",
+      "vehicle": "Van 05",
+      "driver": "Ricardo Lima",
+      "students": 18
+    },
+    {
+      "id": "rt-05",
+      "name": "Rota São José",
+      "vehicle": "Ônibus 09",
+      "driver": "Carlos Ribeiro",
+      "students": 41
+    }
+  ],
+  "transportStudents": [
+    {
+      "id": "tr-01",
+      "studentId": "stu-001",
+      "studentName": "Ana Silva Silva",
+      "schoolId": "sch-01",
+      "routeId": "rt-01",
+      "neighborhood": "Centro"
+    },
+    {
+      "id": "tr-02",
+      "studentId": "stu-005",
+      "studentName": "Elena Gomes Nascimento",
+      "schoolId": "sch-05",
+      "routeId": "rt-02",
+      "neighborhood": "Boa Vista"
+    },
+    {
+      "id": "tr-03",
+      "studentId": "stu-009",
+      "studentName": "Isabela Lima Alves",
+      "schoolId": "sch-09",
+      "routeId": "rt-03",
+      "neighborhood": "Industrial"
+    },
+    {
+      "id": "tr-04",
+      "studentId": "stu-013",
+      "studentName": "Marina Alves Lima",
+      "schoolId": "sch-01",
+      "routeId": "rt-04",
+      "neighborhood": "Centro"
+    },
+    {
+      "id": "tr-05",
+      "studentId": "stu-017",
+      "studentName": "Rafaela Nascimento Gomes",
+      "schoolId": "sch-05",
+      "routeId": "rt-05",
+      "neighborhood": "Boa Vista"
+    },
+    {
+      "id": "tr-06",
+      "studentId": "stu-021",
+      "studentName": "Arthur Silva Silva",
+      "schoolId": "sch-09",
+      "routeId": "rt-01",
+      "neighborhood": "Industrial"
+    },
+    {
+      "id": "tr-07",
+      "studentId": "stu-025",
+      "studentName": "Eduardo Gomes Nascimento",
+      "schoolId": "sch-01",
+      "routeId": "rt-02",
+      "neighborhood": "Centro"
+    },
+    {
+      "id": "tr-08",
+      "studentId": "stu-029",
+      "studentName": "Igor Lima Alves",
+      "schoolId": "sch-05",
+      "routeId": "rt-03",
+      "neighborhood": "Boa Vista"
+    },
+    {
+      "id": "tr-09",
+      "studentId": "stu-033",
+      "studentName": "Carla Alves Lima",
+      "schoolId": "sch-09",
+      "routeId": "rt-04",
+      "neighborhood": "Industrial"
+    },
+    {
+      "id": "tr-10",
+      "studentId": "stu-037",
+      "studentName": "Giulia Nascimento Gomes",
+      "schoolId": "sch-01",
+      "routeId": "rt-05",
+      "neighborhood": "Centro"
+    },
+    {
+      "id": "tr-11",
+      "studentId": "stu-041",
+      "studentName": "Karina Silva Silva",
+      "schoolId": "sch-05",
+      "routeId": "rt-01",
+      "neighborhood": "Boa Vista"
+    },
+    {
+      "id": "tr-12",
+      "studentId": "stu-045",
+      "studentName": "Olivia Gomes Nascimento",
+      "schoolId": "sch-09",
+      "routeId": "rt-02",
+      "neighborhood": "Industrial"
+    },
+    {
+      "id": "tr-13",
+      "studentId": "stu-049",
+      "studentName": "Tiago Lima Alves",
+      "schoolId": "sch-01",
+      "routeId": "rt-03",
+      "neighborhood": "Centro"
+    },
+    {
+      "id": "tr-14",
+      "studentId": "stu-053",
+      "studentName": "Caio Alves Lima",
+      "schoolId": "sch-05",
+      "routeId": "rt-04",
+      "neighborhood": "Boa Vista"
+    },
+    {
+      "id": "tr-15",
+      "studentId": "stu-057",
+      "studentName": "Gabriel Nascimento Gomes",
+      "schoolId": "sch-09",
+      "routeId": "rt-05",
+      "neighborhood": "Industrial"
+    },
+    {
+      "id": "tr-16",
+      "studentId": "stu-061",
+      "studentName": "Ana Silva Silva",
+      "schoolId": "sch-01",
+      "routeId": "rt-01",
+      "neighborhood": "Centro"
+    },
+    {
+      "id": "tr-17",
+      "studentId": "stu-065",
+      "studentName": "Elena Gomes Nascimento",
+      "schoolId": "sch-05",
+      "routeId": "rt-02",
+      "neighborhood": "Boa Vista"
+    },
+    {
+      "id": "tr-18",
+      "studentId": "stu-069",
+      "studentName": "Isabela Lima Alves",
+      "schoolId": "sch-09",
+      "routeId": "rt-03",
+      "neighborhood": "Industrial"
+    },
+    {
+      "id": "tr-19",
+      "studentId": "stu-073",
+      "studentName": "Marina Alves Lima",
+      "schoolId": "sch-01",
+      "routeId": "rt-04",
+      "neighborhood": "Centro"
+    },
+    {
+      "id": "tr-20",
+      "studentId": "stu-077",
+      "studentName": "Rafaela Nascimento Gomes",
+      "schoolId": "sch-05",
+      "routeId": "rt-05",
+      "neighborhood": "Boa Vista"
+    }
+  ],
+  "intersectoral": [
+    {
+      "id": "is-01",
+      "studentId": "stu-001",
+      "studentName": "Ana Silva Silva",
+      "schoolId": "sch-01",
+      "sector": "Educação",
+      "status": "ativo",
+      "openedAt": "2026-02-10",
+      "dueAt": "2026-10-01",
+      "notes": "Acompanhamento intersetorial mockado para validação."
+    },
+    {
+      "id": "is-02",
+      "studentId": "stu-003",
+      "studentName": "Carla Pereira Rocha",
+      "schoolId": "sch-03",
+      "sector": "Saúde",
+      "status": "aguardando_retorno",
+      "openedAt": "2026-03-10",
+      "dueAt": "2026-10-02",
+      "notes": "Acompanhamento intersetorial mockado para validação."
+    },
+    {
+      "id": "is-03",
+      "studentId": "stu-005",
+      "studentName": "Elena Gomes Nascimento",
+      "schoolId": "sch-05",
+      "sector": "Conselho Tutelar",
+      "status": "encerrado",
+      "openedAt": "2026-04-10",
+      "dueAt": "2026-10-03",
+      "notes": "Acompanhamento intersetorial mockado para validação."
+    },
+    {
+      "id": "is-04",
+      "studentId": "stu-007",
+      "studentName": "Giulia Mendes Oliveira",
+      "schoolId": "sch-07",
+      "sector": "CAPS",
+      "status": "pendente",
+      "openedAt": "2026-05-10",
+      "dueAt": "2026-10-04",
+      "notes": "Acompanhamento intersetorial mockado para validação."
+    },
+    {
+      "id": "is-05",
+      "studentId": "stu-009",
+      "studentName": "Isabela Lima Alves",
+      "schoolId": "sch-09",
+      "sector": "Assistência Social",
+      "status": "ativo",
+      "openedAt": "2026-06-10",
+      "dueAt": "2026-10-05",
+      "notes": "Acompanhamento intersetorial mockado para validação."
+    },
+    {
+      "id": "is-06",
+      "studentId": "stu-011",
+      "studentName": "Karina Fernandes Fernandes",
+      "schoolId": "sch-11",
+      "sector": "Educação",
+      "status": "aguardando_retorno",
+      "openedAt": "2026-07-10",
+      "dueAt": "2026-10-06",
+      "notes": "Acompanhamento intersetorial mockado para validação."
+    },
+    {
+      "id": "is-07",
+      "studentId": "stu-013",
+      "studentName": "Marina Alves Lima",
+      "schoolId": "sch-01",
+      "sector": "Saúde",
+      "status": "encerrado",
+      "openedAt": "2026-08-10",
+      "dueAt": "2026-10-07",
+      "notes": "Acompanhamento intersetorial mockado para validação."
+    },
+    {
+      "id": "is-08",
+      "studentId": "stu-015",
+      "studentName": "Olivia Oliveira Mendes",
+      "schoolId": "sch-03",
+      "sector": "Conselho Tutelar",
+      "status": "pendente",
+      "openedAt": "2026-02-10",
+      "dueAt": "2026-10-08",
+      "notes": "Acompanhamento intersetorial mockado para validação."
+    },
+    {
+      "id": "is-09",
+      "studentId": "stu-017",
+      "studentName": "Rafaela Nascimento Gomes",
+      "schoolId": "sch-05",
+      "sector": "CAPS",
+      "status": "ativo",
+      "openedAt": "2026-03-10",
+      "dueAt": "2026-10-09",
+      "notes": "Acompanhamento intersetorial mockado para validação."
+    },
+    {
+      "id": "is-10",
+      "studentId": "stu-019",
+      "studentName": "Tiago Rocha Pereira",
+      "schoolId": "sch-07",
+      "sector": "Assistência Social",
+      "status": "aguardando_retorno",
+      "openedAt": "2026-04-10",
+      "dueAt": "2026-10-10",
+      "notes": "Acompanhamento intersetorial mockado para validação."
+    },
+    {
+      "id": "is-11",
+      "studentId": "stu-021",
+      "studentName": "Arthur Silva Silva",
+      "schoolId": "sch-09",
+      "sector": "Educação",
+      "status": "encerrado",
+      "openedAt": "2026-05-10",
+      "dueAt": "2026-10-11",
+      "notes": "Acompanhamento intersetorial mockado para validação."
+    },
+    {
+      "id": "is-12",
+      "studentId": "stu-023",
+      "studentName": "Caio Pereira Rocha",
+      "schoolId": "sch-11",
+      "sector": "Saúde",
+      "status": "pendente",
+      "openedAt": "2026-06-10",
+      "dueAt": "2026-10-12",
+      "notes": "Acompanhamento intersetorial mockado para validação."
+    },
+    {
+      "id": "is-13",
+      "studentId": "stu-025",
+      "studentName": "Eduardo Gomes Nascimento",
+      "schoolId": "sch-01",
+      "sector": "Conselho Tutelar",
+      "status": "ativo",
+      "openedAt": "2026-07-10",
+      "dueAt": "2026-10-13",
+      "notes": "Acompanhamento intersetorial mockado para validação."
+    },
+    {
+      "id": "is-14",
+      "studentId": "stu-027",
+      "studentName": "Gabriel Mendes Oliveira",
+      "schoolId": "sch-03",
+      "sector": "CAPS",
+      "status": "aguardando_retorno",
+      "openedAt": "2026-08-10",
+      "dueAt": "2026-10-14",
+      "notes": "Acompanhamento intersetorial mockado para validação."
+    },
+    {
+      "id": "is-15",
+      "studentId": "stu-029",
+      "studentName": "Igor Lima Alves",
+      "schoolId": "sch-05",
+      "sector": "Assistência Social",
+      "status": "encerrado",
+      "openedAt": "2026-02-10",
+      "dueAt": "2026-10-15",
+      "notes": "Acompanhamento intersetorial mockado para validação."
+    },
+    {
+      "id": "is-16",
+      "studentId": "stu-031",
+      "studentName": "Ana Fernandes Fernandes",
+      "schoolId": "sch-07",
+      "sector": "Educação",
+      "status": "pendente",
+      "openedAt": "2026-03-10",
+      "dueAt": "2026-10-16",
+      "notes": "Acompanhamento intersetorial mockado para validação."
+    },
+    {
+      "id": "is-17",
+      "studentId": "stu-033",
+      "studentName": "Carla Alves Lima",
+      "schoolId": "sch-09",
+      "sector": "Saúde",
+      "status": "ativo",
+      "openedAt": "2026-04-10",
+      "dueAt": "2026-10-17",
+      "notes": "Acompanhamento intersetorial mockado para validação."
+    },
+    {
+      "id": "is-18",
+      "studentId": "stu-035",
+      "studentName": "Elena Oliveira Mendes",
+      "schoolId": "sch-11",
+      "sector": "Conselho Tutelar",
+      "status": "aguardando_retorno",
+      "openedAt": "2026-05-10",
+      "dueAt": "2026-10-18",
+      "notes": "Acompanhamento intersetorial mockado para validação."
+    },
+    {
+      "id": "is-19",
+      "studentId": "stu-037",
+      "studentName": "Giulia Nascimento Gomes",
+      "schoolId": "sch-01",
+      "sector": "CAPS",
+      "status": "encerrado",
+      "openedAt": "2026-06-10",
+      "dueAt": "2026-10-19",
+      "notes": "Acompanhamento intersetorial mockado para validação."
+    },
+    {
+      "id": "is-20",
+      "studentId": "stu-039",
+      "studentName": "Isabela Rocha Pereira",
+      "schoolId": "sch-03",
+      "sector": "Assistência Social",
+      "status": "pendente",
+      "openedAt": "2026-07-10",
+      "dueAt": "2026-10-20",
+      "notes": "Acompanhamento intersetorial mockado para validação."
+    },
+    {
+      "id": "is-21",
+      "studentId": "stu-041",
+      "studentName": "Karina Silva Silva",
+      "schoolId": "sch-05",
+      "sector": "Educação",
+      "status": "ativo",
+      "openedAt": "2026-08-10",
+      "dueAt": "2026-10-01",
+      "notes": "Acompanhamento intersetorial mockado para validação."
+    },
+    {
+      "id": "is-22",
+      "studentId": "stu-043",
+      "studentName": "Marina Pereira Rocha",
+      "schoolId": "sch-07",
+      "sector": "Saúde",
+      "status": "aguardando_retorno",
+      "openedAt": "2026-02-10",
+      "dueAt": "2026-10-02",
+      "notes": "Acompanhamento intersetorial mockado para validação."
+    },
+    {
+      "id": "is-23",
+      "studentId": "stu-045",
+      "studentName": "Olivia Gomes Nascimento",
+      "schoolId": "sch-09",
+      "sector": "Conselho Tutelar",
+      "status": "encerrado",
+      "openedAt": "2026-03-10",
+      "dueAt": "2026-10-03",
+      "notes": "Acompanhamento intersetorial mockado para validação."
+    },
+    {
+      "id": "is-24",
+      "studentId": "stu-047",
+      "studentName": "Rafaela Mendes Oliveira",
+      "schoolId": "sch-11",
+      "sector": "CAPS",
+      "status": "pendente",
+      "openedAt": "2026-04-10",
+      "dueAt": "2026-10-04",
+      "notes": "Acompanhamento intersetorial mockado para validação."
+    }
+  ],
+  "documents": [
+    {
+      "id": "doc-01",
+      "title": "Relatório de frequência",
+      "category": "escolar",
+      "schoolId": "sch-01",
+      "studentId": "stu-001",
+      "updatedAt": "2026-09-01",
+      "status": "disponivel"
+    },
+    {
+      "id": "doc-02",
+      "title": "Laudo pedagógico",
+      "category": "relatorio",
+      "schoolId": "sch-02",
+      "studentId": null,
+      "updatedAt": "2026-09-02",
+      "status": "pendente"
+    },
+    {
+      "id": "doc-03",
+      "title": "Ata de reunião",
+      "category": "laudo",
+      "schoolId": "sch-03",
+      "studentId": null,
+      "updatedAt": "2026-09-03",
+      "status": "arquivado"
+    },
+    {
+      "id": "doc-04",
+      "title": "Ficha de matrícula",
+      "category": "administrativo",
+      "schoolId": "sch-04",
+      "studentId": "stu-004",
+      "updatedAt": "2026-09-04",
+      "status": "disponivel"
+    },
+    {
+      "id": "doc-05",
+      "title": "Comprovante de residência",
+      "category": "outro",
+      "schoolId": "sch-05",
+      "studentId": null,
+      "updatedAt": "2026-09-05",
+      "status": "pendente"
+    },
+    {
+      "id": "doc-06",
+      "title": "Portaria interna",
+      "category": "escolar",
+      "schoolId": "sch-06",
+      "studentId": null,
+      "updatedAt": "2026-09-06",
+      "status": "arquivado"
+    },
+    {
+      "id": "doc-07",
+      "title": "Relatório de busca ativa",
+      "category": "relatorio",
+      "schoolId": "sch-07",
+      "studentId": "stu-007",
+      "updatedAt": "2026-09-07",
+      "status": "disponivel"
+    },
+    {
+      "id": "doc-08",
+      "title": "Relatório de frequência",
+      "category": "laudo",
+      "schoolId": "sch-08",
+      "studentId": null,
+      "updatedAt": "2026-09-08",
+      "status": "pendente"
+    },
+    {
+      "id": "doc-09",
+      "title": "Laudo pedagógico",
+      "category": "administrativo",
+      "schoolId": "sch-09",
+      "studentId": null,
+      "updatedAt": "2026-09-09",
+      "status": "arquivado"
+    },
+    {
+      "id": "doc-10",
+      "title": "Ata de reunião",
+      "category": "outro",
+      "schoolId": "sch-10",
+      "studentId": "stu-010",
+      "updatedAt": "2026-09-10",
+      "status": "disponivel"
+    },
+    {
+      "id": "doc-11",
+      "title": "Ficha de matrícula",
+      "category": "escolar",
+      "schoolId": "sch-11",
+      "studentId": null,
+      "updatedAt": "2026-09-11",
+      "status": "pendente"
+    },
+    {
+      "id": "doc-12",
+      "title": "Comprovante de residência",
+      "category": "relatorio",
+      "schoolId": "sch-12",
+      "studentId": null,
+      "updatedAt": "2026-09-12",
+      "status": "arquivado"
+    },
+    {
+      "id": "doc-13",
+      "title": "Portaria interna",
+      "category": "laudo",
+      "schoolId": "sch-01",
+      "studentId": "stu-013",
+      "updatedAt": "2026-09-13",
+      "status": "disponivel"
+    },
+    {
+      "id": "doc-14",
+      "title": "Relatório de busca ativa",
+      "category": "administrativo",
+      "schoolId": "sch-02",
+      "studentId": null,
+      "updatedAt": "2026-09-14",
+      "status": "pendente"
+    },
+    {
+      "id": "doc-15",
+      "title": "Relatório de frequência",
+      "category": "outro",
+      "schoolId": "sch-03",
+      "studentId": null,
+      "updatedAt": "2026-09-15",
+      "status": "arquivado"
+    },
+    {
+      "id": "doc-16",
+      "title": "Laudo pedagógico",
+      "category": "escolar",
+      "schoolId": "sch-04",
+      "studentId": "stu-016",
+      "updatedAt": "2026-09-16",
+      "status": "disponivel"
+    },
+    {
+      "id": "doc-17",
+      "title": "Ata de reunião",
+      "category": "relatorio",
+      "schoolId": "sch-05",
+      "studentId": null,
+      "updatedAt": "2026-09-17",
+      "status": "pendente"
+    },
+    {
+      "id": "doc-18",
+      "title": "Ficha de matrícula",
+      "category": "laudo",
+      "schoolId": "sch-06",
+      "studentId": null,
+      "updatedAt": "2026-09-18",
+      "status": "arquivado"
+    },
+    {
+      "id": "doc-19",
+      "title": "Comprovante de residência",
+      "category": "administrativo",
+      "schoolId": "sch-07",
+      "studentId": "stu-019",
+      "updatedAt": "2026-09-19",
+      "status": "disponivel"
+    },
+    {
+      "id": "doc-20",
+      "title": "Portaria interna",
+      "category": "outro",
+      "schoolId": "sch-08",
+      "studentId": null,
+      "updatedAt": "2026-09-20",
+      "status": "pendente"
+    },
+    {
+      "id": "doc-21",
+      "title": "Relatório de busca ativa",
+      "category": "escolar",
+      "schoolId": "sch-09",
+      "studentId": null,
+      "updatedAt": "2026-09-21",
+      "status": "arquivado"
+    },
+    {
+      "id": "doc-22",
+      "title": "Relatório de frequência",
+      "category": "relatorio",
+      "schoolId": "sch-10",
+      "studentId": "stu-022",
+      "updatedAt": "2026-09-22",
+      "status": "disponivel"
+    },
+    {
+      "id": "doc-23",
+      "title": "Laudo pedagógico",
+      "category": "laudo",
+      "schoolId": "sch-11",
+      "studentId": null,
+      "updatedAt": "2026-09-23",
+      "status": "pendente"
+    },
+    {
+      "id": "doc-24",
+      "title": "Ata de reunião",
+      "category": "administrativo",
+      "schoolId": "sch-12",
+      "studentId": null,
+      "updatedAt": "2026-09-24",
+      "status": "arquivado"
+    },
+    {
+      "id": "doc-25",
+      "title": "Ficha de matrícula",
+      "category": "outro",
+      "schoolId": "sch-01",
+      "studentId": "stu-025",
+      "updatedAt": "2026-09-25",
+      "status": "disponivel"
+    },
+    {
+      "id": "doc-26",
+      "title": "Comprovante de residência",
+      "category": "escolar",
+      "schoolId": "sch-02",
+      "studentId": null,
+      "updatedAt": "2026-09-26",
+      "status": "pendente"
+    },
+    {
+      "id": "doc-27",
+      "title": "Portaria interna",
+      "category": "relatorio",
+      "schoolId": "sch-03",
+      "studentId": null,
+      "updatedAt": "2026-09-27",
+      "status": "arquivado"
+    },
+    {
+      "id": "doc-28",
+      "title": "Relatório de busca ativa",
+      "category": "laudo",
+      "schoolId": "sch-04",
+      "studentId": "stu-028",
+      "updatedAt": "2026-09-28",
+      "status": "disponivel"
+    },
+    {
+      "id": "doc-29",
+      "title": "Relatório de frequência",
+      "category": "administrativo",
+      "schoolId": "sch-05",
+      "studentId": null,
+      "updatedAt": "2026-09-01",
+      "status": "pendente"
+    },
+    {
+      "id": "doc-30",
+      "title": "Laudo pedagógico",
+      "category": "outro",
+      "schoolId": "sch-06",
+      "studentId": null,
+      "updatedAt": "2026-09-02",
+      "status": "arquivado"
+    }
+  ],
+  "legislation": [
+    {
+      "id": "leg-01",
+      "title": "Lei municipal de educação inclusiva",
+      "type": "lei",
+      "year": 2020,
+      "subject": "matrícula",
+      "status": "vigente"
+    },
+    {
+      "id": "leg-02",
+      "title": "Decreto de transporte escolar",
+      "type": "decreto",
+      "year": 2021,
+      "subject": "frequência",
+      "status": "vigente"
+    },
+    {
+      "id": "leg-03",
+      "title": "Portaria de busca ativa",
+      "type": "portaria",
+      "year": 2022,
+      "subject": "inclusão",
+      "status": "vigente"
+    },
+    {
+      "id": "leg-04",
+      "title": "Resolução do CME",
+      "type": "resolucao",
+      "year": 2023,
+      "subject": "transporte",
+      "status": "vigente"
+    },
+    {
+      "id": "leg-05",
+      "title": "Instrução normativa de matrículas",
+      "type": "instrucao",
+      "year": 2024,
+      "subject": "pessoal",
+      "status": "vigente"
+    },
+    {
+      "id": "leg-06",
+      "title": "Comunicado de calendário letivo",
+      "type": "comunicado",
+      "year": 2025,
+      "subject": "matrícula",
+      "status": "vigente"
+    },
+    {
+      "id": "leg-07",
+      "title": "Lei municipal de educação inclusiva",
+      "type": "lei",
+      "year": 2020,
+      "subject": "frequência",
+      "status": "vigente"
+    },
+    {
+      "id": "leg-08",
+      "title": "Decreto de transporte escolar",
+      "type": "decreto",
+      "year": 2021,
+      "subject": "inclusão",
+      "status": "vigente"
+    },
+    {
+      "id": "leg-09",
+      "title": "Portaria de busca ativa",
+      "type": "portaria",
+      "year": 2022,
+      "subject": "transporte",
+      "status": "vigente"
+    },
+    {
+      "id": "leg-10",
+      "title": "Resolução do CME",
+      "type": "resolucao",
+      "year": 2023,
+      "subject": "pessoal",
+      "status": "vigente"
+    },
+    {
+      "id": "leg-11",
+      "title": "Instrução normativa de matrículas",
+      "type": "instrucao",
+      "year": 2024,
+      "subject": "matrícula",
+      "status": "vigente"
+    },
+    {
+      "id": "leg-12",
+      "title": "Comunicado de calendário letivo",
+      "type": "comunicado",
+      "year": 2025,
+      "subject": "frequência",
+      "status": "vigente"
+    }
+  ],
+  "reports": [
+    {
+      "id": "rep-01",
+      "name": "Matrículas",
+      "description": "Total e distribuição por escola, etapa e turno",
+      "formats": [
+        "PDF",
+        "Excel",
+        "CSV"
+      ]
+    },
+    {
+      "id": "rep-02",
+      "name": "Frequência",
+      "description": "Médias da rede, baixa frequência e evolução",
+      "formats": [
+        "PDF",
+        "Excel",
+        "CSV"
+      ]
+    },
+    {
+      "id": "rep-03",
+      "name": "Busca Ativa",
+      "description": "Casos, situações e resultados",
+      "formats": [
+        "PDF",
+        "Excel",
+        "CSV"
+      ]
+    },
+    {
+      "id": "rep-04",
+      "name": "Lista de Espera",
+      "description": "Demanda por etapa, escola e tempo",
+      "formats": [
+        "PDF",
+        "Excel",
+        "CSV"
+      ]
+    },
+    {
+      "id": "rep-05",
+      "name": "Reforço Escolar",
+      "description": "Alunos e disciplinas acompanhadas",
+      "formats": [
+        "PDF",
+        "Excel",
+        "CSV"
+      ]
+    },
+    {
+      "id": "rep-06",
+      "name": "Educação Inclusiva",
+      "description": "Acompanhamentos e pendências",
+      "formats": [
+        "PDF",
+        "Excel",
+        "CSV"
+      ]
+    },
+    {
+      "id": "rep-07",
+      "name": "Transporte",
+      "description": "Alunos transportados por escola e rota",
+      "formats": [
+        "PDF",
+        "Excel",
+        "CSV"
+      ]
+    },
+    {
+      "id": "rep-08",
+      "name": "Quadro de Pessoal",
+      "description": "Professores, funcionários e vínculos",
+      "formats": [
+        "PDF",
+        "Excel",
+        "CSV"
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "id": "settings-1",
+      "organizationName": "Secretaria Municipal de Educação",
+      "academicYear": 2026,
+      "attendanceThreshold": 75,
+      "waitlistAlertDays": 60,
+      "activeSearchStaleDays": 30,
+      "demoMode": true,
+      "profile": "dirigente"
+    }
+  ],
+  "history": [
+    {
+      "id": "hist-stu-001-1",
+      "studentId": "stu-001",
+      "studentName": "Ana Silva Silva",
+      "schoolId": "sch-01",
+      "event": "Matrícula",
+      "date": "2026-02-01",
+      "detail": "Ingresso em 1º ano"
+    },
+    {
+      "id": "hist-stu-001-2",
+      "studentId": "stu-001",
+      "studentName": "Ana Silva Silva",
+      "schoolId": "sch-01",
+      "event": "Busca ativa",
+      "date": "2026-06-15",
+      "detail": "Abertura de caso"
+    },
+    {
+      "id": "hist-stu-002-1",
+      "studentId": "stu-002",
+      "studentName": "Bruno Souza Almeida",
+      "schoolId": "sch-02",
+      "event": "Matrícula",
+      "date": "2026-02-02",
+      "detail": "Ingresso em 2º ano"
+    },
+    {
+      "id": "hist-stu-002-2",
+      "studentId": "stu-002",
+      "studentName": "Bruno Souza Almeida",
+      "schoolId": "sch-02",
+      "event": "Acompanhamento pedagógico",
+      "date": "2026-06-15",
+      "detail": "Registro de evolução"
+    },
+    {
+      "id": "hist-stu-003-1",
+      "studentId": "stu-003",
+      "studentName": "Carla Pereira Rocha",
+      "schoolId": "sch-03",
+      "event": "Matrícula",
+      "date": "2026-02-03",
+      "detail": "Ingresso em 3º ano"
+    },
+    {
+      "id": "hist-stu-003-2",
+      "studentId": "stu-003",
+      "studentName": "Carla Pereira Rocha",
+      "schoolId": "sch-03",
+      "event": "Acompanhamento pedagógico",
+      "date": "2026-06-15",
+      "detail": "Registro de evolução"
+    },
+    {
+      "id": "hist-stu-004-1",
+      "studentId": "stu-004",
+      "studentName": "Diego Araújo Santos",
+      "schoolId": "sch-04",
+      "event": "Matrícula",
+      "date": "2026-02-04",
+      "detail": "Ingresso em Pré II"
+    },
+    {
+      "id": "hist-stu-004-2",
+      "studentId": "stu-004",
+      "studentName": "Diego Araújo Santos",
+      "schoolId": "sch-04",
+      "event": "Acompanhamento pedagógico",
+      "date": "2026-06-15",
+      "detail": "Registro de evolução"
+    },
+    {
+      "id": "hist-stu-005-1",
+      "studentId": "stu-005",
+      "studentName": "Elena Gomes Nascimento",
+      "schoolId": "sch-05",
+      "event": "Matrícula",
+      "date": "2026-02-05",
+      "detail": "Ingresso em 5º ano"
+    },
+    {
+      "id": "hist-stu-005-2",
+      "studentId": "stu-005",
+      "studentName": "Elena Gomes Nascimento",
+      "schoolId": "sch-05",
+      "event": "Acompanhamento pedagógico",
+      "date": "2026-06-15",
+      "detail": "Registro de evolução"
+    },
+    {
+      "id": "hist-stu-006-1",
+      "studentId": "stu-006",
+      "studentName": "Felipe Ribeiro Ribeiro",
+      "schoolId": "sch-06",
+      "event": "Matrícula",
+      "date": "2026-02-06",
+      "detail": "Ingresso em 6º ano"
+    },
+    {
+      "id": "hist-stu-006-2",
+      "studentId": "stu-006",
+      "studentName": "Felipe Ribeiro Ribeiro",
+      "schoolId": "sch-06",
+      "event": "Busca ativa",
+      "date": "2026-06-15",
+      "detail": "Abertura de caso"
+    },
+    {
+      "id": "hist-stu-007-1",
+      "studentId": "stu-007",
+      "studentName": "Giulia Mendes Oliveira",
+      "schoolId": "sch-07",
+      "event": "Matrícula",
+      "date": "2026-02-07",
+      "detail": "Ingresso em Pré I"
+    },
+    {
+      "id": "hist-stu-007-2",
+      "studentId": "stu-007",
+      "studentName": "Giulia Mendes Oliveira",
+      "schoolId": "sch-07",
+      "event": "Acompanhamento pedagógico",
+      "date": "2026-06-15",
+      "detail": "Registro de evolução"
+    },
+    {
+      "id": "hist-stu-008-1",
+      "studentId": "stu-008",
+      "studentName": "Hugo Santos Araújo",
+      "schoolId": "sch-08",
+      "event": "Matrícula",
+      "date": "2026-02-08",
+      "detail": "Ingresso em Maternal I"
+    },
+    {
+      "id": "hist-stu-008-2",
+      "studentId": "stu-008",
+      "studentName": "Hugo Santos Araújo",
+      "schoolId": "sch-08",
+      "event": "Acompanhamento pedagógico",
+      "date": "2026-06-15",
+      "detail": "Registro de evolução"
+    },
+    {
+      "id": "hist-stu-009-1",
+      "studentId": "stu-009",
+      "studentName": "Isabela Lima Alves",
+      "schoolId": "sch-09",
+      "event": "Matrícula",
+      "date": "2026-02-09",
+      "detail": "Ingresso em 9º ano"
+    },
+    {
+      "id": "hist-stu-009-2",
+      "studentId": "stu-009",
+      "studentName": "Isabela Lima Alves",
+      "schoolId": "sch-09",
+      "event": "Acompanhamento pedagógico",
+      "date": "2026-06-15",
+      "detail": "Registro de evolução"
+    },
+    {
+      "id": "hist-stu-010-1",
+      "studentId": "stu-010",
+      "studentName": "João Almeida Souza",
+      "schoolId": "sch-10",
+      "event": "Matrícula",
+      "date": "2026-02-10",
+      "detail": "Ingresso em Berçário"
+    },
+    {
+      "id": "hist-stu-010-2",
+      "studentId": "stu-010",
+      "studentName": "João Almeida Souza",
+      "schoolId": "sch-10",
+      "event": "Acompanhamento pedagógico",
+      "date": "2026-06-15",
+      "detail": "Registro de evolução"
+    },
+    {
+      "id": "hist-stu-011-1",
+      "studentId": "stu-011",
+      "studentName": "Karina Fernandes Fernandes",
+      "schoolId": "sch-11",
+      "event": "Matrícula",
+      "date": "2026-02-11",
+      "detail": "Ingresso em Pré I"
+    },
+    {
+      "id": "hist-stu-011-2",
+      "studentId": "stu-011",
+      "studentName": "Karina Fernandes Fernandes",
+      "schoolId": "sch-11",
+      "event": "Busca ativa",
+      "date": "2026-06-15",
+      "detail": "Abertura de caso"
+    },
+    {
+      "id": "hist-stu-012-1",
+      "studentId": "stu-012",
+      "studentName": "Lucas Martins Monteiro",
+      "schoolId": "sch-12",
+      "event": "Matrícula",
+      "date": "2026-02-12",
+      "detail": "Ingresso em Pré II"
+    },
+    {
+      "id": "hist-stu-012-2",
+      "studentId": "stu-012",
+      "studentName": "Lucas Martins Monteiro",
+      "schoolId": "sch-12",
+      "event": "Acompanhamento pedagógico",
+      "date": "2026-06-15",
+      "detail": "Registro de evolução"
+    },
+    {
+      "id": "hist-stu-013-1",
+      "studentId": "stu-013",
+      "studentName": "Marina Alves Lima",
+      "schoolId": "sch-01",
+      "event": "Matrícula",
+      "date": "2026-02-13",
+      "detail": "Ingresso em 4º ano"
+    },
+    {
+      "id": "hist-stu-013-2",
+      "studentId": "stu-013",
+      "studentName": "Marina Alves Lima",
+      "schoolId": "sch-01",
+      "event": "Acompanhamento pedagógico",
+      "date": "2026-06-15",
+      "detail": "Registro de evolução"
+    },
+    {
+      "id": "hist-stu-014-1",
+      "studentId": "stu-014",
+      "studentName": "Nicolas Barros Carvalho",
+      "schoolId": "sch-02",
+      "event": "Matrícula",
+      "date": "2026-02-14",
+      "detail": "Ingresso em 5º ano"
+    },
+    {
+      "id": "hist-stu-014-2",
+      "studentId": "stu-014",
+      "studentName": "Nicolas Barros Carvalho",
+      "schoolId": "sch-02",
+      "event": "Acompanhamento pedagógico",
+      "date": "2026-06-15",
+      "detail": "Registro de evolução"
+    },
+    {
+      "id": "hist-stu-015-1",
+      "studentId": "stu-015",
+      "studentName": "Olivia Oliveira Mendes",
+      "schoolId": "sch-03",
+      "event": "Matrícula",
+      "date": "2026-02-15",
+      "detail": "Ingresso em 6º ano"
+    },
+    {
+      "id": "hist-stu-015-2",
+      "studentId": "stu-015",
+      "studentName": "Olivia Oliveira Mendes",
+      "schoolId": "sch-03",
+      "event": "Acompanhamento pedagógico",
+      "date": "2026-06-15",
+      "detail": "Registro de evolução"
+    },
+    {
+      "id": "hist-stu-016-1",
+      "studentId": "stu-016",
+      "studentName": "Pedro Costa Costa",
+      "schoolId": "sch-04",
+      "event": "Matrícula",
+      "date": "2026-02-16",
+      "detail": "Ingresso em Pré II"
+    },
+    {
+      "id": "hist-stu-016-2",
+      "studentId": "stu-016",
+      "studentName": "Pedro Costa Costa",
+      "schoolId": "sch-04",
+      "event": "Busca ativa",
+      "date": "2026-06-15",
+      "detail": "Abertura de caso"
+    },
+    {
+      "id": "hist-stu-017-1",
+      "studentId": "stu-017",
+      "studentName": "Rafaela Nascimento Gomes",
+      "schoolId": "sch-05",
+      "event": "Matrícula",
+      "date": "2026-02-17",
+      "detail": "Ingresso em 8º ano"
+    },
+    {
+      "id": "hist-stu-017-2",
+      "studentId": "stu-017",
+      "studentName": "Rafaela Nascimento Gomes",
+      "schoolId": "sch-05",
+      "event": "Acompanhamento pedagógico",
+      "date": "2026-06-15",
+      "detail": "Registro de evolução"
+    },
+    {
+      "id": "hist-stu-018-1",
+      "studentId": "stu-018",
+      "studentName": "Sofia Carvalho Barros",
+      "schoolId": "sch-06",
+      "event": "Matrícula",
+      "date": "2026-02-18",
+      "detail": "Ingresso em 9º ano"
+    },
+    {
+      "id": "hist-stu-018-2",
+      "studentId": "stu-018",
+      "studentName": "Sofia Carvalho Barros",
+      "schoolId": "sch-06",
+      "event": "Acompanhamento pedagógico",
+      "date": "2026-06-15",
+      "detail": "Registro de evolução"
+    },
+    {
+      "id": "hist-stu-019-1",
+      "studentId": "stu-019",
+      "studentName": "Tiago Rocha Pereira",
+      "schoolId": "sch-07",
+      "event": "Matrícula",
+      "date": "2026-02-19",
+      "detail": "Ingresso em Pré I"
+    },
+    {
+      "id": "hist-stu-019-2",
+      "studentId": "stu-019",
+      "studentName": "Tiago Rocha Pereira",
+      "schoolId": "sch-07",
+      "event": "Acompanhamento pedagógico",
+      "date": "2026-06-15",
+      "detail": "Registro de evolução"
+    },
+    {
+      "id": "hist-stu-020-1",
+      "studentId": "stu-020",
+      "studentName": "Valentina Monteiro Martins",
+      "schoolId": "sch-08",
+      "event": "Matrícula",
+      "date": "2026-02-20",
+      "detail": "Ingresso em Maternal I"
+    },
+    {
+      "id": "hist-stu-020-2",
+      "studentId": "stu-020",
+      "studentName": "Valentina Monteiro Martins",
+      "schoolId": "sch-08",
+      "event": "Acompanhamento pedagógico",
+      "date": "2026-06-15",
+      "detail": "Registro de evolução"
+    },
+    {
+      "id": "hist-stu-021-1",
+      "studentId": "stu-021",
+      "studentName": "Arthur Silva Silva",
+      "schoolId": "sch-09",
+      "event": "Matrícula",
+      "date": "2026-02-01",
+      "detail": "Ingresso em 3º ano"
+    },
+    {
+      "id": "hist-stu-021-2",
+      "studentId": "stu-021",
+      "studentName": "Arthur Silva Silva",
+      "schoolId": "sch-09",
+      "event": "Busca ativa",
+      "date": "2026-06-15",
+      "detail": "Abertura de caso"
+    },
+    {
+      "id": "hist-stu-022-1",
+      "studentId": "stu-022",
+      "studentName": "Beatriz Souza Almeida",
+      "schoolId": "sch-10",
+      "event": "Matrícula",
+      "date": "2026-02-02",
+      "detail": "Ingresso em Berçário"
+    },
+    {
+      "id": "hist-stu-022-2",
+      "studentId": "stu-022",
+      "studentName": "Beatriz Souza Almeida",
+      "schoolId": "sch-10",
+      "event": "Acompanhamento pedagógico",
+      "date": "2026-06-15",
+      "detail": "Registro de evolução"
+    },
+    {
+      "id": "hist-stu-023-1",
+      "studentId": "stu-023",
+      "studentName": "Caio Pereira Rocha",
+      "schoolId": "sch-11",
+      "event": "Matrícula",
+      "date": "2026-02-03",
+      "detail": "Ingresso em Pré I"
+    },
+    {
+      "id": "hist-stu-023-2",
+      "studentId": "stu-023",
+      "studentName": "Caio Pereira Rocha",
+      "schoolId": "sch-11",
+      "event": "Acompanhamento pedagógico",
+      "date": "2026-06-15",
+      "detail": "Registro de evolução"
+    },
+    {
+      "id": "hist-stu-024-1",
+      "studentId": "stu-024",
+      "studentName": "Daniela Araújo Santos",
+      "schoolId": "sch-12",
+      "event": "Matrícula",
+      "date": "2026-02-04",
+      "detail": "Ingresso em Pré II"
+    },
+    {
+      "id": "hist-stu-024-2",
+      "studentId": "stu-024",
+      "studentName": "Daniela Araújo Santos",
+      "schoolId": "sch-12",
+      "event": "Acompanhamento pedagógico",
+      "date": "2026-06-15",
+      "detail": "Registro de evolução"
+    },
+    {
+      "id": "hist-stu-025-1",
+      "studentId": "stu-025",
+      "studentName": "Eduardo Gomes Nascimento",
+      "schoolId": "sch-01",
+      "event": "Matrícula",
+      "date": "2026-02-05",
+      "detail": "Ingresso em 7º ano"
+    },
+    {
+      "id": "hist-stu-025-2",
+      "studentId": "stu-025",
+      "studentName": "Eduardo Gomes Nascimento",
+      "schoolId": "sch-01",
+      "event": "Acompanhamento pedagógico",
+      "date": "2026-06-15",
+      "detail": "Registro de evolução"
+    }
+  ]
+}

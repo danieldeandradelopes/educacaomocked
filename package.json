@@ -3,7 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "concurrently -n api,web -c cyan,magenta \"pnpm run api\" \"next dev\"",
+    "dev:web": "next dev",
+    "api": "json-server --watch db/db.json --port 4000 --host 127.0.0.1",
+    "db:generate": "node scripts/generate-db.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
@@ -22,9 +25,11 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "concurrently": "^10.0.5",
     "eslint": "^9",
     "eslint-config-next": "16.3.6",
     "eslint-config-prettier": "^10.1.8",
+    "json-server": "^0.17.4",
     "prettier": "^3.9.9",
     "tailwindcss": "^4",
     "typescript": "^5"

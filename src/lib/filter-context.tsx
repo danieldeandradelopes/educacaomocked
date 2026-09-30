@@ -8,13 +8,16 @@ import {
   useState,
   type ReactNode,
 } from 'react';
-import type { GlobalFilters } from '@/domain/types';
-import { DEFAULT_FILTERS } from '@/lib/filters';
+import type { GlobalFilters, Shift, Stage } from '@/domain/types';
+import { DEFAULT_FILTERS, toggleInList } from '@/lib/filters';
 
 interface FilterContextValue {
   filters: GlobalFilters;
   setFilters: (next: Partial<GlobalFilters>) => void;
   resetFilters: () => void;
+  toggleSchool: (schoolId: string) => void;
+  toggleStage: (stage: Stage) => void;
+  toggleShift: (shift: Shift) => void;
 }
 
 const FilterContext = createContext<FilterContextValue | null>(null);
@@ -30,9 +33,37 @@ export function FilterProvider({ children }: { children: ReactNode }) {
     setFiltersState(DEFAULT_FILTERS);
   }, []);
 
+  const toggleSchool = useCallback((schoolId: string) => {
+    setFiltersState((prev) => ({
+      ...prev,
+      schoolIds: toggleInList(prev.schoolIds, schoolId),
+    }));
+  }, []);
+
+  const toggleStage = useCallback((stage: Stage) => {
+    setFiltersState((prev) => ({
+      ...prev,
+      stages: toggleInList(prev.stages, stage),
+    }));
+  }, []);
+
+  const toggleShift = useCallback((shift: Shift) => {
+    setFiltersState((prev) => ({
+      ...prev,
+      shifts: toggleInList(prev.shifts, shift),
+    }));
+  }, []);
+
   const value = useMemo(
-    () => ({ filters, setFilters, resetFilters }),
-    [filters, setFilters, resetFilters],
+    () => ({
+      filters,
+      setFilters,
+      resetFilters,
+      toggleSchool,
+      toggleStage,
+      toggleShift,
+    }),
+    [filters, setFilters, resetFilters, toggleSchool, toggleStage, toggleShift],
   );
 
   return <FilterContext.Provider value={value}>{children}</FilterContext.Provider>;

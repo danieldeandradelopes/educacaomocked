@@ -26,105 +26,40 @@ export interface NavItem {
   readonly children?: readonly {
     readonly id: string;
     readonly label: string;
+    readonly href?: string;
     readonly comingSoon?: boolean;
   }[];
 }
 
 export const NAV_ITEMS: readonly NavItem[] = [
-  {
-    id: 'dashboard',
-    label: 'Dashboard',
-    href: '/',
-    icon: LayoutDashboard,
-  },
+  { id: 'dashboard', label: 'Dashboard', href: '/', icon: LayoutDashboard },
   {
     id: 'students',
     label: 'Alunos',
     icon: GraduationCap,
-    comingSoon: true,
     children: [
-      { id: 'students-list', label: 'Alunos', comingSoon: true },
-      { id: 'enrollments', label: 'Matrículas', comingSoon: true },
-      { id: 'attendance', label: 'Frequência', comingSoon: true },
-      { id: 'history', label: 'Histórico', comingSoon: true },
+      { id: 'students-list', label: 'Alunos', href: '/students' },
+      { id: 'enrollments', label: 'Matrículas', href: '/enrollments' },
+      { id: 'attendance', label: 'Frequência', href: '/attendance' },
+      { id: 'history', label: 'Histórico', href: '/history' },
     ],
   },
-  {
-    id: 'active-search',
-    label: 'Busca Ativa',
-    href: '/active-search',
-    icon: Search,
-  },
-  {
-    id: 'waitlist',
-    label: 'Lista de Espera',
-    href: '/waitlist',
-    icon: ListOrdered,
-  },
-  {
-    id: 'tutoring',
-    label: 'Reforço Escolar',
-    icon: BookOpen,
-    comingSoon: true,
-  },
-  {
-    id: 'inclusive',
-    label: 'Educação Inclusiva',
-    icon: HeartHandshake,
-    comingSoon: true,
-  },
-  {
-    id: 'transport',
-    label: 'Transporte',
-    icon: Bus,
-    comingSoon: true,
-  },
-  {
-    id: 'schools',
-    label: 'Escolas',
-    href: '/schools',
-    icon: School,
-  },
-  {
-    id: 'teachers',
-    label: 'Professores',
-    icon: UserRound,
-    comingSoon: true,
-  },
-  {
-    id: 'employees',
-    label: 'Funcionários',
-    icon: Briefcase,
-    comingSoon: true,
-  },
-  {
-    id: 'staff',
-    label: 'Quadro de Pessoal',
-    href: '/staff',
-    icon: Users,
-  },
+  { id: 'active-search', label: 'Busca Ativa', href: '/active-search', icon: Search },
+  { id: 'waitlist', label: 'Lista de Espera', href: '/waitlist', icon: ListOrdered },
+  { id: 'tutoring', label: 'Reforço Escolar', href: '/tutoring', icon: BookOpen },
+  { id: 'inclusive', label: 'Educação Inclusiva', href: '/inclusive', icon: HeartHandshake },
+  { id: 'transport', label: 'Transporte', href: '/transport', icon: Bus },
+  { id: 'schools', label: 'Escolas', href: '/schools', icon: School },
+  { id: 'teachers', label: 'Professores', href: '/teachers', icon: UserRound },
+  { id: 'employees', label: 'Funcionários', href: '/employees', icon: Briefcase },
+  { id: 'staff', label: 'Quadro de Pessoal', href: '/staff', icon: Users },
   {
     id: 'intersectoral',
     label: 'Acompanhamento Intersetorial',
+    href: '/intersectoral',
     icon: Network,
-    comingSoon: true,
   },
-  {
-    id: 'documents',
-    label: 'Documentos',
-    icon: FolderOpen,
-    comingSoon: true,
-  },
-  {
-    id: 'reports',
-    label: 'Relatórios',
-    icon: FileBarChart,
-    comingSoon: true,
-  },
-  {
-    id: 'settings',
-    label: 'Configurações',
-    icon: Settings,
-    comingSoon: true,
-  },
+  { id: 'documents', label: 'Documentos', href: '/documents', icon: FolderOpen },
+  { id: 'reports', label: 'Relatórios', href: '/reports', icon: FileBarChart },
+  { id: 'settings', label: 'Configurações', href: '/settings', icon: Settings },
 ];

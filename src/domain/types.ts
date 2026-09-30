@@ -14,7 +14,8 @@ export interface School {
   readonly id: string;
   readonly name: string;
   readonly neighborhood: string;
-  readonly stage: Stage;
+  /** One or more stages offered by the school. */
+  readonly stages: readonly Stage[];
   readonly students: number;
   readonly teachers: number;
   readonly staff: number;
@@ -40,6 +41,7 @@ export interface Student {
   readonly inTutoring: boolean;
   readonly inInclusive: boolean;
   readonly documentsPending: boolean;
+  readonly transported?: boolean;
 }
 
 export interface ActiveSearchCase {
@@ -95,9 +97,12 @@ export interface GlobalFilters {
   readonly year: number;
   readonly periodStart: string;
   readonly periodEnd: string;
-  readonly schoolId: string | 'all';
-  readonly stage: Stage | 'all';
-  readonly shift: Shift | 'all';
+  /** Empty = all schools. Multiple = OR. */
+  readonly schoolIds: readonly string[];
+  /** Empty = all stages. Multiple = OR. */
+  readonly stages: readonly Stage[];
+  /** Empty = all shifts. Multiple = OR. */
+  readonly shifts: readonly Shift[];
 }
 
 export interface NetworkKpis {

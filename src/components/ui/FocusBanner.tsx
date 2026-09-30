@@ -14,6 +14,7 @@ const LABELS: Record<string, string> = {
   inclusive: 'Destaque: educação inclusiva por escola',
   transport: 'Destaque: transporte escolar por unidade',
   docs: 'Amostra: alunos com documentação pendente',
+  pending: 'Filtrado: registros pendentes / aguardando retorno',
 };
 
 export function FocusBanner({ allowed }: { allowed: readonly string[] }) {

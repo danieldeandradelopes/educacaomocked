@@ -4,39 +4,58 @@ import Link from 'next/link';
 import { Suspense } from 'react';
 import { EmptyState, StatusBadge } from '@/components/ui/StatusBadge';
 import { FocusBanner, useFocusParam } from '@/components/ui/FocusBanner';
-import {
-  getSchoolById,
-  getStudentById,
-  STUDENTS,
-  STUDENT_TIMELINES,
-} from '@/data/mocks';
+import { ErrorBlock, LoadingBlock } from '@/components/ui/PageHeader';
+import { useApi, useApiList } from '@/lib/use-api';
 import { formatPercent, shiftLabel, stageLabel } from '@/lib/filters';
+import type { School, Student, TimelineEvent } from '@/domain/types';
 
 const FOCUS_ALLOWED = ['docs'] as const;
 
+interface HistoryEvent {
+  id: string;
+  studentId: string;
+  studentName: string;
+  schoolId: string;
+  event: string;
+  date: string;
+  detail: string;
+}
+
 function Student360Content({ studentId }: { studentId: string }) {
   const focus = useFocusParam(FOCUS_ALLOWED);
-  const student = getStudentById(studentId);
+  const studentReq = useApi<Student>(`students/${studentId}`);
+  const schoolsReq = useApiList<School>('schools');
+  const historyReq = useApiList<HistoryEvent>('history');
+  const allStudents = useApiList<Student>('students');
+
+  const student = studentReq.data;
+  const loading = studentReq.loading || schoolsReq.loading;
+  const error = studentReq.error;
+
+  if (loading) return <LoadingBlock />;
+  if (error) return <ErrorBlock message={error} />;
   if (!student) {
     return (
       <EmptyState
         title="Aluno não encontrado"
-        description="Este registro não está na amostra mockada do protótipo."
+        description="Este registro não está na API mockada."
       />
     );
   }
 
-  const school = getSchoolById(student.schoolId);
-  const timeline = STUDENT_TIMELINES[student.id] ?? [
-    {
-      id: 'fallback',
-      date: '2026-02-01',
-      title: 'Matrícula',
-      description: 'Registro escolar ativo',
-      kind: 'enrollment' as const,
-    },
-  ];
-  const othersWithDocs = STUDENTS.filter((s) => s.documentsPending && s.id !== student.id);
+  const school = (schoolsReq.data ?? []).find((s) => s.id === student.schoolId);
+  const timeline: TimelineEvent[] = (historyReq.data ?? [])
+    .filter((h) => h.studentId === student.id)
+    .map((h) => ({
+      id: h.id,
+      date: h.date,
+      title: h.event,
+      description: h.detail,
+      kind: 'update' as const,
+    }));
+  const othersWithDocs = (allStudents.data ?? []).filter(
+    (s) => s.documentsPending && s.id !== student.id,
+  );
 
   return (
     <div className="space-y-6">
@@ -49,15 +68,15 @@ function Student360Content({ studentId }: { studentId: string }) {
             {student.name}
           </h1>
           <p className="mt-1 text-sm text-[var(--color-text-secondary)]">
-            {school?.name} · {student.grade} · {stageLabel(student.stage)} ·{' '}
+            {school?.name ?? student.schoolId} · {student.grade} · {stageLabel(student.stage)} ·{' '}
             {shiftLabel(student.shift)}
           </p>
         </section>
         <Link
-          href="/active-search?focus=attendance"
+          href="/students"
           className="rounded-xl border border-[var(--color-border)] px-3 py-2 text-sm font-medium text-[var(--color-navy)] transition hover:bg-[var(--color-navy)]/5"
         >
-          ← Voltar à Busca Ativa
+          ← Voltar à lista
         </Link>
       </div>
 
@@ -69,10 +88,10 @@ function Student360Content({ studentId }: { studentId: string }) {
             Exemplo de aluno com documentação pendente
           </p>
           <p className="mt-1 text-sm text-[var(--color-text-secondary)]">
-            Há 23 alunos nessa situação na rede. Outros na amostra:
+            Outros na amostra com docs pendentes:
           </p>
           <ul className="mt-3 flex flex-wrap gap-2">
-            {othersWithDocs.map((s) => (
+            {othersWithDocs.slice(0, 8).map((s) => (
               <li key={s.id}>
                 <Link
                   href={`/students/${s.id}?focus=docs`}
@@ -114,23 +133,19 @@ function Student360Content({ studentId }: { studentId: string }) {
           <ul className="mt-4 grid gap-3 sm:grid-cols-2">
             <InfoCard
               title="Frequência"
-              body={`Taxa atual de ${formatPercent(student.attendanceRate)}. Meta da rede: 95%.`}
+              body={`Taxa atual de ${formatPercent(student.attendanceRate)}.`}
             />
             <InfoCard
               title="Busca ativa"
               body={
                 student.inActiveSearch
-                  ? 'Caso aberto com acompanhamento pedagógico e contato familiar.'
+                  ? 'Caso aberto com acompanhamento pedagógico.'
                   : 'Sem registro ativo.'
               }
             />
             <InfoCard
               title="Reforço escolar"
-              body={
-                student.inTutoring
-                  ? 'Participa de reforço em Português e Matemática.'
-                  : 'Não está em reforço no momento.'
-              }
+              body={student.inTutoring ? 'Participa de reforço.' : 'Não está em reforço.'}
             />
             <InfoCard
               title="Educação inclusiva"
@@ -144,11 +159,14 @@ function Student360Content({ studentId }: { studentId: string }) {
               title="Documentos"
               body={
                 student.documentsPending
-                  ? 'Há pendências documentais a regularizar.'
+                  ? 'Há pendências documentais.'
                   : 'Documentação completa na amostra.'
               }
             />
-            <InfoCard title="Histórico escolar" body="Matrícula ativa no ano letivo 2026." />
+            <InfoCard
+              title="Transporte"
+              body={student.transported ? 'Aluno transportado.' : 'Sem transporte escolar.'}
+            />
           </ul>
         </article>
       </section>
@@ -157,22 +175,28 @@ function Student360Content({ studentId }: { studentId: string }) {
         <h2 className="font-display text-lg font-semibold text-[var(--color-navy)]">
           Linha do tempo
         </h2>
-        <ol className="relative mt-6 space-y-6 border-l-2 border-[var(--color-primary)]/30 pl-6">
-          {timeline.map((event, index) => (
-            <li
-              key={event.id}
-              className="timeline-enter relative"
-              style={{ animationDelay: `${index * 80}ms` }}
-            >
-              <span className="absolute -left-[1.7rem] top-1 h-3 w-3 rounded-full border-2 border-white bg-[var(--color-primary)] shadow" />
-              <p className="text-xs font-semibold uppercase tracking-wide text-[var(--color-muted)]">
-                {event.date}
-              </p>
-              <p className="mt-1 font-semibold text-[var(--color-navy)]">{event.title}</p>
-              <p className="mt-1 text-sm text-[var(--color-text-secondary)]">{event.description}</p>
-            </li>
-          ))}
-        </ol>
+        {timeline.length === 0 ? (
+          <p className="mt-4 text-sm text-[var(--color-text-secondary)]">
+            Sem eventos de histórico na API para este aluno.
+          </p>
+        ) : (
+          <ol className="relative mt-6 space-y-6 border-l-2 border-[var(--color-primary)]/30 pl-6">
+            {timeline.map((event, index) => (
+              <li
+                key={event.id}
+                className="timeline-enter relative"
+                style={{ animationDelay: `${index * 80}ms` }}
+              >
+                <span className="absolute -left-[1.7rem] top-1 h-3 w-3 rounded-full border-2 border-white bg-[var(--color-primary)] shadow" />
+                <p className="text-xs font-semibold uppercase tracking-wide text-[var(--color-muted)]">
+                  {event.date}
+                </p>
+                <p className="mt-1 font-semibold text-[var(--color-navy)]">{event.title}</p>
+                <p className="mt-1 text-sm text-[var(--color-text-secondary)]">{event.description}</p>
+              </li>
+            ))}
+          </ol>
+        )}
       </section>
     </div>
   );
@@ -180,7 +204,7 @@ function Student360Content({ studentId }: { studentId: string }) {
 
 export function Student360View({ studentId }: { studentId: string }) {
   return (
-    <Suspense fallback={<p className="text-sm text-[var(--color-muted)]">Carregando…</p>}>
+    <Suspense fallback={<LoadingBlock />}>
       <Student360Content studentId={studentId} />
     </Suspense>
   );

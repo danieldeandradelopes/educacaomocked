@@ -1,18 +1,35 @@
 'use client';
 
-import { SCHOOLS } from '@/data/mocks';
+import { AggregateSelect } from '@/components/ui/AggregateFilterChips';
+import { useApiList } from '@/lib/use-api';
 import { useFilters } from '@/lib/filter-context';
-import { describeFilters, isFilterActive } from '@/lib/filters';
-import type { Shift, Stage } from '@/domain/types';
+import { describeFilters, isFilterActive, shiftLabel, stageLabel } from '@/lib/filters';
+import type { School, Shift, Stage } from '@/domain/types';
+
+const STAGE_OPTIONS: { value: Stage; label: string }[] = [
+  { value: 'creche', label: stageLabel('creche') },
+  { value: 'infantil', label: stageLabel('infantil') },
+  { value: 'fundamental', label: stageLabel('fundamental') },
+];
+
+const SHIFT_OPTIONS: { value: Shift; label: string }[] = [
+  { value: 'manha', label: shiftLabel('manha') },
+  { value: 'tarde', label: shiftLabel('tarde') },
+  { value: 'noite', label: shiftLabel('noite') },
+  { value: 'integral', label: shiftLabel('integral') },
+];
 
 export function FilterBar() {
-  const { filters, setFilters, resetFilters } = useFilters();
+  const { filters, setFilters, resetFilters, toggleSchool, toggleStage, toggleShift } = useFilters();
+  const schoolsReq = useApiList<School>('schools');
+  const schools = schoolsReq.data ?? [];
   const active = isFilterActive(filters);
 
   return (
     <div className="flex flex-col gap-3 rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)]/90 p-3 backdrop-blur sm:p-4">
       <div className="flex flex-wrap items-end gap-3">
-        <Field label="Ano">
+        <label className="flex min-w-[7rem] flex-col gap-1 text-xs font-medium text-[var(--color-muted)]">
+          Ano
           <select
             className="field"
             value={String(filters.year)}
@@ -22,49 +39,36 @@ export function FilterBar() {
             <option value="2026">2026</option>
             <option value="2025">2025</option>
           </select>
-        </Field>
-        <Field label="Escola">
-          <select
-            className="field"
-            value={filters.schoolId}
-            onChange={(e) => setFilters({ schoolId: e.target.value })}
-            aria-label="Filtrar por escola"
-          >
-            <option value="all">Todas</option>
-            {SCHOOLS.map((school) => (
-              <option key={school.id} value={school.id}>
-                {school.name}
-              </option>
-            ))}
-          </select>
-        </Field>
-        <Field label="Etapa">
-          <select
-            className="field"
-            value={filters.stage}
-            onChange={(e) => setFilters({ stage: e.target.value as Stage | 'all' })}
-            aria-label="Filtrar por etapa"
-          >
-            <option value="all">Todas</option>
-            <option value="creche">Creche</option>
-            <option value="infantil">Ed. Infantil</option>
-            <option value="fundamental">Fundamental</option>
-          </select>
-        </Field>
-        <Field label="Turno">
-          <select
-            className="field"
-            value={filters.shift}
-            onChange={(e) => setFilters({ shift: e.target.value as Shift | 'all' })}
-            aria-label="Filtrar por turno"
-          >
-            <option value="all">Todos</option>
-            <option value="manha">Manhã</option>
-            <option value="tarde">Tarde</option>
-            <option value="noite">Noite</option>
-            <option value="integral">Integral</option>
-          </select>
-        </Field>
+        </label>
+
+        <AggregateSelect
+          label="Escola"
+          clearLabel="Todas"
+          selected={filters.schoolIds}
+          onToggle={toggleSchool}
+          onClear={() => setFilters({ schoolIds: [] })}
+          options={schools.map((school) => ({ value: school.id, label: school.name }))}
+          className="min-w-[14rem]"
+        />
+
+        <AggregateSelect
+          label="Etapa"
+          clearLabel="Todas"
+          selected={filters.stages}
+          onToggle={toggleStage}
+          onClear={() => setFilters({ stages: [] })}
+          options={STAGE_OPTIONS}
+        />
+
+        <AggregateSelect
+          label="Turno"
+          clearLabel="Todos"
+          selected={filters.shifts}
+          onToggle={toggleShift}
+          onClear={() => setFilters({ shifts: [] })}
+          options={SHIFT_OPTIONS}
+        />
+
         <button
           type="button"
           onClick={resetFilters}
@@ -74,26 +78,23 @@ export function FilterBar() {
           Limpar
         </button>
       </div>
+
       <p className="text-xs text-[var(--color-muted)]">
         Período: {filters.periodStart} a {filters.periodEnd}
         {active ? (
           <>
             {' '}
-            · <span className="font-semibold text-[var(--color-primary)]">{describeFilters(filters)}</span>
+            ·{' '}
+            <span className="font-semibold text-[var(--color-primary)]">
+              {describeFilters(filters, schools)}
+            </span>
+            {' '}
+            · selects multi (aglutinam)
           </>
         ) : (
-          <> · rede completa · dados fictícios</>
+          <> · rede completa · dados via API</>
         )}
       </p>
     </div>
-  );
-}
-
-function Field({ label, children }: { label: string; children: React.ReactNode }) {
-  return (
-    <label className="flex min-w-[9rem] flex-1 flex-col gap-1 text-xs font-medium text-[var(--color-muted)]">
-      {label}
-      {children}
-    </label>
   );
 }

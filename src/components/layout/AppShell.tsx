@@ -33,12 +33,59 @@ export function AppShell({ children }: { children: React.ReactNode }) {
               <ul className="space-y-1">
                 {NAV_ITEMS.map((item) => {
                   const Icon = item.icon;
+                  const childActive = item.children?.some(
+                    (child) => child.href && pathname.startsWith(child.href),
+                  );
                   const active =
                     item.href === '/'
                       ? pathname === '/'
-                      : Boolean(item.href && pathname.startsWith(item.href));
+                      : Boolean(
+                          (item.href && pathname.startsWith(item.href)) || childActive,
+                        );
                   const base =
                     'flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm transition';
+
+                  if (item.children?.length) {
+                    return (
+                      <li key={item.id}>
+                        <div className={`${base} text-white/70`}>
+                          <Icon className="h-4 w-4 shrink-0" aria-hidden />
+                          <span className="flex-1 text-left font-medium">{item.label}</span>
+                        </div>
+                        <ul className="ml-7 mt-1 space-y-1 border-l border-white/10 pl-3">
+                          {item.children.map((child) => {
+                            if (!child.href) {
+                              return (
+                                <li key={child.id} className="py-1 text-xs text-white/40">
+                                  {child.label}
+                                </li>
+                              );
+                            }
+                            const childIsActive =
+                                  pathname === child.href ||
+                                  Boolean(child.href && pathname.startsWith(`${child.href}/`));
+                            return (
+                              <li key={child.id}>
+                                <Link
+                                  href={child.href}
+                                  onClick={() => setOpen(false)}
+                                  className={`block rounded-lg px-2 py-1.5 text-xs transition ${
+                                    childIsActive
+                                      ? 'bg-teal-400/20 text-white'
+                                      : 'text-white/70 hover:bg-white/10 hover:text-white'
+                                  }`}
+                                  aria-current={childIsActive ? 'page' : undefined}
+                                >
+                                  {child.label}
+                                </Link>
+                              </li>
+                            );
+                          })}
+                        </ul>
+                      </li>
+                    );
+                  }
+
                   if (item.comingSoon || !item.href) {
                     return (
                       <li key={item.id}>
@@ -52,21 +99,10 @@ export function AppShell({ children }: { children: React.ReactNode }) {
                             Em breve
                           </span>
                         </div>
-                        {item.children && (
-                          <ul className="ml-7 mt-1 space-y-1 border-l border-white/10 pl-3">
-                            {item.children.map((child) => (
-                              <li
-                                key={child.id}
-                                className="py-1 text-xs text-white/40"
-                              >
-                                {child.label}
-                              </li>
-                            ))}
-                          </ul>
-                        )}
                       </li>
                     );
                   }
+
                   return (
                     <li key={item.id}>
                       <Link

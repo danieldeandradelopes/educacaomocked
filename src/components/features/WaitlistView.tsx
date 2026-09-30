@@ -1,6 +1,6 @@
 'use client';
 
-import { Suspense } from 'react';
+import { Suspense, useMemo } from 'react';
 import {
   Bar,
   BarChart,
@@ -13,145 +13,261 @@ import {
   XAxis,
   YAxis,
 } from 'recharts';
+import { AggregateFilterChips } from '@/components/ui/AggregateFilterChips';
 import { ChartCard, KpiCard } from '@/components/ui/KpiCard';
 import { DataTable } from '@/components/ui/DataTable';
 import { FocusBanner, useFocusParam } from '@/components/ui/FocusBanner';
+import { ErrorBlock, LoadingBlock, PageHeader } from '@/components/ui/PageHeader';
 import { StatusBadge } from '@/components/ui/StatusBadge';
-import { SCHOOLS, WAITLIST, WAITLIST_BY_STAGE } from '@/data/mocks';
+import { useAggregateFilter } from '@/hooks/useAggregateFilter';
+import { useCrudResource } from '@/hooks/useCrudResource';
+import { usePagination } from '@/hooks/usePagination';
+import { useSortable } from '@/hooks/useSortable';
+import { waitlistFields } from '@/lib/crud-fields';
+import { useApiList } from '@/lib/use-api';
 import { useFilters } from '@/lib/filter-context';
 import {
   computeFilteredKpis,
   describeFilters,
   filterSchools,
   filterWaitlistEntries,
+  filtersResetKey,
   formatNumber,
   isFilterActive,
+  preferredSchoolId,
   stageLabel,
 } from '@/lib/filters';
-import type { WaitlistEntry } from '@/domain/types';
+import type { School, WaitlistEntry } from '@/domain/types';
 
 const PIE_COLORS = ['#0F6B5C', '#1B2A4A', '#C47A11'];
 const FOCUS_ALLOWED = ['over60'] as const;
 
-function applyFocus(entries: readonly WaitlistEntry[], focus: string | null): WaitlistEntry[] {
-  if (focus === 'over60') return entries.filter((e) => e.waitingDays > 60);
-  return [...entries];
+type WaitSituation = 'recent' | 'over30' | 'over60';
+
+function waitSituation(days: number): WaitSituation {
+  if (days > 60) return 'over60';
+  if (days > 30) return 'over30';
+  return 'recent';
+}
+
+function situationLabel(value: WaitSituation) {
+  if (value === 'over60') return '> 60 dias';
+  if (value === 'over30') return '> 30 dias';
+  return 'Recente';
+}
+
+function applySituation(
+  entries: readonly WaitlistEntry[],
+  matches: (value: WaitSituation) => boolean,
+): WaitlistEntry[] {
+  return entries.filter((e) => matches(waitSituation(e.waitingDays)));
 }
 
 function WaitlistContent() {
+  const waitlistReq = useApiList<WaitlistEntry>('waitlist');
+  const schoolsReq = useApiList<School>('schools');
   const { filters } = useFilters();
   const focus = useFocusParam(FOCUS_ALLOWED);
-  const kpis = computeFilteredKpis(filters);
-  const base = filterWaitlistEntries(WAITLIST, filters);
-  const entries = applyFocus(base, focus);
+  const situationFilter = useAggregateFilter<WaitSituation>(
+    focus === 'over60' ? ['over60'] : [],
+  );
+  const schools = schoolsReq.data ?? [];
+  const base = filterWaitlistEntries(waitlistReq.data ?? [], filters);
+  const kpis = useMemo(
+    () => computeFilteredKpis(filters, { schools, waitlistCount: base.length }),
+    [filters, schools, base.length],
+  );
+
+  const entries = useMemo(
+    () => applySituation(base, situationFilter.matches),
+    [base, situationFilter.matches],
+  );
+
   const over60 = base.filter((e) => e.waitingDays > 60).length;
   const over30 = base.filter((e) => e.waitingDays > 30).length;
   const avgWait = Math.round(
     base.reduce((sum, e) => sum + e.waitingDays, 0) / Math.max(base.length, 1),
   );
 
-  const bySchool = filterSchools(SCHOOLS, filters)
+  const schoolName = (id: string) => schools.find((s) => s.id === id)?.name ?? id;
+
+  const sortAccessors = useMemo(
+    () => ({
+      childName: (e: WaitlistEntry) => e.childName,
+      stage: (e: WaitlistEntry) => stageLabel(e.stage),
+      school: (e: WaitlistEntry) => schoolName(e.preferredSchoolId),
+      neighborhood: (e: WaitlistEntry) => e.neighborhood,
+      waitingDays: (e: WaitlistEntry) => e.waitingDays,
+      situation: (e: WaitlistEntry) => e.waitingDays,
+    }),
+    [schools],
+  );
+
+  const resetKey = `${filtersResetKey(filters)}|${focus ?? ''}|${situationFilter.key}`;
+  const sorted = useSortable(entries, sortAccessors, {
+    defaultKey: 'waitingDays',
+    defaultDir: 'desc',
+    resetKey,
+  });
+  const pagination = usePagination(sorted.items, { resetKey: `${resetKey}|${sorted.sortKey}|${sorted.sortDir}` });
+
+  const bySchool = filterSchools(schools, filters)
     .map((s) => ({
       name: s.name.replace('EMEF ', '').replace('EMEI ', '').replace('Creche ', ''),
-      count: WAITLIST.filter((w) => w.preferredSchoolId === s.id).length,
+      count: entries.filter((w) => w.preferredSchoolId === s.id).length,
     }))
     .filter((row) => row.count > 0);
 
   const stageCounts = [
-    { stage: 'Creche', count: base.filter((e) => e.stage === 'creche').length },
-    { stage: 'Ed. Infantil', count: base.filter((e) => e.stage === 'infantil').length },
-    { stage: 'Fundamental', count: base.filter((e) => e.stage === 'fundamental').length },
+    { stage: 'Creche', count: entries.filter((e) => e.stage === 'creche').length },
+    { stage: 'Ed. Infantil', count: entries.filter((e) => e.stage === 'infantil').length },
+    { stage: 'Fundamental', count: entries.filter((e) => e.stage === 'fundamental').length },
   ].filter((row) => row.count > 0);
+
+  const crud = useCrudResource<WaitlistEntry>({
+    collection: 'waitlist',
+    titleSingular: 'registro de espera',
+    fields: waitlistFields(schools),
+    items: entries,
+    reload: waitlistReq.reload,
+    createDefaults: () => ({
+      stage: 'creche',
+      age: 2,
+      waitingDays: 1,
+      requestedAt: new Date().toISOString().slice(0, 10),
+      preferredSchoolId: preferredSchoolId(filters, schools[0]?.id),
+      neighborhood: schools[0]?.neighborhood ?? '',
+    }),
+  });
+
+  const loading = waitlistReq.loading || schoolsReq.loading;
+  const error = waitlistReq.error ?? schoolsReq.error;
+
+  const situationOptions: { value: WaitSituation; label: string; count: number }[] = [
+    {
+      value: 'recent',
+      label: 'Recente',
+      count: base.filter((e) => waitSituation(e.waitingDays) === 'recent').length,
+    },
+    {
+      value: 'over30',
+      label: '> 30 dias',
+      count: base.filter((e) => waitSituation(e.waitingDays) === 'over30').length,
+    },
+    {
+      value: 'over60',
+      label: '> 60 dias',
+      count: base.filter((e) => waitSituation(e.waitingDays) === 'over60').length,
+    },
+  ];
 
   return (
     <div className="space-y-6">
-      <section>
-        <h1 className="font-display text-2xl font-semibold text-[var(--color-navy)] sm:text-3xl">
-          Lista de Espera
-        </h1>
-        <p className="mt-1 text-sm text-[var(--color-text-secondary)]">
-          Demanda por vagas e tempo de espera na rede.
-          {isFilterActive(filters) ? ` · ${describeFilters(filters)}` : ''}
-        </p>
-      </section>
-
+      <PageHeader
+        title="Lista de Espera"
+        description={`CRUD da demanda por vagas${isFilterActive(filters) ? ` · ${describeFilters(filters, schools)}` : ''}.`}
+        action={crud.toolbar}
+      />
       <FocusBanner allowed={FOCUS_ALLOWED} />
+      {loading && <LoadingBlock />}
+      {error && <ErrorBlock message={error} />}
+      {!loading && !error && (
+        <>
+          <section className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+            <KpiCard index={0} label="Total (KPI)" value={kpis.waitlist} accent="amber" />
+            <KpiCard index={1} label="Tempo médio (dias)" value={avgWait || 0} accent="navy" />
+            <KpiCard index={2} label="Acima de 30 dias" value={over30} accent="amber" />
+            <KpiCard index={3} label="Acima de 60 dias" value={over60} accent="danger" />
+          </section>
+          <div className="grid gap-4 xl:grid-cols-2">
+            <ChartCard title="Distribuição por etapa" subtitle="Lista filtrada">
+              <ResponsiveContainer width="100%" height="100%">
+                <PieChart>
+                  <Pie
+                    data={stageCounts}
+                    dataKey="count"
+                    nameKey="stage"
+                    innerRadius={55}
+                    outerRadius={90}
+                    paddingAngle={3}
+                  >
+                    {stageCounts.map((entry, index) => (
+                      <Cell key={entry.stage} fill={PIE_COLORS[index % PIE_COLORS.length]} />
+                    ))}
+                  </Pie>
+                  <Tooltip formatter={(value) => [formatNumber(Number(value)), 'Crianças']} />
+                </PieChart>
+              </ResponsiveContainer>
+            </ChartCard>
+            <ChartCard title="Demanda por escola" subtitle="Preferência declarada">
+              <ResponsiveContainer width="100%" height="100%">
+                <BarChart data={bySchool}>
+                  <CartesianGrid strokeDasharray="3 3" stroke="#d7e0ea" />
+                  <XAxis dataKey="name" tick={{ fill: '#5b6b7c', fontSize: 11 }} />
+                  <YAxis allowDecimals={false} tick={{ fill: '#5b6b7c', fontSize: 12 }} />
+                  <Tooltip />
+                  <Bar dataKey="count" fill="#0F6B5C" radius={[8, 8, 0, 0]} />
+                </BarChart>
+              </ResponsiveContainer>
+            </ChartCard>
+          </div>
 
-      <section className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
-        <KpiCard index={0} label="Total aguardando" value={kpis.waitlist} accent="amber" />
-        <KpiCard index={1} label="Tempo médio (dias)" value={avgWait || 0} accent="navy" />
-        <KpiCard index={2} label="Acima de 30 dias (amostra)" value={over30} accent="amber" />
-        <KpiCard index={3} label="Acima de 60 dias (amostra)" value={over60} accent="danger" />
-      </section>
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <AggregateFilterChips
+              label="Situação"
+              clearLabel="Todas"
+              options={situationOptions}
+              selected={situationFilter.selected}
+              onToggle={situationFilter.toggle}
+              onClear={situationFilter.clear}
+            />
+          </div>
 
-      <div className="grid gap-4 xl:grid-cols-2">
-        <ChartCard title="Distribuição por etapa" subtitle="Amostra filtrada">
-          <ResponsiveContainer width="100%" height="100%">
-            <PieChart>
-              <Pie
-                data={stageCounts.length ? stageCounts : [...WAITLIST_BY_STAGE]}
-                dataKey="count"
-                nameKey="stage"
-                innerRadius={55}
-                outerRadius={90}
-                paddingAngle={3}
-              >
-                {(stageCounts.length ? stageCounts : WAITLIST_BY_STAGE).map((entry, index) => (
-                  <Cell key={entry.stage} fill={PIE_COLORS[index % PIE_COLORS.length]} />
-                ))}
-              </Pie>
-              <Tooltip formatter={(value) => [formatNumber(Number(value)), 'Crianças']} />
-            </PieChart>
-          </ResponsiveContainer>
-        </ChartCard>
-        <ChartCard title="Demanda por escola (amostra)" subtitle="Preferência declarada">
-          <ResponsiveContainer width="100%" height="100%">
-            <BarChart data={bySchool}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#d7e0ea" />
-              <XAxis dataKey="name" tick={{ fill: '#5b6b7c', fontSize: 11 }} />
-              <YAxis allowDecimals={false} tick={{ fill: '#5b6b7c', fontSize: 12 }} />
-              <Tooltip />
-              <Bar dataKey="count" fill="#0F6B5C" radius={[8, 8, 0, 0]} />
-            </BarChart>
-          </ResponsiveContainer>
-        </ChartCard>
-      </div>
-
-      <p className="text-sm text-[var(--color-text-secondary)]">
-        Exibindo {entries.length} registro(s){focus === 'over60' ? ' com mais de 60 dias' : ''}.
-      </p>
-
-      <DataTable
-        caption="Lista de espera"
-        headers={['Criança', 'Etapa', 'Escola preferida', 'Bairro', 'Dias', 'Situação']}
-      >
-        {entries.map((entry) => {
-          const school = SCHOOLS.find((s) => s.id === entry.preferredSchoolId);
-          return (
-            <tr key={entry.id} className="hover:bg-[var(--color-navy)]/[0.03]">
-              <td className="px-4 py-3 font-medium text-[var(--color-navy)]">{entry.childName}</td>
-              <td className="px-4 py-3">{stageLabel(entry.stage)}</td>
-              <td className="px-4 py-3 text-[var(--color-text-secondary)]">{school?.name}</td>
-              <td className="px-4 py-3">{entry.neighborhood}</td>
-              <td className="px-4 py-3">{entry.waitingDays}</td>
-              <td className="px-4 py-3">
-                <StatusBadge
-                  tone={entry.waitingDays > 60 ? 'danger' : entry.waitingDays > 30 ? 'warning' : 'info'}
-                >
-                  {entry.waitingDays > 60 ? '> 60 dias' : entry.waitingDays > 30 ? '> 30 dias' : 'Recente'}
-                </StatusBadge>
-              </td>
-            </tr>
-          );
-        })}
-      </DataTable>
+          <DataTable
+            caption="Lista de espera"
+            columns={[
+              { id: 'childName', label: 'Criança' },
+              { id: 'stage', label: 'Etapa' },
+              { id: 'school', label: 'Escola' },
+              { id: 'neighborhood', label: 'Bairro' },
+              { id: 'waitingDays', label: 'Dias' },
+              { id: 'situation', label: 'Situação' },
+              { id: 'actions', label: 'Ações', sortable: false },
+            ]}
+            sort={sorted}
+            pagination={pagination}
+          >
+            {pagination.pageItems.map((entry) => {
+              const sit = waitSituation(entry.waitingDays);
+              return (
+                <tr key={entry.id}>
+                  <td className="px-4 py-3 font-medium text-[var(--color-navy)]">{entry.childName}</td>
+                  <td className="px-4 py-3">{stageLabel(entry.stage)}</td>
+                  <td className="px-4 py-3">{schoolName(entry.preferredSchoolId)}</td>
+                  <td className="px-4 py-3">{entry.neighborhood}</td>
+                  <td className="px-4 py-3">{entry.waitingDays}</td>
+                  <td className="px-4 py-3">
+                    <StatusBadge
+                      tone={sit === 'over60' ? 'danger' : sit === 'over30' ? 'warning' : 'info'}
+                    >
+                      {situationLabel(sit)}
+                    </StatusBadge>
+                  </td>
+                  <td className="px-4 py-3">{crud.rowActions(entry)}</td>
+                </tr>
+              );
+            })}
+          </DataTable>
+        </>
+      )}
+      {crud.modal}
     </div>
   );
 }
 
 export function WaitlistView() {
   return (
-    <Suspense fallback={<p className="text-sm text-[var(--color-muted)]">Carregando…</p>}>
+    <Suspense fallback={<LoadingBlock />}>
       <WaitlistContent />
     </Suspense>
   );
