@@ -27,8 +27,8 @@ export function FilterBar() {
 
   return (
     <div className="surface-card flex flex-col gap-3 p-3 sm:p-4">
-      <div className="flex flex-wrap items-end gap-3">
-        <label className="flex min-w-[7rem] flex-col gap-1 text-xs font-medium text-[var(--color-muted)]">
+      <div className="grid grid-cols-1 items-end gap-3 sm:grid-cols-2 lg:grid-cols-[7rem_minmax(0,1.4fr)_minmax(0,1fr)_minmax(0,1fr)_auto]">
+        <label className="flex min-w-0 flex-col gap-1 text-xs font-medium text-[var(--color-muted)] sm:col-span-2 lg:col-span-1">
           Ano
           <select
             className="field"
@@ -48,7 +48,7 @@ export function FilterBar() {
           onToggle={toggleSchool}
           onClear={() => setFilters({ schoolIds: [] })}
           options={schools.map((school) => ({ value: school.id, label: school.name }))}
-          className="min-w-[14rem]"
+          className="min-w-0 sm:col-span-2 lg:col-span-1"
         />
 
         <AggregateSelect
@@ -58,6 +58,7 @@ export function FilterBar() {
           onToggle={toggleStage}
           onClear={() => setFilters({ stages: [] })}
           options={STAGE_OPTIONS}
+          className="min-w-0"
         />
 
         <AggregateSelect
@@ -67,32 +68,41 @@ export function FilterBar() {
           onToggle={toggleShift}
           onClear={() => setFilters({ shifts: [] })}
           options={SHIFT_OPTIONS}
+          className="min-w-0"
         />
 
         <button
           type="button"
           onClick={resetFilters}
           disabled={!active}
-          className="min-h-10 rounded-[var(--radius-control)] border border-[var(--color-border)] px-3 py-2 text-sm font-medium text-[var(--color-navy)] transition hover:bg-[var(--color-navy)]/5 disabled:cursor-not-allowed disabled:opacity-40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-primary)]"
+          className="min-h-10 w-full rounded-[var(--radius-control)] border border-[var(--color-border)] px-3 py-2 text-sm font-medium text-[var(--color-navy)] transition hover:bg-[var(--color-navy)]/5 disabled:cursor-not-allowed disabled:opacity-40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-primary)] sm:col-span-2 lg:col-span-1 lg:w-auto"
         >
           Limpar
         </button>
       </div>
 
-      <p className="text-xs text-[var(--color-muted)]">
-        Período: {filters.periodStart} a {filters.periodEnd}
+      <p className="text-xs leading-relaxed text-[var(--color-muted)]">
+        <span className="block sm:inline">
+          Período: {filters.periodStart} a {filters.periodEnd}
+        </span>
         {active ? (
           <>
-            {' '}
-            ·{' '}
-            <span className="font-semibold text-[var(--color-primary)]">
-              {describeFilters(filters, schools)}
+            <span className="hidden sm:inline"> · </span>
+            <span className="mt-1 block sm:mt-0 sm:inline">
+              <span className="font-semibold text-[var(--color-primary)]">
+                {describeFilters(filters, schools)}
+              </span>
+              {' '}
+              · filtros aplicados
             </span>
-            {' '}
-            · filtros aplicados
           </>
         ) : (
-          <> · rede completa · Ambiente de demonstração</>
+          <>
+            <span className="hidden sm:inline"> · </span>
+            <span className="mt-1 block sm:mt-0 sm:inline">
+              rede completa · Ambiente de demonstração
+            </span>
+          </>
         )}
       </p>
     </div>

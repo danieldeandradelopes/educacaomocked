@@ -65,7 +65,7 @@ export function AggregateSelect<T extends string>({
 
   return (
     <div
-      className={`relative flex min-w-[10rem] flex-1 flex-col gap-1 ${className ?? ''}`}
+      className={`relative flex w-full min-w-0 flex-col gap-1 ${className ?? ''}`}
       ref={rootRef}
     >
       <span className="text-xs font-medium text-[var(--color-muted)]">{label}</span>
