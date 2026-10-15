@@ -159,10 +159,15 @@ export function AppShell({ children }: { children: React.ReactNode }) {
                 </p>
               </div>
             </div>
-            <div className="px-4 pb-4 sm:px-6">
+            {/* Desktop: filtros ficam no header sticky */}
+            <div className="hidden px-4 pb-4 sm:px-6 lg:block">
               <FilterBar />
             </div>
           </header>
+          {/* Mobile/tablet: filtros no fluxo da página, não cobrem o conteúdo ao rolar */}
+          <div className="px-4 pt-3 sm:px-6 lg:hidden">
+            <FilterBar />
+          </div>
           <main className="flex-1 px-4 py-5 sm:px-6 sm:py-6">{children}</main>
         </div>
       </div>
