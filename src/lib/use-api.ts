@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { localReadPath, subscribeLocalDb } from '@/lib/local-db';
 
 interface UseApiState<T> {
   data: T | null;
@@ -16,20 +17,15 @@ export function useApi<T>(path: string): UseApiState<T> {
   const [tick, setTick] = useState(0);
 
   useEffect(() => {
+    return subscribeLocalDb(() => setTick((v) => v + 1));
+  }, []);
+
+  useEffect(() => {
     let cancelled = false;
     setLoading(true);
     setError(null);
 
-    const external = process.env.NEXT_PUBLIC_API_URL?.replace(/\/$/, '');
-    const url = external ? `${external}/${path}` : `/api/${path}`;
-
-    fetch(url)
-      .then(async (res) => {
-        if (!res.ok) {
-          throw new Error(`Falha ao carregar ${path} (${res.status})`);
-        }
-        return (await res.json()) as T;
-      })
+    localReadPath<T>(path)
       .then((json) => {
         if (!cancelled) setData(json);
       })
